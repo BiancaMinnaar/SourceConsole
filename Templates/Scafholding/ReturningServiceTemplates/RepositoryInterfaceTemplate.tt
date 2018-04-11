@@ -1,0 +1,18 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+using System;
+using System.Threading.Tasks;
+using CorePCL;
+using <#= _DataModel.ProjectName #>.Implementation.ViewModel;
+
+namespace <#= _DataModel.ProjectName #>.Interface.Repository
+{
+    public interface <#= _DataModel.RepositoryInterfaceName #><T>
+        where T : BaseViewModel
+    {
+        Task <#= _DataModel.EventName #>(<#= _DataModel.ViewModelName #> model, Action<T> completeAction);
+    }
+}
