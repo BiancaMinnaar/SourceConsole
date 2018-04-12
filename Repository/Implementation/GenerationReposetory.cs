@@ -1,5 +1,6 @@
 ﻿using System;
 using SourceConsole.Templates;
+using SourceConsole.Templates.DataModel;
 
 namespace SourceConsole
 {

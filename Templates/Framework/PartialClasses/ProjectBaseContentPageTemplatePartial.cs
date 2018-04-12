@@ -1,4 +1,5 @@
-﻿using SourceConsole.Templates.PartialClasses;
+﻿using SourceConsole.Templates.DataModel;
+using SourceConsole.Templates.PartialClasses;
 
 namespace SourceConsole.Templates.Framework
 {

@@ -1,4 +1,6 @@
-﻿namespace SourceConsole.Templates.ReturningServiceTemplates
+﻿using SourceConsole.Templates.DataModel;
+
+namespace SourceConsole.Templates.ReturningServiceTemplates
 {
     partial class RepositoryTemplate : ITemplate
     {

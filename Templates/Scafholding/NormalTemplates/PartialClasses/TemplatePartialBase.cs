@@ -1,17 +1,17 @@
-﻿using System;
+﻿using SourceConsole.Templates.DataModel;
+
 namespace SourceConsole.Templates.Scafholding.NormalTemplates
 {
     public abstract class TemplatePartialBase : ITemplate
     {
-        public PartialClasses.TemplateEnum TemplateType => PartialClasses.TemplateEnum.Normal;
-        protected GroupTemplateDataModel _DataModel;
-        public GroupTemplateDataModel GetDataModel => _DataModel;
+        public abstract PartialClasses.TemplateEnum TemplateType { get; }
+        protected TemplateDataModel _DataModel;
 
-        public abstract string FullProjectFileName { get; } //=> throw new NotImplementedException();
+        public abstract string FullProjectFileName { get; }
 
-        public abstract SourceEnum TemplateEnum { get; }//=> throw new NotImplementedException();
+        public abstract SourceEnum TemplateEnum { get; }
 
-        public TemplatePartialBase(GroupTemplateDataModel dataModel)
+        public TemplatePartialBase(TemplateDataModel dataModel)
         {
             _DataModel = dataModel;
         }

@@ -1,4 +1,5 @@
 ﻿using System;
+using SourceConsole.Templates.DataModel;
 using SourceConsole.Templates.PartialClasses;
 
 namespace SourceConsole.Templates.Scafholding.GeneratorTemplates
@@ -9,7 +10,9 @@ namespace SourceConsole.Templates.Scafholding.GeneratorTemplates
 
         public override SourceEnum TemplateEnum => SourceEnum.Generator;
 
-        public TemplatePartialTemplatePartial(GroupTemplateDataModel model)
+        public override TemplateEnum TemplateType => throw new NotImplementedException();
+
+        public TemplatePartialTemplatePartial(TemplateDataModel model)
             : base(model)
         {
         }

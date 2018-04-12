@@ -1,4 +1,6 @@
-﻿namespace SourceConsole.Templates.Scafholding.ReturningServiceTemplates
+﻿using SourceConsole.Templates.DataModel;
+
+namespace SourceConsole.Templates.Scafholding.ReturningServiceTemplates
 {
     partial class ServiceTemplate : ITemplate
     {

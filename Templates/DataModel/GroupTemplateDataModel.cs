@@ -1,7 +1,6 @@
 ﻿using System;
-using SourceConsole.Templates.DataModel;
 
-namespace SourceConsole.Templates
+namespace SourceConsole.Templates.DataModel
 {
     public class GroupTemplateDataModel : TemplateDataModel
     {

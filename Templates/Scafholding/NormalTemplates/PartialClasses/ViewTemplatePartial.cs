@@ -1,4 +1,6 @@
-﻿namespace SourceConsole.Templates.NormalTemplates
+﻿using SourceConsole.Templates.DataModel;
+
+namespace SourceConsole.Templates.NormalTemplates
 {
     partial class ViewTemplate : ITemplate
     {
