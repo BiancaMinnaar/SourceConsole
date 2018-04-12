@@ -28,10 +28,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
@@ -110,6 +111,11 @@
     </Compile>
     <Compile Include="Templates\Framework\PartialClasses\ProjectBaseContentPageTemplatePartial.cs" />
     <Compile Include="Data\GenericTemplateModel.cs" />
+    <Compile Include="Templates\Scafholding\NormalTemplates\PartialClasses\TemplatePartialBase.cs" />
+    <Compile Include="Templates\Scafholding\GeneratorTemplates\TemplatePartialTemplate.cs">
+      <DependentUpon>TemplatePartialTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Scafholding\GeneratorTemplates\TemplatePartialTemplatePartial.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Templates\" />
@@ -125,10 +131,11 @@
     <Folder Include="Templates\Framework\" />
     <Folder Include="Templates\Framework\PartialClasses\" />
     <Folder Include="Templates\Swift\" />
+    <Folder Include="Templates\Swift\PartialClasses\" />
+    <Folder Include="Templates\Scafholding\GeneratorTemplates\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Data\Project.Config" />
-    <None Include="packages.config" />
     <None Include="Templates\Scafholding\NormalTemplates\RepositoryInterfaceTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>RepositoryInterfaceTemplate.cs</LastGenOutput>
@@ -188,6 +195,11 @@
     <None Include="Templates\Framework\ProjectBaseContentPageTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ProjectBaseContentPageTemplate.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Templates\Scafholding\GeneratorTemplates\TemplatePartialTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>TemplatePartialTemplate.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

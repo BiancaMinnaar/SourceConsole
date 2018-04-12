@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SourceConsole", "SourceConsole.csproj", "{335063C5-C4DE-4196-8957-EDF53F381C8B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasePCL", "..\BasePCL\BasePCL.csproj", "{F34FE759-9422-4777-84F5-E253B9A3BA16}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
@@ -13,5 +15,9 @@ Global
 		{335063C5-C4DE-4196-8957-EDF53F381C8B}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
 		{335063C5-C4DE-4196-8957-EDF53F381C8B}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{335063C5-C4DE-4196-8957-EDF53F381C8B}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{F34FE759-9422-4777-84F5-E253B9A3BA16}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{F34FE759-9422-4777-84F5-E253B9A3BA16}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{F34FE759-9422-4777-84F5-E253B9A3BA16}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{F34FE759-9422-4777-84F5-E253B9A3BA16}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
