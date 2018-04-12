@@ -2,13 +2,13 @@
 {
     partial class RepositoryInterfaceTemplate : ITemplate
     {
-        TemplateDataModel _DataModel;
-        public TemplateDataModel GetDataModel => _DataModel;
+        GroupTemplateDataModel _DataModel;
+        public GroupTemplateDataModel GetDataModel => _DataModel;
         public string FullProjectFileName => _DataModel._RepositoryInterface.FullProjectFileName;
         public PartialClasses.TemplateEnum TemplateType => PartialClasses.TemplateEnum.Normal;
 		public SourceEnum TemplateEnum => SourceEnum.RepositoryInterface;
 
-        public RepositoryInterfaceTemplate(TemplateDataModel dataModel)
+        public RepositoryInterfaceTemplate(GroupTemplateDataModel dataModel)
         {
             _DataModel = dataModel;
         }

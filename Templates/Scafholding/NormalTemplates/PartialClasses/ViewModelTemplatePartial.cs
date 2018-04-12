@@ -2,15 +2,15 @@
 {
     partial class ViewModelTemplate : ITemplate
     {
-        TemplateDataModel _DataModel;
+        GroupTemplateDataModel _DataModel;
 
-        public TemplateDataModel GetDataModel => _DataModel;
+        public GroupTemplateDataModel GetDataModel => _DataModel;
 
         public string FullProjectFileName => _DataModel._ViewModel.FullProjectFileName;
 
         public PartialClasses.TemplateEnum TemplateType => PartialClasses.TemplateEnum.Normal;
 
-        public ViewModelTemplate(TemplateDataModel dataModel)
+        public ViewModelTemplate(GroupTemplateDataModel dataModel)
         {
             _DataModel = dataModel;
         }

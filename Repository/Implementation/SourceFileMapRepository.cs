@@ -14,7 +14,8 @@ namespace SourceConsole
         View,
         ViewControllerInterface,
         ViewController,
-        ViewModel
+        ViewModel,
+        Generator
     }
 
     public class SourceFileMapRepository<T> : ISourceFileMapRepository<T>

@@ -4,13 +4,13 @@ namespace SourceConsole.Templates.Framework
 {
     partial class ProjectBaseContentPageTemplate : ITemplate
     {
-        TemplateDataModel _DataModel;
-		public TemplateDataModel GetDataModel => _DataModel;
+        GroupTemplateDataModel _DataModel;
+		public GroupTemplateDataModel GetDataModel => _DataModel;
         public TemplateEnum TemplateType => PartialClasses.TemplateEnum.Normal;
         public SourceEnum TemplateEnum => SourceEnum.PBContentPage;
         public string FullProjectFileName => _DataModel._RepositoryInterface.FullProjectFileName;
 
-        public ProjectBaseContentPageTemplate(TemplateDataModel dataModel)
+        public ProjectBaseContentPageTemplate(GroupTemplateDataModel dataModel)
         {
             _DataModel = dataModel;
         }

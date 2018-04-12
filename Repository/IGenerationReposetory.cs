@@ -5,8 +5,8 @@ namespace SourceConsole
 {
     public interface IGenerationReposetory
     {
-        TemplateDataModel GetDataModel(string screenName, string projectName);
-        TemplateDataModel GetDataModel(Func<string> screenName);
+        GroupTemplateDataModel GetDataModel(string screenName, string projectName);
+        GroupTemplateDataModel GetDataModel(Func<string> screenName);
         bool WriteTemplateToFile(string fullFilePath, string templateOutput);
         bool WriteTemplateToFile<T>(T template) where T:ITemplate;
     }

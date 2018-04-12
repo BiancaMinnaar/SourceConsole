@@ -7,7 +7,7 @@ namespace SourceConsole
     {
         IFileService _FileService;
         IProjectReaderRepository _ProjectReader;
-        TemplateDataModel _Model;
+        GroupTemplateDataModel _Model;
 
         public GenerationReposetory(IProjectReaderRepository projectReader, IFileService fileService)
         {
@@ -15,15 +15,15 @@ namespace SourceConsole
             _ProjectReader = projectReader;
         }
 
-        public TemplateDataModel GetDataModel(string screenName, string projectName)
+        public GroupTemplateDataModel GetDataModel(string screenName, string projectName)
         {
-            _Model = new TemplateDataModel(screenName, projectName);
+            _Model = new GroupTemplateDataModel(screenName, projectName);
             return _Model;
         }
 
-        public TemplateDataModel GetDataModel(Func<string> screenName)
+        public GroupTemplateDataModel GetDataModel(Func<string> screenName)
         {
-            _Model = new TemplateDataModel(screenName(), _ProjectReader.GetProjectName());
+            _Model = new GroupTemplateDataModel(screenName(), _ProjectReader.GetProjectName());
             return _Model;
         }
 

@@ -37,7 +37,7 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Templates\DataModel\TemplateDataModel.cs" />
+    <Compile Include="Templates\DataModel\GroupTemplateDataModel.cs" />
     <Compile Include="Templates\DataModel\FileModel.cs" />
     <Compile Include="Repository\IProjectReaderRepository.cs" />
     <Compile Include="Repository\IGenerationReposetory.cs" />
@@ -116,6 +116,7 @@
       <DependentUpon>TemplatePartialTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Templates\Scafholding\GeneratorTemplates\TemplatePartialTemplatePartial.cs" />
+    <Compile Include="Templates\DataModel\TemplateDataModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Templates\" />

@@ -2,15 +2,15 @@
 {
     partial class ServiceInterfaceTemplate : ITemplate
     {
-        TemplateDataModel _DataModel;
+        GroupTemplateDataModel _DataModel;
 
-        public TemplateDataModel GetDataModel => _DataModel;
+        public GroupTemplateDataModel GetDataModel => _DataModel;
 
         public string FullProjectFileName => _DataModel._ServiceInterface.FullProjectFileName;
 
         public PartialClasses.TemplateEnum TemplateType => PartialClasses.TemplateEnum.Normal;
 
-        public ServiceInterfaceTemplate(TemplateDataModel dataModel)
+        public ServiceInterfaceTemplate(GroupTemplateDataModel dataModel)
         {
             _DataModel = dataModel;
         }
