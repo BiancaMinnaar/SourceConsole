@@ -11,6 +11,8 @@ namespace SourceConsole.Templates.Framework
         public SourceEnum TemplateEnum => SourceEnum.PBContentPage;
         public string FullProjectFileName => _DataModel._RepositoryInterface.FullProjectFileName;
 
+        public TemplateDataModel DataModel { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+
         public ProjectBaseContentPageTemplate(GroupTemplateDataModel dataModel)
         {
             _DataModel = dataModel;

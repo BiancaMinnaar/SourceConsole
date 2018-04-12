@@ -10,6 +10,8 @@ namespace SourceConsole.Templates.NormalTemplates
         public PartialClasses.TemplateEnum TemplateType => PartialClasses.TemplateEnum.Normal;
 		public SourceEnum TemplateEnum => SourceEnum.RepositoryInterface;
 
+        public TemplateDataModel DataModel { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+
         public RepositoryInterfaceTemplate(GroupTemplateDataModel dataModel)
         {
             _DataModel = dataModel;

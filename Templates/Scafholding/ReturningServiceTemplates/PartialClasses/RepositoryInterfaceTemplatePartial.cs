@@ -16,6 +16,8 @@ namespace SourceConsole.Templates.ReturningServiceTemplates
 
         public SourceEnum TemplateEnum => SourceEnum.RepositoryInterface;
 
+        public TemplateDataModel DataModel { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+
         public string GetFileName()
         {
             var repo = new SourceFileMapRepository<RepositoryInterfaceTemplate>();

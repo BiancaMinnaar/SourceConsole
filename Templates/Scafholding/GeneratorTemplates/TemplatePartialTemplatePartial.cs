@@ -4,27 +4,26 @@ using SourceConsole.Templates.PartialClasses;
 
 namespace SourceConsole.Templates.Scafholding.GeneratorTemplates
 {
-    partial class TemplatePartialTemplatePartial : NormalTemplates.TemplatePartialBase
+    partial class TemplatePartialTemplate : ITemplate
     {
-        public override string FullProjectFileName => throw new NotImplementedException();
+        public string FullProjectFileName => DataModel._Template.FullProjectFileName;
 
-        public override SourceEnum TemplateEnum => SourceEnum.Generator;
+        public SourceEnum TemplateEnum => SourceEnum.Generator;
 
-        public override TemplateEnum TemplateType => throw new NotImplementedException();
+        public TemplateEnum TemplateType => PartialClasses.TemplateEnum.Regenerate;
 
-        public TemplatePartialTemplatePartial(TemplateDataModel model)
-            : base(model)
+        public TemplateDataModel DataModel { get; set; }
+
+        public string GetFileName()
         {
-        }
-
-        public override string GetFileName()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override string TransformText()
-        {
-            throw new NotImplementedException();
+            var repo = new SourceFileMapRepository<TemplatePartialTemplate>();
+            DataModel._Template = new FileModel()
+            {
+                CodeName = DataModel.Template,
+                Extension = repo.GetSourceExtension(this),
+                ProjectFilePath = repo.GetSourcePath(this)
+            };
+            return DataModel._Template.FileName;
         }
     }
 }

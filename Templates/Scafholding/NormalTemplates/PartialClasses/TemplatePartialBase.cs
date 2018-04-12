@@ -5,7 +5,7 @@ namespace SourceConsole.Templates.Scafholding.NormalTemplates
     public abstract class TemplatePartialBase : ITemplate
     {
         public abstract PartialClasses.TemplateEnum TemplateType { get; }
-        protected TemplateDataModel _DataModel;
+        public abstract TemplateDataModel DataModel { get; set; }
 
         public abstract string FullProjectFileName { get; }
 
@@ -13,7 +13,7 @@ namespace SourceConsole.Templates.Scafholding.NormalTemplates
 
         public TemplatePartialBase(TemplateDataModel dataModel)
         {
-            _DataModel = dataModel;
+            DataModel = dataModel;
         }
 
         public abstract string TransformText();

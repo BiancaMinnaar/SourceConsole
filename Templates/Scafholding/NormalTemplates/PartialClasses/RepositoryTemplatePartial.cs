@@ -19,6 +19,8 @@ namespace SourceConsole.Templates.NormalTemplates
 
         public SourceEnum TemplateEnum => SourceEnum.Repository;
 
+        public TemplateDataModel DataModel { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+
         public string GetFileName()
         {
             var repo = new SourceFileMapRepository<RepositoryTemplate>();
