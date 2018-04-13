@@ -117,6 +117,7 @@
     </Compile>
     <Compile Include="Templates\Scafholding\GeneratorTemplates\TemplatePartialTemplatePartial.cs" />
     <Compile Include="Templates\DataModel\TemplateDataModel.cs" />
+    <Compile Include="Templates\Extensions\Extensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Templates\" />
@@ -134,6 +135,7 @@
     <Folder Include="Templates\Swift\" />
     <Folder Include="Templates\Swift\PartialClasses\" />
     <Folder Include="Templates\Scafholding\GeneratorTemplates\" />
+    <Folder Include="Templates\Extensions\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Data\Project.Config" />
