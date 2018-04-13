@@ -10,9 +10,9 @@ namespace SourceConsole
         {
             IProjectReaderRepository readerRepo = new ProjectReaderRepository(new FileService());
             IGenerationReposetory repo = new GenerationReposetory(readerRepo, new FileService());
-            var screenData = repo.GetDataModel(() =>
+            var screenData = repo.GetBaseDataModel<TemplateDataModel>(() =>
                 {
-                    Console.Write("Screen Name:");
+                    Console.Write("Template Name:");
                     return Console.ReadLine();
             });
             //repo.WriteTemplateToFile(new SourceConsole.Templates.NormalTemplates.ViewModelTemplate(screenData));
@@ -26,7 +26,11 @@ namespace SourceConsole
             //repo.WriteTemplateToFile(new SourceConsole.Templates.NormalTemplates.ServiceTemplate(screenData));
 
             //repo.WriteTemplateToFile<SourceConsole.Templates.Framework.ProjectBaseContentPageTemplate,GroupTemplateDataModel>(new SourceConsole.Templates.Framework.ProjectBaseContentPageTemplate(screenData));
-            //repo.WriteTemplateToFile(new Repository)
+            //var screenData = new TemplateDataModel()
+            //{
+            //    ProjectName = ""
+            //};
+            repo.WriteTemplateToFile(new Templates.Swift.Swift_RepositoryTemplate(screenData), screenData);
         }
     }
 }

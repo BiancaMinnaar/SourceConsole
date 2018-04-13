@@ -16,6 +16,14 @@ namespace SourceConsole
             _ProjectReader = projectReader;
         }
 
+        public M GetBaseDataModel<M>(Func<string> templateName) where M : TemplateDataModel,new()
+        {
+            return new M()
+            {
+                Template = templateName()
+            };
+        }
+
         public GroupTemplateDataModel GetDataModel(string screenName, string projectName)
         {
             _Model = new GroupTemplateDataModel(screenName, projectName);
@@ -33,23 +41,25 @@ namespace SourceConsole
             return _FileService.WriteFileToDisk(fullFilePath, templateOutput);
         }
 
-        public bool WriteTemplateToFile<T,M>(T template) where T : ITemplate<M> where M : TemplateDataModel
+        public bool WriteTemplateToFile<T, M>(T template, M model)
+            where T : ITemplate<M>
+            where M : TemplateDataModel
         {
             var templateOutput = template.TransformText();
             var templateEnum = template.TemplateEnum;
-            var fullName = new SourceFileMapRepository<T,M>().GetSourcePath(template) + template.GetFileName();
+            var fullName = new SourceFileMapRepository<T, M>().GetSourcePath(template) + template.GetFileName();
             var hasWritten = _FileService.WriteFileToDisk(fullName, templateOutput);
-            switch((int)template.TemplateType)
+            switch ((int)template.TemplateType)
             {
                 case 0:
-					_ProjectReader.InsertFileReferenceInProjectFile(template.FullProjectFileName);
+                    _ProjectReader.InsertFileReferenceInProjectFile(template.FullProjectFileName);
                     break;
                 case 1:
                     var noExtension = template.FullProjectFileName.Substring(0, template.FullProjectFileName.LastIndexOf('.'));
-					_ProjectReader.InsertXamlFileReferenceInProjectFile(
-                        noExtension + ".cs", 
+                    _ProjectReader.InsertXamlFileReferenceInProjectFile(
+                        noExtension + ".cs",
                         template.GetFileName());
-					_ProjectReader.InsertXamlEmbededResourceInProjectFile(template.FullProjectFileName);
+                    _ProjectReader.InsertXamlEmbededResourceInProjectFile(template.FullProjectFileName);
                     break;
                 default:
                     break;

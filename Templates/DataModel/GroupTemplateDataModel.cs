@@ -5,6 +5,7 @@ namespace SourceConsole.Templates.DataModel
     public class GroupTemplateDataModel : TemplateDataModel
     {
 		public string EventName { get; set; }
+        public string ProjectName { get; set; }
 
         public FileModel _ViewModel { get; set; }
 		public string ViewModelName
@@ -68,15 +69,20 @@ namespace SourceConsole.Templates.DataModel
             set => _ProjectBaseContentPage = new FileModel() { CodeName = value };
         }
 
+        public GroupTemplateDataModel(string projectName)
+        {
+            ProjectName = projectName;
+        }
+
         public GroupTemplateDataModel(string screenName, string projectName)
-            : base(projectName)
+            : this(projectName)
         {
             EventName = screenName;
 			setData();
         }
 
         public GroupTemplateDataModel(Func<string> inputProjectName , Func<string> inputScreenName)
-            : base(inputProjectName())
+            : this(inputProjectName())
         {
             EventName = inputScreenName();
             setData();

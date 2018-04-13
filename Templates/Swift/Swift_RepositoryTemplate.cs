@@ -22,28 +22,18 @@ namespace SourceConsole.Templates.Swift {
             
             #line 6 ""
             this.Write(@"
-namespace 
-{
-    partial class TemplatePartialTemplate : ITemplate
-    {
-        public string FullProjectFileName => this.GetFullProjectFileName();
+//
+//  RegistrationRepository.swift
+//  Marble.Mobile
+//
+//  Created by Bianca Minnaar on 2018/04/06.
+//  Copyright © 2018 MarbleTech. All rights reserved.
+//
 
-        public SourceEnum TemplateEnum => SourceEnum.Generator;
+import Foundation
 
-        public TemplateEnum TemplateType => PartialClasses.TemplateEnum.Regenerate;
-
-        public TemplateDataModel DataModel { get; set; }
-
-        public TemplatePartialTemplate(TemplateDataModel dataModel)
-        {
-            DataModel = dataModel;
-        }
-
-        public string GetFileName()
-        {
-            return this.GetFileName();
-        }
-    }
+protocol RegistrationRepositoryProtocol {
+    func doRegistration(userModel: UserViewModel, closure:@escaping (([String : AnyObject]) -> Void)) -> Void
 }");
             
             #line default

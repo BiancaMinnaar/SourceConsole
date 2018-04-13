@@ -2,7 +2,6 @@
 {
     public class TemplateDataModel : CorePCL.BaseViewModel
     {
-        public string ProjectName { get; set; }
         public FileModel _Template { get; set; }
         public string Template
         {
@@ -10,9 +9,7 @@
             set => _Template = new FileModel() { CodeName = value };
         }
 
-        public TemplateDataModel(string projectName)
-        {
-            ProjectName = projectName;
-        }
+        public TemplateDataModel()
+        {}
     }
 }

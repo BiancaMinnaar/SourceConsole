@@ -8,7 +8,8 @@ namespace SourceConsole
     {
         GroupTemplateDataModel GetDataModel(string screenName, string projectName);
         GroupTemplateDataModel GetDataModel(Func<string> screenName);
+        M GetBaseDataModel<M>(Func<string> templateName) where M : TemplateDataModel, new();
         bool WriteTemplateToFile(string fullFilePath, string templateOutput);
-        bool WriteTemplateToFile<T, M>(T template) where T : ITemplate<M> where M: TemplateDataModel;
+        bool WriteTemplateToFile<T, M>(T template, M model) where T : ITemplate<M> where M: TemplateDataModel;
     }
 }
