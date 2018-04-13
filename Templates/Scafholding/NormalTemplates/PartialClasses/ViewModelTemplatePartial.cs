@@ -2,7 +2,7 @@
 
 namespace SourceConsole.Templates.NormalTemplates
 {
-    partial class ViewModelTemplate : ITemplate
+    partial class ViewModelTemplate : ITemplate<GroupTemplateDataModel>
     {
         GroupTemplateDataModel _DataModel;
 
@@ -20,10 +20,11 @@ namespace SourceConsole.Templates.NormalTemplates
         public SourceEnum TemplateEnum => SourceEnum.ViewModel;
 
         public TemplateDataModel DataModel { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        GroupTemplateDataModel ITemplate<GroupTemplateDataModel>.DataModel { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
 
         public string GetFileName()
         {
-            var repo = new SourceFileMapRepository<ViewModelTemplate>();
+            var repo = new SourceFileMapRepository<ViewModelTemplate,GroupTemplateDataModel>();
             _DataModel._ViewModel = new DataModel.FileModel()
             {
                 CodeName = _DataModel.ViewModelName,

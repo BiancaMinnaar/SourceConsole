@@ -3,7 +3,7 @@ using SourceConsole.Templates.PartialClasses;
 
 namespace SourceConsole.Templates.Framework
 {
-    partial class ProjectBaseContentPageTemplate : ITemplate
+    partial class ProjectBaseContentPageTemplate : ITemplate<GroupTemplateDataModel>
     {
         GroupTemplateDataModel _DataModel;
 		public GroupTemplateDataModel GetDataModel => _DataModel;
@@ -11,7 +11,7 @@ namespace SourceConsole.Templates.Framework
         public SourceEnum TemplateEnum => SourceEnum.PBContentPage;
         public string FullProjectFileName => _DataModel._RepositoryInterface.FullProjectFileName;
 
-        public TemplateDataModel DataModel { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        GroupTemplateDataModel ITemplate<GroupTemplateDataModel>.DataModel { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
 
         public ProjectBaseContentPageTemplate(GroupTemplateDataModel dataModel)
         {
@@ -20,7 +20,7 @@ namespace SourceConsole.Templates.Framework
 
         public string GetFileName()
         {
-            var repo = new SourceFileMapRepository<ProjectBaseContentPageTemplate>();
+            var repo = new SourceFileMapRepository<ProjectBaseContentPageTemplate,GroupTemplateDataModel>();
             _DataModel._ProjectBaseContentPage = new DataModel.FileModel()
             {
                 CodeName = _DataModel.ProjectBaseContentPageName,

@@ -2,11 +2,11 @@
 using SourceConsole.Templates.Extensions;
 using SourceConsole.Templates.PartialClasses;
 
-namespace SourceConsole.Templates.Scafholding.GeneratorTemplates
+namespace SourceConsole.Templates.Swift
 {
-    partial class TemplatePartialTemplate : ITemplate
+    partial class Swift_RepositoryTemplate : ITemplate<TemplateDataModel>
     {
-        public string FullProjectFileName => this.GetFullProjectFileName();
+        public string FullProjectFileName => this.GetFullProjectFileName<Swift_RepositoryTemplate,TemplateDataModel>();
 
         public SourceEnum TemplateEnum => SourceEnum.Generator;
 
@@ -14,7 +14,7 @@ namespace SourceConsole.Templates.Scafholding.GeneratorTemplates
 
         public TemplateDataModel DataModel { get; set; }
 
-        public TemplatePartialTemplate(TemplateDataModel dataModel)
+        public Swift_RepositoryTemplate(TemplateDataModel dataModel)
         {
             DataModel = dataModel;
         }

@@ -19,7 +19,7 @@ namespace SourceConsole.Templates.NormalTemplates
 
         public string GetFileName()
         {
-            var repo = new SourceFileMapRepository<RepositoryInterfaceTemplate>();
+            var repo = new SourceFileMapRepository<RepositoryInterfaceTemplate,TemplateDataModel>();
             _DataModel._RepositoryInterface = new DataModel.FileModel()
             {
                 CodeName = _DataModel.RepositoryInterfaceName,

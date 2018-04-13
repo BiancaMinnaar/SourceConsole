@@ -112,12 +112,13 @@
     <Compile Include="Templates\Framework\PartialClasses\ProjectBaseContentPageTemplatePartial.cs" />
     <Compile Include="Data\GenericTemplateModel.cs" />
     <Compile Include="Templates\Scafholding\NormalTemplates\PartialClasses\TemplatePartialBase.cs" />
-    <Compile Include="Templates\Scafholding\GeneratorTemplates\TemplatePartialTemplate.cs">
-      <DependentUpon>TemplatePartialTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Templates\Scafholding\GeneratorTemplates\TemplatePartialTemplatePartial.cs" />
     <Compile Include="Templates\DataModel\TemplateDataModel.cs" />
     <Compile Include="Templates\Extensions\Extensions.cs" />
+    <Compile Include="Templates\DataModel\SwiftTemplateModel.cs" />
+    <Compile Include="Templates\Swift\PartialClasses\Swift_RepositoryTemplatePartial.cs" />
+    <Compile Include="Templates\Swift\Swift_RepositoryTemplate.cs">
+      <DependentUpon>Swift_RepositoryTemplate.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Templates\" />
@@ -200,9 +201,9 @@
       <LastGenOutput>ProjectBaseContentPageTemplate.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
-    <None Include="Templates\Scafholding\GeneratorTemplates\TemplatePartialTemplate.tt">
+    <None Include="Templates\Swift\Swift_RepositoryTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>TemplatePartialTemplate.cs</LastGenOutput>
+      <LastGenOutput>Swift_RepositoryTemplate.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

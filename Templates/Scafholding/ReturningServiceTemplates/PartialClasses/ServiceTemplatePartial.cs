@@ -2,7 +2,7 @@
 
 namespace SourceConsole.Templates.Scafholding.ReturningServiceTemplates
 {
-    partial class ServiceTemplate : ITemplate
+    partial class ServiceTemplate : ITemplate<GroupTemplateDataModel>
     {
         GroupTemplateDataModel _DataModel;
 
@@ -19,11 +19,11 @@ namespace SourceConsole.Templates.Scafholding.ReturningServiceTemplates
 
         public SourceEnum TemplateEnum => SourceEnum.Service;
 
-        public TemplateDataModel DataModel { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        GroupTemplateDataModel ITemplate<GroupTemplateDataModel>.DataModel { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
 
         public string GetFileName()
         {
-            var repo = new SourceFileMapRepository<ServiceTemplate>();
+            var repo = new SourceFileMapRepository<ServiceTemplate,GroupTemplateDataModel>();
             _DataModel._Service = new DataModel.FileModel()
             {
                 CodeName = _DataModel.ServiceName,

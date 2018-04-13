@@ -8,49 +8,40 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SourceConsole.Templates.Scafholding.GeneratorTemplates {
+namespace SourceConsole.Templates.Swift {
     using System.Linq;
     using System.Text;
     using System.Collections.Generic;
     using System;
     
     
-    public partial class TemplatePartialTemplate : TemplatePartialTemplateBase {
+    public partial class Swift_RepositoryTemplate : Swift_RepositoryTemplateBase {
         
         public virtual string TransformText() {
             this.GenerationEnvironment = null;
             
             #line 6 ""
             this.Write(@"
-namespace SourceConsole.Templates.NormalTemplates
+namespace 
 {
-    partial class ServiceTemplate : ITemplate
+    partial class TemplatePartialTemplate : ITemplate
     {
-        TemplateDataModel _DataModel;
+        public string FullProjectFileName => this.GetFullProjectFileName();
 
-        public TemplateDataModel GetDataModel => _DataModel;
+        public SourceEnum TemplateEnum => SourceEnum.Generator;
 
-        public string FullProjectFileName => _DataModel._Service.FullProjectFileName;
+        public TemplateEnum TemplateType => PartialClasses.TemplateEnum.Regenerate;
 
-        public PartialClasses.TemplateEnum TemplateType => PartialClasses.TemplateEnum.Normal;
+        public TemplateDataModel DataModel { get; set; }
 
-        public ServiceTemplate(TemplateDataModel dataModel)
+        public TemplatePartialTemplate(TemplateDataModel dataModel)
         {
-            _DataModel = dataModel;
+            DataModel = dataModel;
         }
-
-        public SourceEnum TemplateEnum => SourceEnum.Service;
 
         public string GetFileName()
         {
-            var repo = new SourceFileMapRepository<ServiceTemplate>();
-            _DataModel._Service = new DataModel.FileModel()
-            {
-                CodeName = _DataModel.ServiceName,
-                Extension = repo.GetSourceExtension(this),
-                ProjectFilePath = repo.GetSourcePath(this)
-            };
-            return _DataModel._Service.FileName;
+            return this.GetFileName();
         }
     }
 }");
@@ -64,7 +55,7 @@ namespace SourceConsole.Templates.NormalTemplates
         }
     }
     
-    public class TemplatePartialTemplateBase {
+    public class Swift_RepositoryTemplateBase {
         
         private global::System.Text.StringBuilder builder;
         

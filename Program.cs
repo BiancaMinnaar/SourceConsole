@@ -1,5 +1,6 @@
 ﻿using System;
 using SourceConsole.Templates;
+using SourceConsole.Templates.DataModel;
 
 namespace SourceConsole
 {
@@ -24,7 +25,8 @@ namespace SourceConsole
             //repo.WriteTemplateToFile(new SourceConsole.Templates.NormalTemplates.ServiceInterfaceTemplate(screenData));
             //repo.WriteTemplateToFile(new SourceConsole.Templates.NormalTemplates.ServiceTemplate(screenData));
 
-            repo.WriteTemplateToFile(new SourceConsole.Templates.Framework.ProjectBaseContentPageTemplate(screenData));
+            //repo.WriteTemplateToFile<SourceConsole.Templates.Framework.ProjectBaseContentPageTemplate,GroupTemplateDataModel>(new SourceConsole.Templates.Framework.ProjectBaseContentPageTemplate(screenData));
+            //repo.WriteTemplateToFile(new Repository)
         }
     }
 }

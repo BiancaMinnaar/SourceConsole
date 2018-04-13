@@ -2,11 +2,18 @@
 
 namespace SourceConsole.Templates
 {
-    public interface ITemplate
+    /// <summary>
+    /// Template. Depricated Use ITemplate<M>
+    /// </summary>
+    public interface ITemplate : ITemplate<TemplateDataModel>
     {
-        TemplateDataModel DataModel { get; set; }
+    }
+
+    public interface ITemplate<M> where M : TemplateDataModel
+    {
+        M DataModel { get; set; }
         PartialClasses.TemplateEnum TemplateType { get; }
-		string FullProjectFileName { get; }
+        string FullProjectFileName { get; }
         string TransformText();
         SourceEnum TemplateEnum { get; }
         string GetFileName();

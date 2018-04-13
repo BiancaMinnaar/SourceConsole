@@ -9,6 +9,6 @@ namespace SourceConsole
         GroupTemplateDataModel GetDataModel(string screenName, string projectName);
         GroupTemplateDataModel GetDataModel(Func<string> screenName);
         bool WriteTemplateToFile(string fullFilePath, string templateOutput);
-        bool WriteTemplateToFile<T>(T template) where T:ITemplate;
+        bool WriteTemplateToFile<T, M>(T template) where T : ITemplate<M> where M: TemplateDataModel;
     }
 }

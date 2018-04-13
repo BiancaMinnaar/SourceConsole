@@ -1,5 +1,6 @@
 ﻿using System;
 using SourceConsole.Templates;
+using SourceConsole.Templates.DataModel;
 
 namespace SourceConsole
 {
@@ -18,8 +19,9 @@ namespace SourceConsole
         Generator
     }
 
-    public class SourceFileMapRepository<T> : ISourceFileMapRepository<T>
-        where T : ITemplate
+    public class SourceFileMapRepository<T,M> : ISourceFileMapRepository<T,M>
+        where T : ITemplate<M>
+        where M : TemplateDataModel
     {
         IProjectReaderRepository readerRepo = new ProjectReaderRepository(new FileService());
 

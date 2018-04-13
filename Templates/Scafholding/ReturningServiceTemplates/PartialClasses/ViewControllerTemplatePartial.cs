@@ -2,7 +2,7 @@
 
 namespace SourceConsole.Templates.ReturningServiceTemplates
 {
-    partial class ViewControllerTemplate : ITemplate
+    partial class ViewControllerTemplate : ITemplate<GroupTemplateDataModel>
     {
         GroupTemplateDataModel _DataModel;
 
@@ -20,10 +20,11 @@ namespace SourceConsole.Templates.ReturningServiceTemplates
         public SourceEnum TemplateEnum => SourceEnum.ViewController;
 
         public TemplateDataModel DataModel { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        GroupTemplateDataModel ITemplate<GroupTemplateDataModel>.DataModel { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
 
         public string GetFileName()
         {
-            var repo = new SourceFileMapRepository<ViewControllerTemplate>();
+            var repo = new SourceFileMapRepository<ViewControllerTemplate,GroupTemplateDataModel>();
             _DataModel._ViewController = new DataModel.FileModel()
             {
                 CodeName = _DataModel.ViewControllerName,

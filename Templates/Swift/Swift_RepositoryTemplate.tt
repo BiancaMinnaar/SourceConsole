@@ -1,0 +1,29 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+
+namespace 
+{
+    partial class TemplatePartialTemplate : ITemplate
+    {
+        public string FullProjectFileName => this.GetFullProjectFileName();
+
+        public SourceEnum TemplateEnum => SourceEnum.Generator;
+
+        public TemplateEnum TemplateType => PartialClasses.TemplateEnum.Regenerate;
+
+        public TemplateDataModel DataModel { get; set; }
+
+        public TemplatePartialTemplate(TemplateDataModel dataModel)
+        {
+            DataModel = dataModel;
+        }
+
+        public string GetFileName()
+        {
+            return this.GetFileName();
+        }
+    }
+}

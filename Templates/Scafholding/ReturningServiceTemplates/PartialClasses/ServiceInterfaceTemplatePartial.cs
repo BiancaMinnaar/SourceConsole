@@ -2,7 +2,7 @@
 
 namespace SourceConsole.Templates.ReturningServiceTemplates
 {
-    partial class ServiceInterfaceTemplate : ITemplate
+    partial class ServiceInterfaceTemplate : ITemplate<GroupTemplateDataModel>
     {
         GroupTemplateDataModel _DataModel;
 
@@ -19,11 +19,11 @@ namespace SourceConsole.Templates.ReturningServiceTemplates
 
         public SourceEnum TemplateEnum => SourceEnum.ServiceInterface;
 
-        public TemplateDataModel DataModel { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        GroupTemplateDataModel ITemplate<GroupTemplateDataModel>.DataModel { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
 
         public string GetFileName()
         {
-            var repo = new SourceFileMapRepository<ServiceInterfaceTemplate>();
+            var repo = new SourceFileMapRepository<ServiceInterfaceTemplate,GroupTemplateDataModel>();
             _DataModel._ServiceInterface = new DataModel.FileModel()
             {
                 CodeName = _DataModel.ServiceInterfaceName,

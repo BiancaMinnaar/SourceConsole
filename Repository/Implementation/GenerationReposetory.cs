@@ -33,11 +33,11 @@ namespace SourceConsole
             return _FileService.WriteFileToDisk(fullFilePath, templateOutput);
         }
 
-        public bool WriteTemplateToFile<T>(T template) where T : ITemplate
+        public bool WriteTemplateToFile<T,M>(T template) where T : ITemplate<M> where M : TemplateDataModel
         {
             var templateOutput = template.TransformText();
             var templateEnum = template.TemplateEnum;
-            var fullName = new SourceFileMapRepository<T>().GetSourcePath(template) + template.GetFileName();
+            var fullName = new SourceFileMapRepository<T,M>().GetSourcePath(template) + template.GetFileName();
             var hasWritten = _FileService.WriteFileToDisk(fullName, templateOutput);
             switch((int)template.TemplateType)
             {
