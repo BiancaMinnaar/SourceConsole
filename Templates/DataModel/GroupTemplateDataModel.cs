@@ -69,7 +69,13 @@ namespace SourceConsole.Templates.DataModel
             set => _ProjectBaseContentPage = new FileModel() { CodeName = value };
         }
 
+        public GroupTemplateDataModel()
+            :base()
+        {
+        }
+
         public GroupTemplateDataModel(string projectName)
+            :this()
         {
             ProjectName = projectName;
         }
