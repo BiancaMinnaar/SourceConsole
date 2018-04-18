@@ -4,18 +4,13 @@ namespace SourceConsole.Templates.NormalTemplates
 {
     partial class ViewModelTemplate : ITemplate<GroupTemplateDataModel>
     {
+		public string FullProjectFileName => _DataModel._ViewModel.FullProjectFileName;
         GroupTemplateDataModel _DataModel;
 
         public GroupTemplateDataModel GetDataModel => _DataModel;
 
-        public string FullProjectFileName => _DataModel._ViewModel.FullProjectFileName;
 
         public PartialClasses.TemplateEnum TemplateType => PartialClasses.TemplateEnum.Normal;
-
-        public ViewModelTemplate(GroupTemplateDataModel dataModel)
-        {
-            _DataModel = dataModel;
-        }
 
         public SourceEnum TemplateEnum => SourceEnum.ViewModel;
 

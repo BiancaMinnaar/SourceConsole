@@ -1,4 +1,5 @@
 ﻿using System;
+using SourceConsole.Factory;
 using SourceConsole.Templates;
 using SourceConsole.Templates.DataModel;
 
@@ -9,13 +10,13 @@ namespace SourceConsole
         public static void Main(string[] args)
         {
             IProjectReaderRepository readerRepo = new ProjectReaderRepository(new FileService());
-            IGenerationReposetory repo = new GenerationReposetory(readerRepo, new FileService());
+            IGenerationReposetory repo = new GenerationReposetory(readerRepo, new FileService(), new SimpleCSharpProjectFactory(readerRepo));
             var screenData = repo.GetBaseDataModel<GroupTemplateDataModel>(() =>
                 {
                     Console.Write("Template Name:");
                     return Console.ReadLine();
             });
-            repo.WriteTemplateToFile(new Templates.NormalTemplates.ViewModelTemplate(screenData), screenData);
+            repo.WriteTemplateToFile<Templates.NormalTemplates.ViewModelTemplate, GroupTemplateDataModel>(screenData);
             //repo.WriteTemplateToFile(new SourceConsole.Templates.NormalTemplates.ViewTemplate(screenData));
             //repo.WriteTemplateToFile(new SourceConsole.Templates.NormalTemplates.ViewCodeBehindTemplate(screenData));
             //repo.WriteTemplateToFile(new SourceConsole.Templates.NormalTemplates.ViewControllerInterfaceTemplate(screenData));

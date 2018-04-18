@@ -119,6 +119,8 @@
     <Compile Include="Templates\Swift\Swift_RepositoryTemplate.cs">
       <DependentUpon>Swift_RepositoryTemplate.tt</DependentUpon>
     </Compile>
+    <Compile Include="Factory\SimpleCSharpProjectFactory.cs" />
+    <Compile Include="Factory\IProjectFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Templates\" />
@@ -137,6 +139,7 @@
     <Folder Include="Templates\Swift\PartialClasses\" />
     <Folder Include="Templates\Scafholding\GeneratorTemplates\" />
     <Folder Include="Templates\Extensions\" />
+    <Folder Include="Factory\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Data\Project.Config" />

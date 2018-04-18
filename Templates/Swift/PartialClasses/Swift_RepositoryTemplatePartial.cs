@@ -14,11 +14,6 @@ namespace SourceConsole.Templates.Swift
 
         public TemplateDataModel DataModel { get; set; }
 
-        public Swift_RepositoryTemplate(TemplateDataModel dataModel)
-        {
-            DataModel = dataModel;
-        }
-
         public string GetFileName()
         {
             return this.GetFileName();

@@ -1,4 +1,5 @@
 ﻿using System;
+using SourceConsole.Factory;
 using SourceConsole.Templates;
 using SourceConsole.Templates.DataModel;
 
@@ -8,15 +9,17 @@ namespace SourceConsole
     {
         IFileService _FileService;
         IProjectReaderRepository _ProjectReader;
+        IProjectFactory _ProjectFactory;
         GroupTemplateDataModel _Model;
 
-        public GenerationReposetory(IProjectReaderRepository projectReader, IFileService fileService)
+        public GenerationReposetory(IProjectReaderRepository projectReader, IFileService fileService, IProjectFactory projectPactory)
         {
             _FileService = fileService;
             _ProjectReader = projectReader;
+            _ProjectFactory = projectPactory;
         }
 
-        public M GetBaseDataModel<M>(Func<string> templateName) where M : TemplateDataModel,new()
+        public M GetBaseDataModel<M>(Func<string> templateName) where M : TemplateDataModel, new()
         {
             return new M()
             {
@@ -41,36 +44,18 @@ namespace SourceConsole
             return _FileService.WriteFileToDisk(fullFilePath, templateOutput);
         }
 
-        public bool WriteTemplateToFile<T, M>(T template, M model)
-            where T : ITemplate<M>
+        public bool WriteTemplateToFile<T, M>(M model)
+            where T : ITemplate<M>, new()
             where M : TemplateDataModel
         {
+            var template = new T
+            {
+                DataModel = model
+            };
             var templateOutput = template.TransformText();
-            var templateEnum = template.TemplateEnum;
             var fullName = new SourceFileMapRepository<T, M>().GetSourcePath(template) + template.GetFileName();
             var hasWritten = _FileService.WriteFileToDisk(fullName, templateOutput);
-            switch ((int)template.TemplateType)
-            {
-                case 0:
-                    _ProjectReader.InsertFileReferenceInProjectFile(template.FullProjectFileName);
-                    break;
-                case 1:
-                    var noExtension = template.FullProjectFileName.Substring(0, template.FullProjectFileName.LastIndexOf('.'));
-                    _ProjectReader.InsertXamlFileReferenceInProjectFile(
-                        noExtension + ".cs",
-                        template.GetFileName());
-                    _ProjectReader.InsertXamlEmbededResourceInProjectFile(template.FullProjectFileName);
-                    break;
-                default:
-                    break;
-            }
-
-            if (template.TemplateType == 0)
-            {
-            }
-            else
-            {
-            }
+            _ProjectFactory.UpdateProjectFileWithFileReference<M>(template);
 
             return true;
         }
