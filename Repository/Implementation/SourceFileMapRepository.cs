@@ -1,29 +1,20 @@
 ﻿using System;
-using SourceConsole.Templates;
-using SourceConsole.Templates.DataModel;
+using CorePCL.Generation.DataModel;
+using CorePCL.Generation.Repository;
+using CorePCL.Generation.Templates;
 
-namespace SourceConsole
-{
-    public enum SourceEnum
-    {
-        PBContentPage,
-        RepositoryInterface,
-        Repository,
-        ServiceInterface,
-        Service,
-        ViewCodeBehind,
-        View,
-        ViewControllerInterface,
-        ViewController,
-        ViewModel,
-        Generator
-    }
-
-    public class SourceFileMapRepository<T,M> : ISourceFileMapRepository<T,M>
+namespace SourceConsole.Repository.Implementation
+{   
+    public class SourceFileMapRepository<T, M> : ISourceFileMapRepository<T, M>
         where T : ITemplate<M>
         where M : TemplateDataModel
     {
-        IProjectReaderRepository readerRepo = new ProjectReaderRepository(new FileService());
+        IProjectReaderRepository _ReaderRepo;// = new ProjectReaderRepository(new FileService());
+
+        public SourceFileMapRepository(IProjectReaderRepository readerRepo)
+        {
+            _ReaderRepo = readerRepo;
+        }
 
         public SourceEnum GetSourceEnumFromTempate(T template)
         {
@@ -46,25 +37,25 @@ namespace SourceConsole
             switch(template.TemplateEnum)
             {
                 case SourceEnum.PBContentPage:
-                    return readerRepo.GetBaseFolderPath();
+                    return _ReaderRepo.GetBaseFolderPath();
                 case SourceEnum.Repository:
-                    return readerRepo.GetRepositoryPath();
+                    return _ReaderRepo.GetRepositoryPath();
                 case SourceEnum.RepositoryInterface:
-                    return readerRepo.GetRepositoryInterfacePath();
+                    return _ReaderRepo.GetRepositoryInterfacePath();
                 case SourceEnum.Service:
-                    return readerRepo.GetServicePath();
+                    return _ReaderRepo.GetServicePath();
                 case SourceEnum.ServiceInterface:
-                    return readerRepo.GetServiceInterfacePath();
+                    return _ReaderRepo.GetServiceInterfacePath();
                 case SourceEnum.View:
-                    return readerRepo.GetViewPath();
+                    return _ReaderRepo.GetViewPath();
                 case SourceEnum.ViewCodeBehind:
-                    return readerRepo.GetViewCodeBehindPath();
+                    return _ReaderRepo.GetViewCodeBehindPath();
                 case SourceEnum.ViewController:
-                    return readerRepo.GetViewControllerPath();
+                    return _ReaderRepo.GetViewControllerPath();
                 case SourceEnum.ViewControllerInterface:
-                    return readerRepo.GetViewControllerInterfacePath();
+                    return _ReaderRepo.GetViewControllerInterfacePath();
                 case SourceEnum.ViewModel:
-                    return readerRepo.GetViewModelPath();
+                    return _ReaderRepo.GetViewModelPath();
                 default:
                     throw new NotSupportedException("Your template isn't supported.");
             }

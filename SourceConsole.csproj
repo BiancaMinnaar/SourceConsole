@@ -38,18 +38,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Templates\DataModel\GroupTemplateDataModel.cs" />
-    <Compile Include="Templates\DataModel\FileModel.cs" />
-    <Compile Include="Repository\IProjectReaderRepository.cs" />
-    <Compile Include="Repository\IGenerationReposetory.cs" />
-    <Compile Include="Repository\Implementation\GenerationReposetory.cs" />
-    <Compile Include="Repository\ISourceFileMapRepository.cs" />
     <Compile Include="Repository\Implementation\ProjectReaderRepository.cs" />
-    <Compile Include="Repository\Implementation\SourceFileMapRepository.cs" />
-    <Compile Include="Service\IFileService.cs" />
     <Compile Include="Service\Implementation\FileService.cs" />
-    <Compile Include="Data\ProjectModel.cs" />
-    <Compile Include="Templates\ITemplate.cs" />
-    <Compile Include="Templates\TemplateEnum.cs" />
     <Compile Include="Templates\Scafholding\NormalTemplates\PartialClasses\RepositoryInterfaceTemplatePartial.cs" />
     <Compile Include="Templates\Scafholding\NormalTemplates\PartialClasses\RepositoryTemplatePartial.cs" />
     <Compile Include="Templates\Scafholding\NormalTemplates\PartialClasses\ServiceInterfaceTemplatePartial.cs" />
@@ -60,31 +50,31 @@
     <Compile Include="Templates\Scafholding\NormalTemplates\PartialClasses\ViewModelTemplatePartial.cs" />
     <Compile Include="Templates\Scafholding\NormalTemplates\PartialClasses\ViewTemplatePartial.cs" />
     <Compile Include="Templates\Scafholding\NormalTemplates\RepositoryInterfaceTemplate.cs">
-      <DependentUpon>..\..\NormalTemplates\RepositoryInterfaceTemplate.tt</DependentUpon>
+      <DependentUpon>RepositoryInterfaceTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Templates\Scafholding\NormalTemplates\RepositoryTemplate.cs">
-      <DependentUpon>..\..\NormalTemplates\RepositoryTemplate.tt</DependentUpon>
+      <DependentUpon>RepositoryTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Templates\Scafholding\NormalTemplates\ServiceInterfaceTemplate.cs">
-      <DependentUpon>..\..\NormalTemplates\ServiceInterfaceTemplate.tt</DependentUpon>
+      <DependentUpon>ServiceInterfaceTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Templates\Scafholding\NormalTemplates\ServiceTemplate.cs">
-      <DependentUpon>..\..\NormalTemplates\ServiceTemplate.tt</DependentUpon>
+      <DependentUpon>ServiceTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Templates\Scafholding\NormalTemplates\ViewCodeBehindTemplate.cs">
-      <DependentUpon>..\..\NormalTemplates\ViewCodeBehindTemplate.tt</DependentUpon>
+      <DependentUpon>ViewCodeBehindTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Templates\Scafholding\NormalTemplates\ViewControllerInterfaceTemplate.cs">
-      <DependentUpon>..\..\NormalTemplates\ViewControllerInterfaceTemplate.tt</DependentUpon>
+      <DependentUpon>ViewControllerInterfaceTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Templates\Scafholding\NormalTemplates\ViewControllerTemplate.cs">
-      <DependentUpon>..\..\NormalTemplates\ViewControllerTemplate.tt</DependentUpon>
+      <DependentUpon>ViewControllerTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Templates\Scafholding\NormalTemplates\ViewModelTemplate.cs">
-      <DependentUpon>..\..\NormalTemplates\ViewModelTemplate.tt</DependentUpon>
+      <DependentUpon>ViewModelTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Templates\Scafholding\NormalTemplates\ViewTemplate.cs">
-      <DependentUpon>..\..\NormalTemplates\ViewTemplate.tt</DependentUpon>
+      <DependentUpon>ViewTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Templates\Scafholding\ReturningServiceTemplates\PartialClasses\RepositoryInterfaceTemplatePartial.cs" />
     <Compile Include="Templates\Scafholding\ReturningServiceTemplates\PartialClasses\RepositoryTemplatePartial.cs" />
@@ -110,17 +100,14 @@
       <DependentUpon>ProjectBaseContentPageTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Templates\Framework\PartialClasses\ProjectBaseContentPageTemplatePartial.cs" />
-    <Compile Include="Data\GenericTemplateModel.cs" />
     <Compile Include="Templates\Scafholding\NormalTemplates\PartialClasses\TemplatePartialBase.cs" />
-    <Compile Include="Templates\DataModel\TemplateDataModel.cs" />
-    <Compile Include="Templates\Extensions\Extensions.cs" />
     <Compile Include="Templates\DataModel\SwiftTemplateModel.cs" />
     <Compile Include="Templates\Swift\PartialClasses\Swift_RepositoryTemplatePartial.cs" />
     <Compile Include="Templates\Swift\Swift_RepositoryTemplate.cs">
       <DependentUpon>Swift_RepositoryTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Factory\SimpleCSharpProjectFactory.cs" />
-    <Compile Include="Factory\IProjectFactory.cs" />
+    <Compile Include="Repository\Implementation\SourceFileMapRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Templates\" />
@@ -137,8 +124,6 @@
     <Folder Include="Templates\Framework\PartialClasses\" />
     <Folder Include="Templates\Swift\" />
     <Folder Include="Templates\Swift\PartialClasses\" />
-    <Folder Include="Templates\Scafholding\GeneratorTemplates\" />
-    <Folder Include="Templates\Extensions\" />
     <Folder Include="Factory\" />
   </ItemGroup>
   <ItemGroup>

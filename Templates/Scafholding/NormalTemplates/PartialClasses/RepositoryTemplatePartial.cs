@@ -1,36 +1,26 @@
-﻿using SourceConsole.Templates.DataModel;
+﻿using CorePCL.Generation.Templates;
+using CorePCL.Generation.Templates.Extensions;
+using CorePCL.Generation.Templates.PartialClasses;
+using SourceConsole.Repository.Implementation;
+using SourceConsole.Templates.DataModel;
 
-namespace SourceConsole.Templates.NormalTemplates
+namespace SourceConsole.Templates.Scafholding.NormalTemplates
 {
-    partial class RepositoryTemplate : ITemplate
+    partial class RepositoryTemplate : ITemplate<GroupTemplateDataModel>
     {
-        GroupTemplateDataModel _DataModel;
-
-        public GroupTemplateDataModel GetDataModel => _DataModel;
-
-        public string FullProjectFileName => _DataModel._Repository.FullProjectFileName;
-
-        public PartialClasses.TemplateEnum TemplateType => PartialClasses.TemplateEnum.Normal;
-
-        public RepositoryTemplate(GroupTemplateDataModel dataModel)
-        {
-            _DataModel = dataModel;
-        }
+        public string FullProjectFileName => this.GetFullProjectFileName<RepositoryTemplate, GroupTemplateDataModel>();
 
         public SourceEnum TemplateEnum => SourceEnum.Repository;
 
-        public TemplateDataModel DataModel { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        public TemplateEnum TemplateType => CorePCL.Generation.Templates.PartialClasses.TemplateEnum.Normal;
+
+        public GroupTemplateDataModel DataModel { get; set; }
 
         public string GetFileName()
         {
-            var repo = new SourceFileMapRepository<RepositoryTemplate,TemplateDataModel>();
-            _DataModel._Repository = new DataModel.FileModel()
-            {
-                CodeName = _DataModel.RepositoryName,
-                Extension = repo.GetSourceExtension(this),
-                ProjectFilePath = repo.GetSourcePath(this)
-            };
-            return _DataModel._Repository.FileName;
+            return this.GetFileName(
+                new SourceFileMapRepository<RepositoryTemplate, GroupTemplateDataModel>(
+                    new ProjectReaderRepository(new FileService())));
         }
     }
 }

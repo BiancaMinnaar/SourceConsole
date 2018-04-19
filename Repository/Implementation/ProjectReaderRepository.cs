@@ -1,4 +1,7 @@
 ﻿using System.Xml;
+using CorePCL.Generation.Data;
+using CorePCL.Generation.Repository;
+using CorePCL.Generation.Service;
 
 namespace SourceConsole
 {

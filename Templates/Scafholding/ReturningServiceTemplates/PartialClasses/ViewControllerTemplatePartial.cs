@@ -1,37 +1,26 @@
-﻿using SourceConsole.Templates.DataModel;
+﻿using CorePCL.Generation.Templates;
+using CorePCL.Generation.Templates.Extensions;
+using CorePCL.Generation.Templates.PartialClasses;
+using SourceConsole.Repository.Implementation;
+using SourceConsole.Templates.DataModel;
 
 namespace SourceConsole.Templates.ReturningServiceTemplates
 {
     partial class ViewControllerTemplate : ITemplate<GroupTemplateDataModel>
     {
-        GroupTemplateDataModel _DataModel;
-
-        public GroupTemplateDataModel GetDataModel => _DataModel;
-
-        public PartialClasses.TemplateEnum TemplateType => PartialClasses.TemplateEnum.Normal;
-
-        public string FullProjectFileName => _DataModel._ViewController.FullProjectFileName;
-
-        public ViewControllerTemplate(GroupTemplateDataModel dataModel)
-        {
-            _DataModel = dataModel;
-        }
+        public string FullProjectFileName => this.GetFullProjectFileName<ViewControllerTemplate, GroupTemplateDataModel>();
 
         public SourceEnum TemplateEnum => SourceEnum.ViewController;
 
-        public TemplateDataModel DataModel { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-        GroupTemplateDataModel ITemplate<GroupTemplateDataModel>.DataModel { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        public TemplateEnum TemplateType => CorePCL.Generation.Templates.PartialClasses.TemplateEnum.Normal;
+
+        public GroupTemplateDataModel DataModel { get; set; }
 
         public string GetFileName()
         {
-            var repo = new SourceFileMapRepository<ViewControllerTemplate,GroupTemplateDataModel>();
-            _DataModel._ViewController = new DataModel.FileModel()
-            {
-                CodeName = _DataModel.ViewControllerName,
-                Extension = repo.GetSourceExtension(this),
-                ProjectFilePath = repo.GetSourcePath(this)
-            };
-            return _DataModel._ViewController.FileName;
+            return this.GetFileName(
+                new SourceFileMapRepository<ViewControllerTemplate, GroupTemplateDataModel>(
+                    new ProjectReaderRepository(new FileService())));
         }
     }
 }

@@ -7,22 +7,22 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using CorePCL;
-using <#= _DataModel.ProjectName #>.Base;
-using <#= _DataModel.ProjectName #>.Implementation.ViewModel;
-using <#= _DataModel.ProjectName #>.Interface.Service;
-using <#= _DataModel.ProjectName #>.ViewModel;
+using <#= DataModel.ProjectName #>.Base;
+using <#= DataModel.ProjectName #>.Implementation.ViewModel;
+using <#= DataModel.ProjectName #>.Interface.Service;
+using <#= DataModel.ProjectName #>.ViewModel;
 
-namespace <#= _DataModel.ProjectName #>.Implementation.Service
+namespace <#= DataModel.ProjectName #>.Implementation.Service
 {
-        public class <#= _DataModel.ServiceName #><T> : BaseService<T>, <#= _DataModel.ServiceInterfaceName #><T>
+        public class <#= DataModel.ServiceName #><T> : BaseService<T>, <#= DataModel.ServiceInterfaceName #><T>
             where T : BaseViewModel
         {
-            public <#= _DataModel.ServiceName #>(Func<string, Dictionary<string, ParameterTypedValue>, BaseViewModel, BaseNetworkAccessEnum, Task<T>> networkInterface)
+            public <#= DataModel.ServiceName #>(Func<string, Dictionary<string, ParameterTypedValue>, BaseViewModel, BaseNetworkAccessEnum, Task<T>> networkInterface)
                 :base(networkInterface)
             {
             }
 
-        public async Task <#= _DataModel.EventName #>(<#= _DataModel.ViewModelName #> model)
+        public async Task <#= DataModel.EventName #>(<#= DataModel.ViewModelName #> model)
         {
             string requestURL = "/path/{Parameter}";
             var httpMethod = BaseNetworkAccessEnum.Get;

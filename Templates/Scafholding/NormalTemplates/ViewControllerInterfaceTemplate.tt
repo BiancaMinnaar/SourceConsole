@@ -5,10 +5,10 @@
 <#@ import namespace="System.Collections.Generic" #>
 using System.Threading.Tasks;
 
-namespace <#= _DataModel.ProjectName #>.Interface.ViewController
+namespace <#= DataModel.ProjectName #>.Interface.ViewController
 {
-    public interface <#= _DataModel.ViewControllerInterfaceName #>
+    public interface <#= DataModel.ViewControllerInterfaceName #>
     {
-        Task <#= _DataModel.EventName #>();
+        Task <#= DataModel.EventName #>();
     }
 }

@@ -4,14 +4,14 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 using System.Threading.Tasks;
-using <#= _DataModel.ProjectName #>.Implementation.ViewModel;
+using <#= DataModel.ProjectName #>.Implementation.ViewModel;
 
-namespace <#= _DataModel.ProjectName #>.Interface.Service
+namespace <#= DataModel.ProjectName #>.Interface.Service
 {
-    public interface <#= _DataModel.ServiceInterfaceName #><T>
+    public interface <#= DataModel.ServiceInterfaceName #><T>
         where T : BaseViewModel
     {
-        Task<T> <#= _DataModel.EventName #>(<#= _DataModel.ViewModelName #> model);
+        Task<T> <#= DataModel.EventName #>(<#= DataModel.ViewModelName #> model);
     }
 }
 

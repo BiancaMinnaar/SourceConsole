@@ -1,6 +1,8 @@
-﻿using SourceConsole.Templates.DataModel;
-using SourceConsole.Templates.Extensions;
-using SourceConsole.Templates.PartialClasses;
+﻿using CorePCL.Generation.DataModel;
+using CorePCL.Generation.Templates;
+using CorePCL.Generation.Templates.Extensions;
+using CorePCL.Generation.Templates.PartialClasses;
+using SourceConsole.Repository.Implementation;
 
 namespace SourceConsole.Templates.Swift
 {
@@ -10,13 +12,15 @@ namespace SourceConsole.Templates.Swift
 
         public SourceEnum TemplateEnum => SourceEnum.Generator;
 
-        public TemplateEnum TemplateType => PartialClasses.TemplateEnum.Regenerate;
+        public TemplateEnum TemplateType => CorePCL.Generation.Templates.PartialClasses.TemplateEnum.Regenerate;
 
         public TemplateDataModel DataModel { get; set; }
 
         public string GetFileName()
         {
-            return this.GetFileName();
+            return this.GetFileName(
+                new SourceFileMapRepository<Swift_RepositoryTemplate, TemplateDataModel>(
+                    new ProjectReaderRepository(new FileService())));
         }
     }
 }

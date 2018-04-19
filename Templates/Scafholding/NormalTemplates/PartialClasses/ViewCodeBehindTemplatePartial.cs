@@ -1,37 +1,26 @@
-﻿using SourceConsole.Templates.DataModel;
+﻿using CorePCL.Generation.Templates;
+using CorePCL.Generation.Templates.Extensions;
+using CorePCL.Generation.Templates.PartialClasses;
+using SourceConsole.Repository.Implementation;
+using SourceConsole.Templates.DataModel;
 
-namespace SourceConsole.Templates.NormalTemplates
+namespace SourceConsole.Templates.Scafholding.NormalTemplates
 {
     partial class ViewCodeBehindTemplate : ITemplate<GroupTemplateDataModel>
     {
-        GroupTemplateDataModel _DataModel;
-
-        public GroupTemplateDataModel GetDataModel => _DataModel;
-
-        public string FullProjectFileName => _DataModel._ViewCodeBehind.FullProjectFileName;
-
-        public PartialClasses.TemplateEnum TemplateType => PartialClasses.TemplateEnum.CodeBehind;
-
-        public ViewCodeBehindTemplate(GroupTemplateDataModel dataModel)
-        {
-            _DataModel = dataModel;
-        }
+        public string FullProjectFileName => this.GetFullProjectFileName<ViewCodeBehindTemplate, GroupTemplateDataModel>();
 
         public SourceEnum TemplateEnum => SourceEnum.ViewCodeBehind;
 
-        public TemplateDataModel DataModel { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-        GroupTemplateDataModel ITemplate<GroupTemplateDataModel>.DataModel { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        public TemplateEnum TemplateType => CorePCL.Generation.Templates.PartialClasses.TemplateEnum.Normal;
+
+        public GroupTemplateDataModel DataModel { get; set; }
 
         public string GetFileName()
         {
-            var repo = new SourceFileMapRepository<ViewCodeBehindTemplate,GroupTemplateDataModel>();
-            _DataModel._ViewCodeBehind = new DataModel.FileModel()
-            {
-                CodeName = _DataModel.ViewCodeBehindName,
-                Extension = repo.GetSourceExtension(this),
-                ProjectFilePath = repo.GetSourcePath(this)
-            };
-            return _DataModel._ViewCodeBehind.FileName;
+            return this.GetFileName(
+                new SourceFileMapRepository<ViewCodeBehindTemplate, GroupTemplateDataModel>(
+                    new ProjectReaderRepository(new FileService())));
         }
     }
 }

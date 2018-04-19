@@ -1,34 +1,26 @@
-﻿using SourceConsole.Templates.DataModel;
+﻿using CorePCL.Generation.Templates;
+using CorePCL.Generation.Templates.Extensions;
+using CorePCL.Generation.Templates.PartialClasses;
+using SourceConsole.Repository.Implementation;
+using SourceConsole.Templates.DataModel;
 
 namespace SourceConsole.Templates.ReturningServiceTemplates
 {
-    partial class RepositoryInterfaceTemplate : ITemplate
+    partial class RepositoryInterfaceTemplate : ITemplate<GroupTemplateDataModel>
     {
-        GroupTemplateDataModel _DataModel;
-        public GroupTemplateDataModel GetDataModel => _DataModel;
-        public string FullProjectFileName => _DataModel._RepositoryInterface.FullProjectFileName;
-        public PartialClasses.TemplateEnum TemplateType => PartialClasses.TemplateEnum.Normal;
-
-        public RepositoryInterfaceTemplate(GroupTemplateDataModel dataModel)
-        {
-            _DataModel = dataModel;
-        }
+        public string FullProjectFileName => this.GetFullProjectFileName<RepositoryInterfaceTemplate, GroupTemplateDataModel>();
 
         public SourceEnum TemplateEnum => SourceEnum.RepositoryInterface;
 
-        public TemplateDataModel DataModel { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        public TemplateEnum TemplateType => CorePCL.Generation.Templates.PartialClasses.TemplateEnum.Normal;
+
+        public GroupTemplateDataModel DataModel { get; set; }
 
         public string GetFileName()
         {
-            var repo = new SourceFileMapRepository<RepositoryInterfaceTemplate,TemplateDataModel>();
-            _DataModel._RepositoryInterface = new DataModel.FileModel()
-            {
-                CodeName = _DataModel.RepositoryInterfaceName,
-                Extension = repo.GetSourceExtension(this),
-                ProjectFilePath = repo.GetSourcePath(this)
-            };
-            return _DataModel._RepositoryInterface.FileName;
+            return this.GetFileName(
+                new SourceFileMapRepository<RepositoryInterfaceTemplate, GroupTemplateDataModel>(
+                    new ProjectReaderRepository(new FileService())));
         }
-
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace SourceConsole
+﻿using CorePCL.Generation.Service;
+
+namespace SourceConsole
 {
     public class FileService : IFileService
     {

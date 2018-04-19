@@ -5,15 +5,15 @@
 <#@ import namespace="System.Collections.Generic" #>
 using System;
 using Xamarin.Forms;
-using <#= _DataModel.ProjectName #>.Base;
-using <#= _DataModel.ProjectName #>.Implementation.ViewController;
-using <#= _DataModel.ProjectName #>.Implementation.ViewModel;
+using <#= DataModel.ProjectName #>.Base;
+using <#= DataModel.ProjectName #>.Implementation.ViewController;
+using <#= DataModel.ProjectName #>.Implementation.ViewModel;
 
-namespace <#= _DataModel.ProjectName #>.Implementation.View
+namespace <#= DataModel.ProjectName #>.Implementation.View
 {
-    public partial class <#= _DataModel.ViewName #> : ProjectBaseContentPage<<#= _DataModel.ViewControllerName #>, <#= _DataModel.ViewModelName #>>
+    public partial class <#= DataModel.ViewName #> : ProjectBaseContentPage<<#= DataModel.ViewControllerName #>, <#= DataModel.ViewModelName #>>
     {
-        public <#= _DataModel.ViewName #>()
+        public <#= DataModel.ViewName #>()
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
@@ -24,9 +24,9 @@ namespace <#= _DataModel.ProjectName #>.Implementation.View
         {
         }
 
-        public async void On_<#= _DataModel.EventName #>_Event(object sender, EventArgs e)
+        public async void On_<#= DataModel.EventName #>_Event(object sender, EventArgs e)
         {
-            await _ViewController.<#= _DataModel.EventName #>();
+            await _ViewController.<#= DataModel.EventName #>();
         }
     }
 }

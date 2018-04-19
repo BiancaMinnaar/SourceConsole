@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SourceConsole.Templates.NormalTemplates {
+namespace SourceConsole.Templates.Scafholding.NormalTemplates {
     using System.Linq;
     using System.Text;
     using System.Collections.Generic;
@@ -27,7 +27,7 @@ namespace SourceConsole.Templates.NormalTemplates {
             #line hidden
             
             #line 9 ""
-            this.Write(this.ToStringHelper.ToStringWithCulture( _DataModel.ProjectName ));
+            this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.ProjectName ));
             
             #line default
             #line hidden
@@ -39,7 +39,7 @@ namespace SourceConsole.Templates.NormalTemplates {
             #line hidden
             
             #line 11 ""
-            this.Write(this.ToStringHelper.ToStringWithCulture( _DataModel.ProjectName ));
+            this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.ProjectName ));
             
             #line default
             #line hidden
@@ -51,7 +51,7 @@ namespace SourceConsole.Templates.NormalTemplates {
             #line hidden
             
             #line 13 ""
-            this.Write(this.ToStringHelper.ToStringWithCulture( _DataModel.RepositoryInterfaceName ));
+            this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.RepositoryInterfaceName ));
             
             #line default
             #line hidden
@@ -63,7 +63,7 @@ namespace SourceConsole.Templates.NormalTemplates {
             #line hidden
             
             #line 15 ""
-            this.Write(this.ToStringHelper.ToStringWithCulture( _DataModel.EventName ));
+            this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.EventName ));
             
             #line default
             #line hidden
@@ -75,7 +75,7 @@ namespace SourceConsole.Templates.NormalTemplates {
             #line hidden
             
             #line 15 ""
-            this.Write(this.ToStringHelper.ToStringWithCulture( _DataModel.ViewModelName ));
+            this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.ViewModelName ));
             
             #line default
             #line hidden

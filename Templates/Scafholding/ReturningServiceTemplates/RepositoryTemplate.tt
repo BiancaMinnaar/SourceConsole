@@ -6,27 +6,27 @@
 using System;
 using System.Threading.Tasks;
 using CorePCL;
-using <#= _DataModel.ProjectName #>.Base;
-using <#= _DataModel.ProjectName #>.Implementation.ViewModel;
-using <#= _DataModel.ProjectName #>.Interface.Repository;
-using <#= _DataModel.ProjectName #>.Interface.Service;
+using <#= DataModel.ProjectName #>.Base;
+using <#= DataModel.ProjectName #>.Implementation.ViewModel;
+using <#= DataModel.ProjectName #>.Interface.Repository;
+using <#= DataModel.ProjectName #>.Interface.Service;
 
-namespace <#= _DataModel.ProjectName #>.Implementation.Repository
+namespace <#= DataModel.ProjectName #>.Implementation.Repository
 {
-    public class <#= _DataModel.RepositoryName #><T> : ProjectBaseRepository, <#= _DataModel.RepositoryInterfaceName #><T>
+    public class <#= DataModel.RepositoryName #><T> : ProjectBaseRepository, <#= DataModel.RepositoryInterfaceName #><T>
         where T : BaseViewModel
     {
-        <#= _DataModel.ServiceInterfaceName #> _Service;
+        <#= DataModel.ServiceInterfaceName #> _Service;
 
-        public <#= _DataModel.RepositoryName #>(IMasterRepository masterRepository, <#= _DataModel.ServiceInterfaceName #><T> service)
+        public <#= DataModel.RepositoryName #>(IMasterRepository masterRepository, <#= DataModel.ServiceInterfaceName #><T> service)
             : base(masterRepository)
         {
             _Service = service;
         }
 
-        public async Task <#= _DataModel.EventName #>(<#= _DataModel.ViewModelName #> model, Action<T> completeAction)
+        public async Task <#= DataModel.EventName #>(<#= DataModel.ViewModelName #> model, Action<T> completeAction)
         {
-            var serviceReturnModel = await _Service.<#= _DataModel.EventName #>(model);
+            var serviceReturnModel = await _Service.<#= DataModel.EventName #>(model);
             completeAction(serviceReturnModel);
         }
     }

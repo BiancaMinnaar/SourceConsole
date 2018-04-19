@@ -1,33 +1,26 @@
-﻿using SourceConsole.Templates.DataModel;
-using SourceConsole.Templates.PartialClasses;
+﻿using CorePCL.Generation.Templates;
+using CorePCL.Generation.Templates.Extensions;
+using CorePCL.Generation.Templates.PartialClasses;
+using SourceConsole.Repository.Implementation;
+using SourceConsole.Templates.DataModel;
 
 namespace SourceConsole.Templates.Framework
 {
     partial class ProjectBaseContentPageTemplate : ITemplate<GroupTemplateDataModel>
     {
-        GroupTemplateDataModel _DataModel;
-		public GroupTemplateDataModel GetDataModel => _DataModel;
-        public TemplateEnum TemplateType => PartialClasses.TemplateEnum.Normal;
+        public string FullProjectFileName => this.GetFullProjectFileName<ProjectBaseContentPageTemplate, GroupTemplateDataModel>();
+
         public SourceEnum TemplateEnum => SourceEnum.PBContentPage;
-        public string FullProjectFileName => _DataModel._RepositoryInterface.FullProjectFileName;
 
-        GroupTemplateDataModel ITemplate<GroupTemplateDataModel>.DataModel { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        public TemplateEnum TemplateType => CorePCL.Generation.Templates.PartialClasses.TemplateEnum.Normal;
 
-        public ProjectBaseContentPageTemplate(GroupTemplateDataModel dataModel)
-        {
-            _DataModel = dataModel;
-        }
+        public GroupTemplateDataModel DataModel { get; set; }
 
         public string GetFileName()
         {
-            var repo = new SourceFileMapRepository<ProjectBaseContentPageTemplate,GroupTemplateDataModel>();
-            _DataModel._ProjectBaseContentPage = new DataModel.FileModel()
-            {
-                CodeName = _DataModel.ProjectBaseContentPageName,
-                Extension = repo.GetSourceExtension(this),
-                ProjectFilePath = repo.GetSourcePath(this)
-            };
-            return _DataModel._ProjectBaseContentPage.FileName;
+            return this.GetFileName(
+                new SourceFileMapRepository<ProjectBaseContentPageTemplate, GroupTemplateDataModel>(
+                    new ProjectReaderRepository(new FileService())));
         }
     }
 }

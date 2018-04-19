@@ -4,11 +4,11 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 using System;
-using <#= _DataModel.ProjectName #>.Base;
+using <#= DataModel.ProjectName #>.Base;
 
-namespace <#= _DataModel.ProjectName #>.Implementation.ViewModel
+namespace <#= DataModel.ProjectName #>.Implementation.ViewModel
 {
-    public class <#= _DataModel.ViewModelName #> : ProjectBaseViewModel
+    public class <#= DataModel.ViewModelName #> : ProjectBaseViewModel
     {
         
     }

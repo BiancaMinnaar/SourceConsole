@@ -1,5 +1,7 @@
-﻿using SourceConsole.Templates;
-using SourceConsole.Templates.DataModel;
+﻿using CorePCL.Generation.DataModel;
+using CorePCL.Generation.Factory;
+using CorePCL.Generation.Repository;
+using CorePCL.Generation.Templates;
 
 namespace SourceConsole.Factory
 {

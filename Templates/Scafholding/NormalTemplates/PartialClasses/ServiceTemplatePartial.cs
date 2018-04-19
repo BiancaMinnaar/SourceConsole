@@ -1,36 +1,26 @@
-﻿using SourceConsole.Templates.DataModel;
+﻿using CorePCL.Generation.Templates;
+using CorePCL.Generation.Templates.Extensions;
+using CorePCL.Generation.Templates.PartialClasses;
+using SourceConsole.Repository.Implementation;
+using SourceConsole.Templates.DataModel;
 
-namespace SourceConsole.Templates.NormalTemplates
+namespace SourceConsole.Templates.Scafholding.NormalTemplates
 {
     partial class ServiceTemplate : ITemplate<GroupTemplateDataModel>
     {
-        GroupTemplateDataModel _DataModel;
-
-        public GroupTemplateDataModel GetDataModel => _DataModel;
-
-        public string FullProjectFileName => _DataModel._Service.FullProjectFileName;
-
-        public PartialClasses.TemplateEnum TemplateType => PartialClasses.TemplateEnum.Normal;
-
-        public ServiceTemplate(GroupTemplateDataModel dataModel)
-        {
-            _DataModel = dataModel;
-        }
+        public string FullProjectFileName => this.GetFullProjectFileName<ServiceTemplate, GroupTemplateDataModel>();
 
         public SourceEnum TemplateEnum => SourceEnum.Service;
 
-        GroupTemplateDataModel ITemplate<GroupTemplateDataModel>.DataModel { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        public TemplateEnum TemplateType => CorePCL.Generation.Templates.PartialClasses.TemplateEnum.Normal;
+
+        public GroupTemplateDataModel DataModel { get; set; }
 
         public string GetFileName()
         {
-            var repo = new SourceFileMapRepository<ServiceTemplate,GroupTemplateDataModel>();
-            _DataModel._Service = new DataModel.FileModel()
-            {
-                CodeName = _DataModel.ServiceName,
-                Extension = repo.GetSourceExtension(this),
-                ProjectFilePath = repo.GetSourcePath(this)
-            };
-            return _DataModel._Service.FileName;
+            return this.GetFileName(
+                new SourceFileMapRepository<ServiceTemplate, GroupTemplateDataModel>(
+                    new ProjectReaderRepository(new FileService())));
         }
     }
 }

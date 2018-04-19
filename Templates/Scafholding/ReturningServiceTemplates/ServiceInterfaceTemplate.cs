@@ -27,7 +27,7 @@ namespace SourceConsole.Templates.ReturningServiceTemplates {
             #line hidden
             
             #line 7 ""
-            this.Write(this.ToStringHelper.ToStringWithCulture( _DataModel.ProjectName ));
+            this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.ProjectName ));
             
             #line default
             #line hidden
@@ -39,7 +39,7 @@ namespace SourceConsole.Templates.ReturningServiceTemplates {
             #line hidden
             
             #line 9 ""
-            this.Write(this.ToStringHelper.ToStringWithCulture( _DataModel.ProjectName ));
+            this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.ProjectName ));
             
             #line default
             #line hidden
@@ -51,7 +51,7 @@ namespace SourceConsole.Templates.ReturningServiceTemplates {
             #line hidden
             
             #line 11 ""
-            this.Write(this.ToStringHelper.ToStringWithCulture( _DataModel.ServiceInterfaceName ));
+            this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.ServiceInterfaceName ));
             
             #line default
             #line hidden
@@ -63,7 +63,7 @@ namespace SourceConsole.Templates.ReturningServiceTemplates {
             #line hidden
             
             #line 14 ""
-            this.Write(this.ToStringHelper.ToStringWithCulture( _DataModel.EventName ));
+            this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.EventName ));
             
             #line default
             #line hidden
@@ -75,7 +75,7 @@ namespace SourceConsole.Templates.ReturningServiceTemplates {
             #line hidden
             
             #line 14 ""
-            this.Write(this.ToStringHelper.ToStringWithCulture( _DataModel.ViewModelName ));
+            this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.ViewModelName ));
             
             #line default
             #line hidden
