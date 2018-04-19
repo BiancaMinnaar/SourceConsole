@@ -4,7 +4,7 @@ using CorePCL.Generation.Templates.PartialClasses;
 using SourceConsole.Repository.Implementation;
 using SourceConsole.Templates.DataModel;
 
-namespace SourceConsole.Templates.ReturningServiceTemplates
+namespace SourceConsole.Templates.Scafholding.ReturningServiceTemplates
 {
     partial class RepositoryInterfaceTemplate : ITemplate<GroupTemplateDataModel>
     {

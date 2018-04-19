@@ -82,19 +82,19 @@
     <Compile Include="Templates\Scafholding\ReturningServiceTemplates\PartialClasses\ServiceTemplatePartial.cs" />
     <Compile Include="Templates\Scafholding\ReturningServiceTemplates\PartialClasses\ViewControllerTemplatePartial.cs" />
     <Compile Include="Templates\Scafholding\ReturningServiceTemplates\RepositoryInterfaceTemplate.cs">
-      <DependentUpon>..\..\ReturningServiceTemplates\RepositoryInterfaceTemplate.tt</DependentUpon>
+      <DependentUpon>RepositoryInterfaceTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Templates\Scafholding\ReturningServiceTemplates\RepositoryTemplate.cs">
-      <DependentUpon>..\..\ReturningServiceTemplates\RepositoryTemplate.tt</DependentUpon>
+      <DependentUpon>RepositoryTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Templates\Scafholding\ReturningServiceTemplates\ServiceInterfaceTemplate.cs">
-      <DependentUpon>..\..\ReturningServiceTemplates\ServiceInterfaceTemplate.tt</DependentUpon>
+      <DependentUpon>ServiceInterfaceTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Templates\Scafholding\ReturningServiceTemplates\ServiceTemplate.cs">
       <DependentUpon>ServiceTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Templates\Scafholding\ReturningServiceTemplates\ViewControllerTemplate.cs">
-      <DependentUpon>..\..\ReturningServiceTemplates\ViewControllerTemplate.tt</DependentUpon>
+      <DependentUpon>ViewControllerTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Templates\Framework\ProjectBaseContentPageTemplate.cs">
       <DependentUpon>ProjectBaseContentPageTemplate.tt</DependentUpon>

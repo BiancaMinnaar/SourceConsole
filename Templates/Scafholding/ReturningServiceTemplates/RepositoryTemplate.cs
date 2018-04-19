@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SourceConsole.Templates.ReturningServiceTemplates {
+namespace SourceConsole.Templates.Scafholding.ReturningServiceTemplates {
     using System.Linq;
     using System.Text;
     using System.Collections.Generic;
