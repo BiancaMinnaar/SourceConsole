@@ -9,10 +9,6 @@ namespace SourceConsole.Repository.Implementation
 {
     public class XamarinFormsRepository
     {
-        public XamarinFormsRepository()
-        {
-        }
-
         public void GenerateXamarinScreen()
         {
             IProjectReaderRepository readerRepo = new ProjectReaderRepository(new FileService());
