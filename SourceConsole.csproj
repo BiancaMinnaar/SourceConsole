@@ -7,7 +7,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>SourceConsole</RootNamespace>
     <AssemblyName>SourceConsole</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -196,9 +196,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BasePCL\BasePCL.csproj">
-      <Project>{F34FE759-9422-4777-84F5-E253B9A3BA16}</Project>
-      <Name>BasePCL</Name>
+    <ProjectReference Include="..\MobileBonsai\MobileBonsai.csproj">
+      <Project>{32472C29-1D51-497A-B0EF-959DB4BF114C}</Project>
+      <Name>MobileBonsai</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
