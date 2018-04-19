@@ -1,5 +1,4 @@
-﻿using System;
-using CorePCL.Generation.DataModel;
+﻿using CorePCL.Generation.DataModel;
 
 namespace SourceConsole.Templates.DataModel
 {
@@ -70,40 +69,15 @@ namespace SourceConsole.Templates.DataModel
             set => _ProjectBaseContentPage = new FileModel() { CodeName = value };
         }
 
-        public GroupTemplateDataModel()
-            :base()
+        public override void SetData()
         {
-        }
-
-        public GroupTemplateDataModel(string projectName)
-            :this()
-        {
-            ProjectName = projectName;
-        }
-
-        public GroupTemplateDataModel(string screenName, string projectName)
-            : this(projectName)
-        {
-            EventName = screenName;
-			setData();
-        }
-
-        public GroupTemplateDataModel(Func<string> inputProjectName , Func<string> inputScreenName)
-            : this(inputProjectName())
-        {
-            EventName = inputScreenName();
-            setData();
-        }
-
-        void setData()
-        {
-            ViewModelName = EventName + "ViewModel";
-            ViewName = EventName + "View";
-            ViewControllerName = EventName + "ViewController";
+            ViewModelName = Template + "ViewModel";
+            ViewName = Template + "View";
+            ViewControllerName = Template + "ViewController";
             ViewControllerInterfaceName = "I" + ViewControllerName;
-            RepositoryName = EventName + "Repository";
+            RepositoryName = Template + "Repository";
             RepositoryInterfaceName = "I" + RepositoryName;
-            ServiceName = EventName + "Service";
+            ServiceName = Template + "Service";
             ServiceInterfaceName = "I" + ServiceName;
 
             ProjectBaseContentPageName = "ProjectBaseContentPage";

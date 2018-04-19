@@ -13,11 +13,19 @@ namespace SourceConsole.Repository.Implementation
             IProjectReaderRepository readerRepo = new ProjectReaderRepository(new FileService());
             IGenerationReposetory<GroupTemplateDataModel> repo =
                 new GenerationReposetory<GroupTemplateDataModel>(new FileService(), new SimpleCSharpProjectFactory(readerRepo));
-            var screenData = repo.GetBaseDataModel(() =>
+            Func<string> getScreenName = () =>
             {
-                Console.Write("Template Name:");
+                Console.Write("Screen Name:");
                 return Console.ReadLine();
-            });
+            };
+            var screenData = repo.GetBaseDataModel(getScreenName());
+            screenData.ProjectName = readerRepo.GetProjectName();
+            Func<string> getEventName = () =>
+            {
+                Console.Write("Event Name:");
+                return Console.ReadLine();
+            };
+            screenData.EventName = getEventName();
             repo.WriteTemplateToFile(screenData, new SourceFileMapRepository<Templates.Scafholding.NormalTemplates.ViewModelTemplate, GroupTemplateDataModel>(readerRepo));
             repo.WriteTemplateToFile(screenData, new SourceFileMapRepository<Templates.Scafholding.NormalTemplates.ViewTemplate, GroupTemplateDataModel>(readerRepo));
             repo.WriteTemplateToFile(screenData, new SourceFileMapRepository<Templates.Scafholding.NormalTemplates.ViewCodeBehindTemplate, GroupTemplateDataModel>(readerRepo));
