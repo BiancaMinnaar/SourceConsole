@@ -20,7 +20,7 @@ namespace SourceConsole.Templates.Framework
         {
             return this.GetFileName(
                 new SourceFileMapRepository<ProjectBaseContentPageTemplate, GroupTemplateDataModel>(
-                    new ProjectReaderRepository(new FileService())));
+                    new ProjectReaderRepository(new FileService())), DataModel.Template);
         }
     }
 }

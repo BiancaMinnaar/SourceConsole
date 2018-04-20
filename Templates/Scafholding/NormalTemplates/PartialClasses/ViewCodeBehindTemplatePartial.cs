@@ -20,7 +20,7 @@ namespace SourceConsole.Templates.Scafholding.NormalTemplates
         {
             return this.GetFileName(
                 new SourceFileMapRepository<ViewCodeBehindTemplate, GroupTemplateDataModel>(
-                    new ProjectReaderRepository(new FileService())));
+                    new ProjectReaderRepository(new FileService())), DataModel.ViewCodeBehindName);
         }
     }
 }

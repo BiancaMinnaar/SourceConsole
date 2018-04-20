@@ -100,7 +100,6 @@
       <DependentUpon>ProjectBaseContentPageTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Templates\Framework\PartialClasses\ProjectBaseContentPageTemplatePartial.cs" />
-    <Compile Include="Templates\Scafholding\NormalTemplates\PartialClasses\TemplatePartialBase.cs" />
     <Compile Include="Templates\DataModel\SwiftTemplateModel.cs" />
     <Compile Include="Templates\Swift\PartialClasses\Swift_RepositoryTemplatePartial.cs" />
     <Compile Include="Templates\Swift\Swift_RepositoryTemplate.cs">
