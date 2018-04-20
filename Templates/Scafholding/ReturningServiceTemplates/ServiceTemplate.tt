@@ -7,10 +7,8 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using CorePCL;
-using <#= DataModel.ProjectName #>.Base;
 using <#= DataModel.ProjectName #>.Implementation.ViewModel;
 using <#= DataModel.ProjectName #>.Interface.Service;
-using <#= DataModel.ProjectName #>.ViewModel;
 
 namespace <#= DataModel.ProjectName #>.Implementation.Service
 {
@@ -22,7 +20,7 @@ namespace <#= DataModel.ProjectName #>.Implementation.Service
             {
             }
 
-        public async Task <#= DataModel.EventName #>(<#= DataModel.ViewModelName #> model)
+        public async Task<T> <#= DataModel.EventName #>(<#= DataModel.ViewModelName #> model)
         {
             string requestURL = "/path/{Parameter}";
             var httpMethod = BaseNetworkAccessEnum.Get;

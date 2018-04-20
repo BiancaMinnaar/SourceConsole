@@ -4,26 +4,26 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 using System.Threading.Tasks;
-using <#= DataModel.ProjectName #>.Base;
 using <#= DataModel.ProjectName #>.Implementation.Repository;
 using <#= DataModel.ProjectName #>.Implementation.Service;
 using <#= DataModel.ProjectName #>.Implementation.ViewModel;
 using <#= DataModel.ProjectName #>.Interface.Repository;
 using <#= DataModel.ProjectName #>.Interface.Service;
 using <#= DataModel.ProjectName #>.Interface.ViewController;
+using <#= DataModel.ProjectName #>.Root.ViewController;
 
 namespace <#= DataModel.ProjectName #>.Implementation.ViewController
 {
     public class <#= DataModel.ViewControllerName #> : ProjectBaseViewController<<#= DataModel.ViewModelName #>>, I<#= DataModel.ViewControllerName #>
     {
-        I<#= DataModel.EventName #>Repository _Reposetory;
-        I<#= DataModel.EventName #>Service _Service;
+        I<#= DataModel.EventName #>Repository<<#= DataModel.ViewModelName #>> _Reposetory;
+        I<#= DataModel.EventName #>Service<<#= DataModel.ViewModelName #>> _Service;
 
         public override void SetRepositories()
         {
-            _Service = new <#= DataModel.EventName #>Service((U, P, C, A) => 
+            _Service = new <#= DataModel.EventName #>Service<<#= DataModel.ViewModelName #>>((U, P, C, A) => 
                                                            ExecuteQueryWithReturnTypeAndNetworkAccessAsync<LoginResponseUser>(U, P, C, A));
-            _Reposetory = new <#= DataModel.EventName #>Repository(_MasterRepo, _Service);
+            _Reposetory = new <#= DataModel.EventName #>Repository<<#= DataModel.ViewModelName #>>(_MasterRepo, _Service);
         }
 
         public async Task <#= DataModel.EventName #>()

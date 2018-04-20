@@ -21,43 +21,43 @@ namespace SourceConsole.Templates.Scafholding.NormalTemplates {
             this.GenerationEnvironment = null;
             
             #line 6 ""
-            this.Write("using System;\nusing Xamarin.Forms;\nusing ");
+            this.Write("using System;\nusing ");
             
             #line default
             #line hidden
             
-            #line 8 ""
+            #line 7 ""
             this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.ProjectName ));
             
             #line default
             #line hidden
             
-            #line 8 ""
-            this.Write(".Base;\nusing ");
-            
-            #line default
-            #line hidden
-            
-            #line 9 ""
-            this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.ProjectName ));
-            
-            #line default
-            #line hidden
-            
-            #line 9 ""
+            #line 7 ""
             this.Write(".Implementation.ViewController;\nusing ");
             
             #line default
             #line hidden
             
-            #line 10 ""
+            #line 8 ""
             this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.ProjectName ));
             
             #line default
             #line hidden
             
-            #line 10 ""
-            this.Write(".Implementation.ViewModel;\n\nnamespace ");
+            #line 8 ""
+            this.Write(".Implementation.ViewModel;\nusing ");
+            
+            #line default
+            #line hidden
+            
+            #line 9 ""
+            this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.ProjectName ));
+            
+            #line default
+            #line hidden
+            
+            #line 9 ""
+            this.Write(".Root.View;\nusing Xamarin.Forms;\n\nnamespace ");
             
             #line default
             #line hidden

@@ -6,17 +6,17 @@
 using System;
 using System.Threading.Tasks;
 using CorePCL;
-using <#= DataModel.ProjectName #>.Base;
 using <#= DataModel.ProjectName #>.Implementation.ViewModel;
 using <#= DataModel.ProjectName #>.Interface.Repository;
 using <#= DataModel.ProjectName #>.Interface.Service;
+using <#= DataModel.ProjectName #>.Root.Repository;
 
 namespace <#= DataModel.ProjectName #>.Implementation.Repository
 {
     public class <#= DataModel.RepositoryName #><T> : ProjectBaseRepository, <#= DataModel.RepositoryInterfaceName #><T>
         where T : BaseViewModel
     {
-        <#= DataModel.ServiceInterfaceName #> _Service;
+        <#= DataModel.ServiceInterfaceName #><T> _Service;
 
         public <#= DataModel.RepositoryName #>(IMasterRepository masterRepository, <#= DataModel.ServiceInterfaceName #><T> service)
             : base(masterRepository)

@@ -35,7 +35,7 @@ namespace SourceConsole.Templates.Scafholding.NormalTemplates {
             #line hidden
             
             #line 10 ""
-            this.Write(".Base\"\n    xmlns:m=\"clr-namespace:");
+            this.Write(".Root.View\"\n    xmlns:m=\"clr-namespace:");
             
             #line default
             #line hidden
@@ -72,31 +72,8 @@ namespace SourceConsole.Templates.Scafholding.NormalTemplates {
             
             #line 13 ""
             this.Write(".Implementation.View\"\n    xmlns:svg=\"clr-namespace:TwinTechsForms.NControl;assemb" +
-                    "ly=TwinTechsForms.NControl.SvgImageView\"\n    xmlns:image=\"clr-namespace:");
-            
-            #line default
-            #line hidden
-            
-            #line 15 ""
-            this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.ProjectName ));
-            
-            #line default
-            #line hidden
-            
-            #line 15 ""
-            this.Write(".View;assembly=");
-            
-            #line default
-            #line hidden
-            
-            #line 15 ""
-            this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.ProjectName ));
-            
-            #line default
-            #line hidden
-            
-            #line 15 ""
-            this.Write("\"\n    x:Class=\"");
+                    "ly=TwinTechsForms.NControl.SvgImageView\"\n    xmlns:image=\"clr-namespace:MobileBo" +
+                    "nsai.View;assembly=MobileBonsai\"\n    x:Class=\"");
             
             #line default
             #line hidden

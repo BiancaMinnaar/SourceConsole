@@ -34,31 +34,19 @@ namespace SourceConsole.Templates.Scafholding.ReturningServiceTemplates {
             #line hidden
             
             #line 10 ""
-            this.Write(".Base;\nusing ");
-            
-            #line default
-            #line hidden
-            
-            #line 11 ""
-            this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.ProjectName ));
-            
-            #line default
-            #line hidden
-            
-            #line 11 ""
             this.Write(".Implementation.ViewModel;\nusing ");
             
             #line default
             #line hidden
             
-            #line 12 ""
+            #line 11 ""
             this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.ProjectName ));
             
             #line default
             #line hidden
             
-            #line 12 ""
-            this.Write(".Interface.Service;\nusing ");
+            #line 11 ""
+            this.Write(".Interface.Service;\n\nnamespace ");
             
             #line default
             #line hidden
@@ -70,80 +58,68 @@ namespace SourceConsole.Templates.Scafholding.ReturningServiceTemplates {
             #line hidden
             
             #line 13 ""
-            this.Write(".ViewModel;\n\nnamespace ");
-            
-            #line default
-            #line hidden
-            
-            #line 15 ""
-            this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.ProjectName ));
-            
-            #line default
-            #line hidden
-            
-            #line 15 ""
             this.Write(".Implementation.Service\n{\n        public class ");
             
             #line default
             #line hidden
             
-            #line 17 ""
+            #line 15 ""
             this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.ServiceName ));
             
             #line default
             #line hidden
             
-            #line 17 ""
+            #line 15 ""
             this.Write("<T> : BaseService<T>, ");
             
             #line default
             #line hidden
             
-            #line 17 ""
+            #line 15 ""
             this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.ServiceInterfaceName ));
             
             #line default
             #line hidden
             
-            #line 17 ""
+            #line 15 ""
             this.Write("<T>\n            where T : BaseViewModel\n        {\n            public ");
             
             #line default
             #line hidden
             
-            #line 20 ""
+            #line 18 ""
             this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.ServiceName ));
             
             #line default
             #line hidden
             
-            #line 20 ""
+            #line 18 ""
             this.Write("(Func<string, Dictionary<string, ParameterTypedValue>, BaseViewModel, BaseNetwork" +
                     "AccessEnum, Task<T>> networkInterface)\n                :base(networkInterface)\n " +
-                    "           {\n            }\n\n        public async Task ");
+                    "           {\n            }\n\n        public async Task<T> ");
             
             #line default
             #line hidden
             
-            #line 25 ""
+            #line 23 ""
             this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.EventName ));
             
             #line default
             #line hidden
             
-            #line 25 ""
+            #line 23 ""
             this.Write("(");
             
             #line default
             #line hidden
             
-            #line 25 ""
+            #line 23 ""
             this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.ViewModelName ));
             
             #line default
             #line hidden
             
-            #line 25 ""
+            #line 23 ""
             this.Write(@" model)
         {
             string requestURL = ""/path/{Parameter}"";

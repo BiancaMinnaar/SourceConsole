@@ -4,7 +4,7 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 using System;
-using <#= DataModel.ProjectName #>.Base;
+using <#= DataModel.ProjectName #>.Root.ViewModel;
 
 namespace <#= DataModel.ProjectName #>.Implementation.ViewModel
 {

@@ -33,7 +33,7 @@ namespace SourceConsole.Templates.Scafholding.NormalTemplates {
             #line hidden
             
             #line 7 ""
-            this.Write(".Base;\n\nnamespace ");
+            this.Write(".Root.ViewModel;\n\nnamespace ");
             
             #line default
             #line hidden

@@ -33,71 +33,71 @@ namespace SourceConsole.Templates.Scafholding.NormalTemplates {
             #line hidden
             
             #line 7 ""
-            this.Write(".Base;\nusing ");
-            
-            #line default
-            #line hidden
-            
-            #line 8 ""
-            this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.ProjectName ));
-            
-            #line default
-            #line hidden
-            
-            #line 8 ""
             this.Write(".Implementation.Repository;\nusing ");
             
             #line default
             #line hidden
             
-            #line 9 ""
+            #line 8 ""
             this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.ProjectName ));
             
             #line default
             #line hidden
             
-            #line 9 ""
+            #line 8 ""
             this.Write(".Implementation.Service;\nusing ");
             
             #line default
             #line hidden
             
-            #line 10 ""
+            #line 9 ""
             this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.ProjectName ));
             
             #line default
             #line hidden
             
-            #line 10 ""
+            #line 9 ""
             this.Write(".Implementation.ViewModel;\nusing ");
             
             #line default
             #line hidden
             
-            #line 11 ""
+            #line 10 ""
             this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.ProjectName ));
             
             #line default
             #line hidden
             
-            #line 11 ""
+            #line 10 ""
             this.Write(".Interface.Repository;\nusing ");
             
             #line default
             #line hidden
             
-            #line 12 ""
+            #line 11 ""
             this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.ProjectName ));
             
             #line default
             #line hidden
             
-            #line 12 ""
+            #line 11 ""
             this.Write(".Interface.Service;\nusing ");
             
             #line default
             #line hidden
             
+            #line 12 ""
+            this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.ProjectName ));
+            
+            #line default
+            #line hidden
+            
+            #line 12 ""
+            this.Write(".Interface.ViewController;\nusing ");
+            
+            #line default
+            #line hidden
+            
             #line 13 ""
             this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.ProjectName ));
             
@@ -105,7 +105,7 @@ namespace SourceConsole.Templates.Scafholding.NormalTemplates {
             #line hidden
             
             #line 13 ""
-            this.Write(".Interface.ViewController;\n\nnamespace ");
+            this.Write(".Root.ViewController;\n\nnamespace ");
             
             #line default
             #line hidden

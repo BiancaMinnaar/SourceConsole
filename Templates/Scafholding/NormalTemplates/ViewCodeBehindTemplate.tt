@@ -4,10 +4,10 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 using System;
-using Xamarin.Forms;
-using <#= DataModel.ProjectName #>.Base;
 using <#= DataModel.ProjectName #>.Implementation.ViewController;
 using <#= DataModel.ProjectName #>.Implementation.ViewModel;
+using <#= DataModel.ProjectName #>.Root.View;
+using Xamarin.Forms;
 
 namespace <#= DataModel.ProjectName #>.Implementation.View
 {

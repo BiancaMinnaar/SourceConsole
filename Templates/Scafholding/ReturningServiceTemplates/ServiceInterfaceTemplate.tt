@@ -4,6 +4,7 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 using System.Threading.Tasks;
+using CorePCL;
 using <#= DataModel.ProjectName #>.Implementation.ViewModel;
 
 namespace <#= DataModel.ProjectName #>.Interface.Service

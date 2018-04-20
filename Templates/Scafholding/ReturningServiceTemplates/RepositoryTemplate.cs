@@ -33,35 +33,35 @@ namespace SourceConsole.Templates.Scafholding.ReturningServiceTemplates {
             #line hidden
             
             #line 9 ""
-            this.Write(".Base;\nusing ");
-            
-            #line default
-            #line hidden
-            
-            #line 10 ""
-            this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.ProjectName ));
-            
-            #line default
-            #line hidden
-            
-            #line 10 ""
             this.Write(".Implementation.ViewModel;\nusing ");
             
             #line default
             #line hidden
             
-            #line 11 ""
+            #line 10 ""
             this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.ProjectName ));
             
             #line default
             #line hidden
             
-            #line 11 ""
+            #line 10 ""
             this.Write(".Interface.Repository;\nusing ");
             
             #line default
             #line hidden
             
+            #line 11 ""
+            this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.ProjectName ));
+            
+            #line default
+            #line hidden
+            
+            #line 11 ""
+            this.Write(".Interface.Service;\nusing ");
+            
+            #line default
+            #line hidden
+            
             #line 12 ""
             this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.ProjectName ));
             
@@ -69,7 +69,7 @@ namespace SourceConsole.Templates.Scafholding.ReturningServiceTemplates {
             #line hidden
             
             #line 12 ""
-            this.Write(".Interface.Service;\n\nnamespace ");
+            this.Write(".Root.Repository;\n\nnamespace ");
             
             #line default
             #line hidden
@@ -117,7 +117,7 @@ namespace SourceConsole.Templates.Scafholding.ReturningServiceTemplates {
             #line hidden
             
             #line 19 ""
-            this.Write(" _Service;\n\n        public ");
+            this.Write("<T> _Service;\n\n        public ");
             
             #line default
             #line hidden
