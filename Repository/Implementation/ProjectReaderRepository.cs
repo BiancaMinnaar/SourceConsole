@@ -41,56 +41,6 @@ namespace SourceConsole
             return configData[templateName].ToString();
         }
 
-        public string GetRepositoryInterfacePath()
-        {
-            return _Model.RepositoryInterfacePath;
-        }
-
-        public string GetRepositoryPath()
-        {
-            return _Model.RepositoryPath;
-        }
-
-        public string GetServiceInterfacePath()
-        {
-            return _Model.ServiceInterfacePath;
-        }
-
-        public string GetServicePath()
-        {
-            return _Model.ServicePath;
-        }
-
-        public string GetViewCodeBehindPath()
-        {
-            return _Model.ViewCodeBehindPath;
-        }
-
-        public string GetViewControllerInterfacePath()
-        {
-            return _Model.ViewControllerInterfacePath;
-        }
-
-        public string GetViewControllerPath()
-        {
-            return _Model.ViewControllerPath;
-        }
-
-        public string GetViewModelPath()
-        {
-            return _Model.ViewModelPath;
-        }
-
-        public string GetViewPath()
-        {
-            return _Model.ViewPath;
-        }
-
-        public string GetBaseFolderPath()
-        {
-            return _Model.BaseFolderPath;
-        }
-
         public bool InsertFileReferenceInProjectFile(string classPath)
         {
             var namespaceURI = "http://schemas.microsoft.com/developer/msbuild/2003";
