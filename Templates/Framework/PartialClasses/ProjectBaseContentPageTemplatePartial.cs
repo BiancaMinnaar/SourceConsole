@@ -16,6 +16,8 @@ namespace SourceConsole.Templates.Framework
 
         public GroupTemplateDataModel DataModel { get; set; }
 
+        public string TemplateResourceKey => "BaseFolderPath";
+
         public string GetFileName()
         {
             return this.GetFileName(

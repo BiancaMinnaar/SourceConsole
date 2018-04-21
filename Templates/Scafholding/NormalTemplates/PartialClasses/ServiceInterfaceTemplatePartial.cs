@@ -16,6 +16,8 @@ namespace SourceConsole.Templates.Scafholding.NormalTemplates
 
         public GroupTemplateDataModel DataModel { get; set; }
 
+        public string TemplateResourceKey => "ServiceInterfacePath";
+
         public string GetFileName()
         {
             return this.GetFileName(

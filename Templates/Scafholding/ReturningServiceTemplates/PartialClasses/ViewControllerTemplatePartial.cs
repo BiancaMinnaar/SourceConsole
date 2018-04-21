@@ -16,6 +16,8 @@ namespace SourceConsole.Templates.Scafholding.ReturningServiceTemplates
 
         public GroupTemplateDataModel DataModel { get; set; }
 
+        public string TemplateResourceKey => "ViewControllerPath";
+
         public string GetFileName()
         {
             return this.GetFileName(

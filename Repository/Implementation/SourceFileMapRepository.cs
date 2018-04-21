@@ -34,31 +34,7 @@ namespace SourceConsole.Repository.Implementation
 
         public string GetSourcePath(T template)
         {
-            switch(template.TemplateEnum)
-            {
-                case SourceEnum.PBContentPage:
-                    return _ReaderRepo.GetBaseFolderPath();
-                case SourceEnum.Repository:
-                    return _ReaderRepo.GetRepositoryPath();
-                case SourceEnum.RepositoryInterface:
-                    return _ReaderRepo.GetRepositoryInterfacePath();
-                case SourceEnum.Service:
-                    return _ReaderRepo.GetServicePath();
-                case SourceEnum.ServiceInterface:
-                    return _ReaderRepo.GetServiceInterfacePath();
-                case SourceEnum.View:
-                    return _ReaderRepo.GetViewPath();
-                case SourceEnum.ViewCodeBehind:
-                    return _ReaderRepo.GetViewCodeBehindPath();
-                case SourceEnum.ViewController:
-                    return _ReaderRepo.GetViewControllerPath();
-                case SourceEnum.ViewControllerInterface:
-                    return _ReaderRepo.GetViewControllerInterfacePath();
-                case SourceEnum.ViewModel:
-                    return _ReaderRepo.GetViewModelPath();
-                default:
-                    throw new NotSupportedException("Your template isn't supported.");
-            }
+            return _ReaderRepo.GetTemplatePath(template.TemplateResourceKey);
         }
     }
 }

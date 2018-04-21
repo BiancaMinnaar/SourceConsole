@@ -16,6 +16,8 @@ namespace SourceConsole.Templates.Scafholding.ReturningServiceTemplates
 
         public GroupTemplateDataModel DataModel { get; set; }
 
+        public string TemplateResourceKey => "RepositoryInterfacePath";
+
         public string GetFileName()
         {
             return this.GetFileName(

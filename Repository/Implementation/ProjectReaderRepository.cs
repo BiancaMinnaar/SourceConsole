@@ -2,6 +2,7 @@
 using CorePCL.Generation.Data;
 using CorePCL.Generation.Repository;
 using CorePCL.Generation.Service;
+using Newtonsoft.Json.Linq;
 
 namespace SourceConsole
 {
@@ -10,11 +11,13 @@ namespace SourceConsole
 		IFileService _FileService;
         ProjectModel _Model;
         XmlDocument _ProjectFile;
+        string configJson;
 
         public ProjectReaderRepository(IFileService fileService)
         {
 			_FileService = fileService;
-            _Model = Newtonsoft.Json.JsonConvert.DeserializeAnonymousType<ProjectModel>(_FileService.ReadFromFile("../../Data/Project.Config"), _Model);
+            configJson = _FileService.ReadFromFile("../../Data/Project.Config");
+            _Model = Newtonsoft.Json.JsonConvert.DeserializeAnonymousType<ProjectModel>(configJson, _Model);
             _ProjectFile = new XmlDocument();
             _ProjectFile.Load(_Model.ProjectFileLocation);
             XmlNamespaceManager xnManager =
@@ -30,6 +33,12 @@ namespace SourceConsole
         public string GetProjectName()
         {
             return _Model.ProjectName;
+        }
+
+        public string GetTemplatePath(string templateName)
+        {
+            var configData = JObject.Parse(configJson);
+            return configData[templateName].ToString();
         }
 
         public string GetRepositoryInterfacePath()

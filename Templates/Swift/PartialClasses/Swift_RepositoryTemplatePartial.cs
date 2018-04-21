@@ -16,6 +16,8 @@ namespace SourceConsole.Templates.Swift
 
         public TemplateDataModel DataModel { get; set; }
 
+        public string TemplateResourceKey => throw new System.NotImplementedException();
+
         public string GetFileName()
         {
             return this.GetFileName(
