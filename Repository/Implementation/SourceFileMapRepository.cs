@@ -9,7 +9,7 @@ namespace SourceConsole.Repository.Implementation
         where T : ITemplate<M>
         where M : TemplateDataModel
     {
-        IProjectReaderRepository _ReaderRepo;// = new ProjectReaderRepository(new FileService());
+        IProjectReaderRepository _ReaderRepo;
 
         public SourceFileMapRepository(IProjectReaderRepository readerRepo)
         {
