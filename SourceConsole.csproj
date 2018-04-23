@@ -108,6 +108,7 @@
     <Compile Include="Factory\SimpleCSharpProjectFactory.cs" />
     <Compile Include="Repository\Implementation\SourceFileMapRepository.cs" />
     <Compile Include="Repository\Implementation\XamarinFormsRepository.cs" />
+    <Compile Include="Repository\Implementation\ItemGroupEnum.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Templates\" />

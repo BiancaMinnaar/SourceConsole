@@ -12,7 +12,7 @@ namespace SourceConsole.Templates.Scafholding.NormalTemplates
 
         public SourceEnum TemplateEnum => SourceEnum.ViewCodeBehind;
 
-        public TemplateEnum TemplateType => CorePCL.Generation.Templates.PartialClasses.TemplateEnum.Normal;
+        public TemplateEnum TemplateType => CorePCL.Generation.Templates.PartialClasses.TemplateEnum.CodeBehind;
 
         public GroupTemplateDataModel DataModel { get; set; }
 

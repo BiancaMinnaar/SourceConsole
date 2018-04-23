@@ -16,8 +16,8 @@ namespace <#= DataModel.ProjectName #>.Implementation.ViewController
 {
     public class <#= DataModel.ViewControllerName #> : ProjectBaseViewController<<#= DataModel.ViewModelName #>>, I<#= DataModel.ViewControllerName #>
     {
-        I<#= DataModel.EventName #>Repository _Reposetory;
-        I<#= DataModel.EventName #>Service _Service;
+        I<#= DataModel.RepositoryName #>Repository _Reposetory;
+        I<#= DataModel.ServiceName #>Service _Service;
 
         public override void SetRepositories()
         {

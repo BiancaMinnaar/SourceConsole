@@ -159,13 +159,13 @@ namespace SourceConsole.Templates.Scafholding.ReturningServiceTemplates {
             #line hidden
             
             #line 19 ""
-            this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.EventName ));
+            this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.RepositoryName ));
             
             #line default
             #line hidden
             
             #line 19 ""
-            this.Write("Repository<");
+            this.Write("<");
             
             #line default
             #line hidden
@@ -183,13 +183,13 @@ namespace SourceConsole.Templates.Scafholding.ReturningServiceTemplates {
             #line hidden
             
             #line 20 ""
-            this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.EventName ));
+            this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.ServiceName ));
             
             #line default
             #line hidden
             
             #line 20 ""
-            this.Write("Service<");
+            this.Write("<");
             
             #line default
             #line hidden
@@ -208,13 +208,13 @@ namespace SourceConsole.Templates.Scafholding.ReturningServiceTemplates {
             #line hidden
             
             #line 24 ""
-            this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.EventName ));
+            this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.ServiceName ));
             
             #line default
             #line hidden
             
             #line 24 ""
-            this.Write("Service<");
+            this.Write("<");
             
             #line default
             #line hidden
@@ -227,20 +227,31 @@ namespace SourceConsole.Templates.Scafholding.ReturningServiceTemplates {
             
             #line 24 ""
             this.Write(">((U, P, C, A) => \n                                                           Exe" +
-                    "cuteQueryWithReturnTypeAndNetworkAccessAsync<LoginResponseUser>(U, P, C, A));\n  " +
-                    "          _Reposetory = new ");
+                    "cuteQueryWithReturnTypeAndNetworkAccessAsync<");
+            
+            #line default
+            #line hidden
+            
+            #line 25 ""
+            this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.ViewModelName ));
+            
+            #line default
+            #line hidden
+            
+            #line 25 ""
+            this.Write(">(U, P, C, A));\n            _Reposetory = new ");
             
             #line default
             #line hidden
             
             #line 26 ""
-            this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.EventName ));
+            this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.RepositoryName ));
             
             #line default
             #line hidden
             
             #line 26 ""
-            this.Write("Repository<");
+            this.Write("<");
             
             #line default
             #line hidden

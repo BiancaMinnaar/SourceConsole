@@ -16,14 +16,14 @@ namespace <#= DataModel.ProjectName #>.Implementation.ViewController
 {
     public class <#= DataModel.ViewControllerName #> : ProjectBaseViewController<<#= DataModel.ViewModelName #>>, I<#= DataModel.ViewControllerName #>
     {
-        I<#= DataModel.EventName #>Repository<<#= DataModel.ViewModelName #>> _Reposetory;
-        I<#= DataModel.EventName #>Service<<#= DataModel.ViewModelName #>> _Service;
+        I<#= DataModel.RepositoryName #><<#= DataModel.ViewModelName #>> _Reposetory;
+        I<#= DataModel.ServiceName #><<#= DataModel.ViewModelName #>> _Service;
 
         public override void SetRepositories()
         {
-            _Service = new <#= DataModel.EventName #>Service<<#= DataModel.ViewModelName #>>((U, P, C, A) => 
-                                                           ExecuteQueryWithReturnTypeAndNetworkAccessAsync<LoginResponseUser>(U, P, C, A));
-            _Reposetory = new <#= DataModel.EventName #>Repository<<#= DataModel.ViewModelName #>>(_MasterRepo, _Service);
+            _Service = new <#= DataModel.ServiceName #><<#= DataModel.ViewModelName #>>((U, P, C, A) => 
+                                                           ExecuteQueryWithReturnTypeAndNetworkAccessAsync<<#= DataModel.ViewModelName #>>(U, P, C, A));
+            _Reposetory = new <#= DataModel.RepositoryName #><<#= DataModel.ViewModelName #>>(_MasterRepo, _Service);
         }
 
         public async Task <#= DataModel.EventName #>()
