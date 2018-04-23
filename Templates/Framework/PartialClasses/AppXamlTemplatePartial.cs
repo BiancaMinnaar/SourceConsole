@@ -12,7 +12,7 @@ namespace SourceConsole.Templates.Framework
     {
         public string FullProjectFileName => this.GetFullProjectFileName<AppXamlTemplate, TemplateDataModel>();
 
-        public SourceEnum TemplateEnum => SourceEnum.Generator;
+        public SourceEnum TemplateEnum => SourceEnum.View;
 
         public TemplateEnum TemplateType => CorePCL.Generation.Templates.PartialClasses.TemplateEnum.Xaml;
 

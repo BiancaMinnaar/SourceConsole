@@ -3,6 +3,7 @@ using CorePCL.Generation.Repository;
 using CorePCL.Generation.Repository.Implementation;
 using SourceConsole.Factory;
 using SourceConsole.Templates.DataModel;
+using CorePCL.Generation.DataModel;
 
 namespace SourceConsole.Repository.Implementation
 {
@@ -40,10 +41,12 @@ namespace SourceConsole.Repository.Implementation
         public void GenerateXamarinPreSetup()
         {
             IProjectReaderRepository readerRepo = new ProjectReaderRepository(new FileService());
-            IGenerationReposetory<GroupTemplateDataModel> repo =
-                new GenerationReposetory<GroupTemplateDataModel>(new FileService(), new SimpleCSharpProjectFactory(readerRepo));
+            IGenerationReposetory<TemplateDataModel> repo =
+                new GenerationReposetory<TemplateDataModel>(new FileService(), new SimpleCSharpProjectFactory(readerRepo));
+            var screenData = repo.GetBaseDataModel("App2");
 
-            //repo.WriteTemplateToFile(screenData, new SourceFileMapRepository<Templates.Scafholding.NormalTemplates.ViewModelTemplate, GroupTemplateDataModel>(readerRepo));
+            repo.WriteTemplateToFile(screenData, new SourceFileMapRepository<Templates.Framework.AppXamlTemplate, TemplateDataModel>(readerRepo));
+            repo.WriteTemplateToFile(screenData, new SourceFileMapRepository<Templates.Framework.AppCodeBehindTemplate, TemplateDataModel>(readerRepo));
         }
     }
 }
