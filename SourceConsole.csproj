@@ -109,6 +109,14 @@
     <Compile Include="Repository\Implementation\SourceFileMapRepository.cs" />
     <Compile Include="Repository\Implementation\XamarinFormsRepository.cs" />
     <Compile Include="Repository\Implementation\ItemGroupEnum.cs" />
+    <Compile Include="Templates\Framework\AppCodeBehindTemplate.cs">
+      <DependentUpon>AppCodeBehindTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Framework\PartialClasses\AppCodeBehindTemplatePartial.cs" />
+    <Compile Include="Templates\Framework\AppXamlTemplate.cs">
+      <DependentUpon>AppXamlTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Framework\PartialClasses\AppXamlTemplatePartial.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Templates\" />
@@ -193,6 +201,14 @@
     <None Include="Templates\Swift\Swift_RepositoryTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>Swift_RepositoryTemplate.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Framework\AppCodeBehindTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>AppCodeBehindTemplate.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Framework\AppXamlTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>AppXamlTemplate.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

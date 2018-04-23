@@ -36,5 +36,14 @@ namespace SourceConsole.Repository.Implementation
             repo.WriteTemplateToFile(screenData, new SourceFileMapRepository<Templates.Scafholding.ReturningServiceTemplates.ServiceInterfaceTemplate, GroupTemplateDataModel>(readerRepo));
             repo.WriteTemplateToFile(screenData, new SourceFileMapRepository<Templates.Scafholding.ReturningServiceTemplates.ServiceTemplate, GroupTemplateDataModel>(readerRepo));
         }
+
+        public void GenerateXamarinPreSetup()
+        {
+            IProjectReaderRepository readerRepo = new ProjectReaderRepository(new FileService());
+            IGenerationReposetory<GroupTemplateDataModel> repo =
+                new GenerationReposetory<GroupTemplateDataModel>(new FileService(), new SimpleCSharpProjectFactory(readerRepo));
+
+            //repo.WriteTemplateToFile(screenData, new SourceFileMapRepository<Templates.Scafholding.NormalTemplates.ViewModelTemplate, GroupTemplateDataModel>(readerRepo));
+        }
     }
 }
