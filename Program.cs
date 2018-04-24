@@ -12,7 +12,8 @@ namespace SourceConsole
         public static void Main(string[] args)
         {
             var MainRepo = new XamarinFormsRepository();
-            MainRepo.GenerateXamarinScreen();
+            //MainRepo.GenerateXamarinScreen();
+            MainRepo.GenerateXamarinPreSetup();
         }
     }
 }

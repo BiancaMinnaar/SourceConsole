@@ -117,6 +117,7 @@
       <DependentUpon>AppXamlTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Templates\Framework\PartialClasses\AppXamlTemplatePartial.cs" />
+    <Compile Include="Templates\DataModel\PreSetupTemplateModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Templates\" />

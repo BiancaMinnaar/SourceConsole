@@ -41,12 +41,13 @@ namespace SourceConsole.Repository.Implementation
         public void GenerateXamarinPreSetup()
         {
             IProjectReaderRepository readerRepo = new ProjectReaderRepository(new FileService());
-            IGenerationReposetory<TemplateDataModel> repo =
-                new GenerationReposetory<TemplateDataModel>(new FileService(), new SimpleCSharpProjectFactory(readerRepo));
+            IGenerationReposetory<PreSetupTemplateModel> repo =
+                new GenerationReposetory<PreSetupTemplateModel>(new FileService(), new SimpleCSharpProjectFactory(readerRepo));
             var screenData = repo.GetBaseDataModel("App2");
+            screenData.ProjectName = readerRepo.GetProjectName();
 
-            repo.WriteTemplateToFile(screenData, new SourceFileMapRepository<Templates.Framework.AppXamlTemplate, TemplateDataModel>(readerRepo));
-            repo.WriteTemplateToFile(screenData, new SourceFileMapRepository<Templates.Framework.AppCodeBehindTemplate, TemplateDataModel>(readerRepo));
+            repo.WriteTemplateToFile(screenData, new SourceFileMapRepository<Templates.Framework.AppXamlTemplate, PreSetupTemplateModel>(readerRepo));
+            repo.WriteTemplateToFile(screenData, new SourceFileMapRepository<Templates.Framework.AppCodeBehindTemplate, PreSetupTemplateModel>(readerRepo));
         }
     }
 }

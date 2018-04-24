@@ -21,11 +21,43 @@ namespace SourceConsole.Templates.Framework {
             this.GenerationEnvironment = null;
             
             #line 6 ""
-            this.Write(@"using CVBonsai.Trunk.Repository.Implementation;
-using CVBonsai.Implementation.View;
-using Xamarin.Forms;
-
-namespace CVBonsai
+            this.Write("using ");
+            
+            #line default
+            #line hidden
+            
+            #line 6 ""
+            this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.ProjectName ));
+            
+            #line default
+            #line hidden
+            
+            #line 6 ""
+            this.Write(".Trunk.Repository.Implementation;\nusing ");
+            
+            #line default
+            #line hidden
+            
+            #line 7 ""
+            this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.ProjectName ));
+            
+            #line default
+            #line hidden
+            
+            #line 7 ""
+            this.Write(".Implementation.View;\nusing Xamarin.Forms;\n\nnamespace ");
+            
+            #line default
+            #line hidden
+            
+            #line 10 ""
+            this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.ProjectName ));
+            
+            #line default
+            #line hidden
+            
+            #line 10 ""
+            this.Write(@"
 {
     public partial class App : Application
     {
@@ -34,7 +66,7 @@ namespace CVBonsai
             InitializeComponent();
 
             var _MasterRepo = MasterRepository.MasterRepo;
-            _MasterRepo.SetRootView(new NavigationPage(new LoginView()));
+            //_MasterRepo.SetRootView(new NavigationPage(new LoginView()));
             //_MasterRepo.SetRootView(new NavigationPage(new TestHarnesView()));
             MainPage = _MasterRepo.GetRootView();
         }
