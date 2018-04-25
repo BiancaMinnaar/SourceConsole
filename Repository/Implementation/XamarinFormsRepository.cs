@@ -110,9 +110,16 @@ namespace SourceConsole.Repository.Implementation
                 {
                     obj.ProjectName = readerRepo.GetProjectName();
                 })();
-
-            //repo.WriteTemplateToFile(screenData, new SourceFileMapRepository<Templates.Framework.AppXamlTemplate, PreSetupTemplateModel>(readerRepo));
-            //repo.WriteTemplateToFile(screenData, new SourceFileMapRepository<Templates.Framework.AppCodeBehindTemplate, PreSetupTemplateModel>(readerRepo));
+            WriteTemplateWithModelInjection<PreSetupTemplateModel, Templates.Framework.ProjectBaseViewModelTemplate>(
+                readerRepo, "ProjectBaseViewModel", (obj) =>
+                {
+                    obj.ProjectName = readerRepo.GetProjectName();
+                })();
+            WriteTemplateWithModelInjection<PreSetupTemplateModel, Templates.Framework.SVGBindingPropertyTemplate>(
+                readerRepo, "SVGBindingProperty", (obj) =>
+                {
+                    obj.ProjectName = readerRepo.GetProjectName();
+                })();
         }
     }
 }
