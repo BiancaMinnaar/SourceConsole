@@ -126,6 +126,10 @@
       <DependentUpon>MasterModelTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Templates\Framework\PartialClasses\MasterModelTemplatePartial.cs" />
+    <Compile Include="Templates\Framework\ProjectBaseContentScrollViewTemplate.cs">
+      <DependentUpon>ProjectBaseContentScrollViewTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Framework\PartialClasses\ProjectBaseContentScrollViewTemplatePartial.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Templates\" />
@@ -226,6 +230,10 @@
     <None Include="Templates\Framework\MasterModelTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>MasterModelTemplate.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Framework\ProjectBaseContentScrollViewTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ProjectBaseContentScrollViewTemplate.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
