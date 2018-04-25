@@ -21,7 +21,100 @@ namespace SourceConsole.Templates.Framework {
             this.GenerationEnvironment = null;
             
             #line 6 ""
-            this.Write("\n");
+            this.Write("using ");
+            
+            #line default
+            #line hidden
+            
+            #line 6 ""
+            this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.ProjectName ));
+            
+            #line default
+            #line hidden
+            
+            #line 6 ""
+            this.Write(".Root;\nusing ");
+            
+            #line default
+            #line hidden
+            
+            #line 7 ""
+            this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.ProjectName ));
+            
+            #line default
+            #line hidden
+            
+            #line 7 ""
+            this.Write(".Root.Repository;\nusing ");
+            
+            #line default
+            #line hidden
+            
+            #line 8 ""
+            this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.ProjectName ));
+            
+            #line default
+            #line hidden
+            
+            #line 8 ""
+            this.Write(".Root.ViewController;\nusing ");
+            
+            #line default
+            #line hidden
+            
+            #line 9 ""
+            this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.ProjectName ));
+            
+            #line default
+            #line hidden
+            
+            #line 9 ""
+            this.Write(".Root.ViewModel;\nusing ");
+            
+            #line default
+            #line hidden
+            
+            #line 10 ""
+            this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.ProjectName ));
+            
+            #line default
+            #line hidden
+            
+            #line 10 ""
+            this.Write(".Trunk.Repository.Implementation;\nusing Xamarin.Forms;\n\nnamespace ");
+            
+            #line default
+            #line hidden
+            
+            #line 13 ""
+            this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.ProjectName ));
+            
+            #line default
+            #line hidden
+            
+            #line 13 ""
+            this.Write(@".Root.View
+{
+    public abstract class ProjectBaseContentPage<T, M> : ContentPage
+        where T: ProjectBaseViewController<M>, new()
+        where M: ProjectBaseViewModel, new()
+    {
+        protected T _ViewController;
+
+        protected ProjectBaseContentPage()
+        {
+            _ViewController = new T();
+            _ViewController.InputObject = new M();
+            SetSVGCollection();
+            _ViewController._MasterRepo = MasterRepository.MasterRepo;
+            _ViewController.SetRepositories();
+        }
+
+        protected abstract void SetSVGCollection();
+    }
+}
+
+");
             
             #line default
             #line hidden

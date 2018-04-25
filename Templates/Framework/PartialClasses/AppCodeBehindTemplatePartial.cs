@@ -10,7 +10,7 @@ namespace SourceConsole.Templates.Framework
     {
         public string FullProjectFileName => this.GetFullProjectFileName<AppCodeBehindTemplate, PreSetupTemplateModel>();
 
-        public SourceEnum TemplateEnum => SourceEnum.Generator;
+        public SourceEnum TemplateEnum => SourceEnum.ViewCodeBehind;
 
         public TemplateEnum TemplateType => CorePCL.Generation.Templates.PartialClasses.TemplateEnum.CodeBehind;
 

@@ -4,6 +4,7 @@ using CorePCL.Generation.Repository.Implementation;
 using SourceConsole.Factory;
 using SourceConsole.Templates.DataModel;
 using CorePCL.Generation.DataModel;
+using CorePCL.Generation.Templates;
 
 namespace SourceConsole.Repository.Implementation
 {
@@ -38,16 +39,40 @@ namespace SourceConsole.Repository.Implementation
             repo.WriteTemplateToFile(screenData, new SourceFileMapRepository<Templates.Scafholding.ReturningServiceTemplates.ServiceTemplate, GroupTemplateDataModel>(readerRepo));
         }
 
+        public Action WriteTemplateWithModelInjection<M, I>(IProjectReaderRepository readerRepo, string templateName, Action<M> inject) 
+            where M : TemplateDataModel, new()
+            where I : ITemplate<M>, new()
+        {
+            IGenerationReposetory<M> repo =
+                new GenerationReposetory<M>(new FileService(), new SimpleCSharpProjectFactory(readerRepo));
+            var model = repo.GetBaseDataModel(templateName);
+            inject(model);
+
+            return () =>
+            {
+                repo.WriteTemplateToFile(
+                    model,
+                    new SourceFileMapRepository<I, M>(readerRepo));
+            };   
+        }
+
         public void GenerateXamarinPreSetup()
         {
             IProjectReaderRepository readerRepo = new ProjectReaderRepository(new FileService());
-            IGenerationReposetory<PreSetupTemplateModel> repo =
-                new GenerationReposetory<PreSetupTemplateModel>(new FileService(), new SimpleCSharpProjectFactory(readerRepo));
-            var screenData = repo.GetBaseDataModel("App2");
-            screenData.ProjectName = readerRepo.GetProjectName();
 
-            repo.WriteTemplateToFile(screenData, new SourceFileMapRepository<Templates.Framework.AppXamlTemplate, PreSetupTemplateModel>(readerRepo));
-            repo.WriteTemplateToFile(screenData, new SourceFileMapRepository<Templates.Framework.AppCodeBehindTemplate, PreSetupTemplateModel>(readerRepo));
+            WriteTemplateWithModelInjection<PreSetupTemplateModel, Templates.Framework.AppXamlTemplate>(
+                readerRepo, "App",(obj) => 
+            {
+                obj.ProjectName = readerRepo.GetProjectName();
+            })();
+            WriteTemplateWithModelInjection<PreSetupTemplateModel, Templates.Framework.AppCodeBehindTemplate>(
+                readerRepo, "App", (obj) =>
+                {
+                    obj.ProjectName = readerRepo.GetProjectName();
+                })();
+
+            //repo.WriteTemplateToFile(screenData, new SourceFileMapRepository<Templates.Framework.AppXamlTemplate, PreSetupTemplateModel>(readerRepo));
+            //repo.WriteTemplateToFile(screenData, new SourceFileMapRepository<Templates.Framework.AppCodeBehindTemplate, PreSetupTemplateModel>(readerRepo));
         }
     }
 }

@@ -26,7 +26,9 @@ namespace SourceConsole.Repository.Implementation
             switch(template.TemplateEnum)
             {
                 case SourceEnum.View:
-                               return "xaml";
+                    return "xaml";
+                case SourceEnum.ViewCodeBehind:
+                    return "xaml.cs";
                 default:
                     return "cs";
             }

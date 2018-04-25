@@ -6,22 +6,22 @@ using SourceConsole.Templates.DataModel;
 
 namespace SourceConsole.Templates.Framework
 {
-    partial class ProjectBaseContentPageTemplate : ITemplate<GroupTemplateDataModel>
+    partial class ProjectBaseContentPageTemplate : ITemplate<PreSetupTemplateModel>
     {
-        public string FullProjectFileName => this.GetFullProjectFileName<ProjectBaseContentPageTemplate, GroupTemplateDataModel>();
+        public string FullProjectFileName => this.GetFullProjectFileName<ProjectBaseContentPageTemplate, PreSetupTemplateModel>();
 
         public SourceEnum TemplateEnum => SourceEnum.PBContentPage;
 
         public TemplateEnum TemplateType => CorePCL.Generation.Templates.PartialClasses.TemplateEnum.Normal;
 
-        public GroupTemplateDataModel DataModel { get; set; }
+        public PreSetupTemplateModel DataModel { get; set; }
 
         public string TemplateResourceKey => "BaseFolderPath";
 
         public string GetFileName()
         {
             return this.GetFileName(
-                new SourceFileMapRepository<ProjectBaseContentPageTemplate, GroupTemplateDataModel>(
+                new SourceFileMapRepository<ProjectBaseContentPageTemplate, PreSetupTemplateModel>(
                     new ProjectReaderRepository(new FileService())), DataModel.Template);
         }
     }
