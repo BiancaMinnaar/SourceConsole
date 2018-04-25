@@ -142,6 +142,10 @@
       <DependentUpon>ProjectBaseStackContentViewTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Templates\Framework\PartialClasses\ProjectBaseStackContentViewTemplatePartial.cs" />
+    <Compile Include="Templates\Framework\ProjectBaseViewControllerTemplate.cs">
+      <DependentUpon>ProjectBaseViewControllerTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Framework\PartialClasses\ProjectBaseViewControllerTemplatePartial.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Templates\" />
@@ -258,6 +262,10 @@
     <None Include="Templates\Framework\ProjectBaseStackContentViewTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ProjectBaseStackContentViewTemplate.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Framework\ProjectBaseViewControllerTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ProjectBaseViewControllerTemplate.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
