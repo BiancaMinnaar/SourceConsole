@@ -118,6 +118,10 @@
     </Compile>
     <Compile Include="Templates\Framework\PartialClasses\AppXamlTemplatePartial.cs" />
     <Compile Include="Templates\DataModel\PreSetupTemplateModel.cs" />
+    <Compile Include="Templates\Framework\CheckAndBalanceTemplate.cs">
+      <DependentUpon>CheckAndBalanceTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Framework\PartialClasses\CheckAndBalanceTemplatePartial.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Templates\" />
@@ -210,6 +214,10 @@
     <None Include="Templates\Framework\AppXamlTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>AppXamlTemplate.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Framework\CheckAndBalanceTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>CheckAndBalanceTemplate.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
