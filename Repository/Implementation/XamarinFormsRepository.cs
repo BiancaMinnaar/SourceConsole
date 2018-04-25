@@ -90,6 +90,11 @@ namespace SourceConsole.Repository.Implementation
                 {
                     obj.ProjectName = readerRepo.GetProjectName();
                 })();
+            WriteTemplateWithModelInjection<PreSetupTemplateModel, Templates.Framework.ProjectBaseContentViewTemplate>(
+                readerRepo, "ProjectBaseContentView", (obj) =>
+                {
+                    obj.ProjectName = readerRepo.GetProjectName();
+                })();
 
             //repo.WriteTemplateToFile(screenData, new SourceFileMapRepository<Templates.Framework.AppXamlTemplate, PreSetupTemplateModel>(readerRepo));
             //repo.WriteTemplateToFile(screenData, new SourceFileMapRepository<Templates.Framework.AppCodeBehindTemplate, PreSetupTemplateModel>(readerRepo));

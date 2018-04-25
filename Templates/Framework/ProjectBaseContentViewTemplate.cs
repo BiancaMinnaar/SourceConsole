@@ -15,7 +15,7 @@ namespace SourceConsole.Templates.Framework {
     using System;
     
     
-    public partial class ProjectBaseContentScrollViewTemplate : ProjectBaseContentScrollViewTemplateBase {
+    public partial class ProjectBaseContentViewTemplate : ProjectBaseContentViewTemplateBase {
         
         public virtual string TransformText() {
             this.GenerationEnvironment = null;
@@ -33,7 +33,7 @@ namespace SourceConsole.Templates.Framework {
             #line hidden
             
             #line 6 ""
-            this.Write(".Root.ViewController;\nusing ");
+            this.Write(".Root.ViewModel;\nusing ");
             
             #line default
             #line hidden
@@ -45,7 +45,7 @@ namespace SourceConsole.Templates.Framework {
             #line hidden
             
             #line 7 ""
-            this.Write(".Root.ViewModel;\nusing ");
+            this.Write(".Root.ViewController;\nusing ");
             
             #line default
             #line hidden
@@ -71,13 +71,13 @@ namespace SourceConsole.Templates.Framework {
             #line 11 ""
             this.Write(@".Root.View
 {
-    public abstract class ProjectBaseContentScrollView<T, M> : ScrollView
+    public abstract class ProjectBaseContentView<T, M> : Grid
         where T : ProjectBaseViewController<M>, new()
         where M : ProjectBaseViewModel
     {
         protected T _ViewController;
 
-        protected ProjectBaseContentScrollView()
+        protected ProjectBaseContentView()
         {
             _ViewController = new T();
             SetSVGCollection();
@@ -98,7 +98,7 @@ namespace SourceConsole.Templates.Framework {
         }
     }
     
-    public class ProjectBaseContentScrollViewTemplateBase {
+    public class ProjectBaseContentViewTemplateBase {
         
         private global::System.Text.StringBuilder builder;
         

@@ -130,6 +130,10 @@
       <DependentUpon>ProjectBaseContentScrollViewTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Templates\Framework\PartialClasses\ProjectBaseContentScrollViewTemplatePartial.cs" />
+    <Compile Include="Templates\Framework\ProjectBaseContentViewTemplate.cs">
+      <DependentUpon>ProjectBaseContentViewTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Framework\PartialClasses\ProjectBaseContentViewTemplatePartial.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Templates\" />
@@ -234,6 +238,10 @@
     <None Include="Templates\Framework\ProjectBaseContentScrollViewTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ProjectBaseContentScrollViewTemplate.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Framework\ProjectBaseContentViewTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ProjectBaseContentViewTemplate.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
