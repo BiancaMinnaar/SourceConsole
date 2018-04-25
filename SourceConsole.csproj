@@ -122,6 +122,10 @@
       <DependentUpon>CheckAndBalanceTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Templates\Framework\PartialClasses\CheckAndBalanceTemplatePartial.cs" />
+    <Compile Include="Templates\Framework\MasterModelTemplate.cs">
+      <DependentUpon>MasterModelTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Framework\PartialClasses\MasterModelTemplatePartial.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Templates\" />
@@ -218,6 +222,10 @@
     <None Include="Templates\Framework\CheckAndBalanceTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>CheckAndBalanceTemplate.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Framework\MasterModelTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>MasterModelTemplate.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
