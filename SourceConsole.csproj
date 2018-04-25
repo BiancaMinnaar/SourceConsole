@@ -134,6 +134,14 @@
       <DependentUpon>ProjectBaseContentViewTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Templates\Framework\PartialClasses\ProjectBaseContentViewTemplatePartial.cs" />
+    <Compile Include="Templates\Framework\ProjectBaseRepositoryTemplate.cs">
+      <DependentUpon>ProjectBaseRepositoryTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Framework\PartialClasses\ProjectBaseRepositoryTemplatePartial.cs" />
+    <Compile Include="Templates\Framework\ProjectBaseStackContentViewTemplate.cs">
+      <DependentUpon>ProjectBaseStackContentViewTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Framework\PartialClasses\ProjectBaseStackContentViewTemplatePartial.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Templates\" />
@@ -242,6 +250,14 @@
     <None Include="Templates\Framework\ProjectBaseContentViewTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ProjectBaseContentViewTemplate.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Framework\ProjectBaseRepositoryTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ProjectBaseRepositoryTemplate.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Framework\ProjectBaseStackContentViewTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ProjectBaseStackContentViewTemplate.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
