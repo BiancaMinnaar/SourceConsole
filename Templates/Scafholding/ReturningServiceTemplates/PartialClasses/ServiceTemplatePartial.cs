@@ -20,9 +20,12 @@ namespace SourceConsole.Templates.Scafholding.ReturningServiceTemplates
 
         public string GetFileName()
         {
-            return this.GetFileName(
-                new SourceFileMapRepository<ServiceTemplate, GroupTemplateDataModel>(
-                    new ProjectReaderRepository(new FileService())), DataModel.ServiceName);
+            var readerRepo = new ProjectReaderRepository(new FileService());
+            var mapRepo = new SourceFileMapRepository<ServiceTemplate, GroupTemplateDataModel>()
+            {
+                _ReaderRepo = readerRepo
+            };
+            return this.GetFileName(mapRepo, DataModel.Template);
         }
     }
 }

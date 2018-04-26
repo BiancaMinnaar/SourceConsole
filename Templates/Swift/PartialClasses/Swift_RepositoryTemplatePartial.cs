@@ -20,9 +20,12 @@ namespace SourceConsole.Templates.Swift
 
         public string GetFileName()
         {
-            return this.GetFileName(
-                new SourceFileMapRepository<Swift_RepositoryTemplate, TemplateDataModel>(
-                    new ProjectReaderRepository(new FileService())), DataModel.Template);
+            var readerRepo = new ProjectReaderRepository(new FileService());
+            var mapRepo = new SourceFileMapRepository<Swift_RepositoryTemplate, TemplateDataModel>()
+            {
+                _ReaderRepo = readerRepo
+            };
+            return this.GetFileName(mapRepo, DataModel.Template);
         }
     }
 }

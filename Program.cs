@@ -11,9 +11,13 @@ namespace SourceConsole
     {
         public static void Main(string[] args)
         {
-            var MainRepo = new XamarinFormsRepository();
+            var readerRepo = new ProjectReaderRepository(new FileService());
+            var MainRepo = new XamarinFormsScreenGeneratorRepository(
+                new FileService(), 
+                new SimpleCSharpProjectFactory(readerRepo),
+                readerRepo);
             //MainRepo.GenerateXamarinScreen();
-            MainRepo.GenerateXamarinPreSetup();
+            MainRepo.RunSteps();
         }
     }
 }

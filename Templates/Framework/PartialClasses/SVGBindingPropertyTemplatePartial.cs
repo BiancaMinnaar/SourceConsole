@@ -20,9 +20,12 @@ namespace SourceConsole.Templates.Framework
 
         public string GetFileName()
         {
-            return this.GetFileName(
-                new SourceFileMapRepository<SVGBindingPropertyTemplate, PreSetupTemplateModel>(
-                    new ProjectReaderRepository(new FileService())), DataModel.Template);
+            var readerRepo = new ProjectReaderRepository(new FileService());
+            var mapRepo = new SourceFileMapRepository<SVGBindingPropertyTemplate, PreSetupTemplateModel>()
+            {
+                _ReaderRepo = readerRepo
+            };
+            return this.GetFileName(mapRepo, DataModel.Template);
         }
     }
 }

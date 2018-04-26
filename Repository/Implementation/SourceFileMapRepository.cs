@@ -9,11 +9,10 @@ namespace SourceConsole.Repository.Implementation
         where T : ITemplate<M>
         where M : TemplateDataModel
     {
-        IProjectReaderRepository _ReaderRepo;
+        public IProjectReaderRepository _ReaderRepo { get; set; }
 
-        public SourceFileMapRepository(IProjectReaderRepository readerRepo)
+        public SourceFileMapRepository()
         {
-            _ReaderRepo = readerRepo;
         }
 
         public SourceEnum GetSourceEnumFromTempate(T template)
@@ -36,7 +35,9 @@ namespace SourceConsole.Repository.Implementation
 
         public string GetSourcePath(T template)
         {
-            return _ReaderRepo.GetTemplatePath(template.TemplateResourceKey);
+            if (_ReaderRepo != null)
+                return _ReaderRepo.GetTemplatePath(template.TemplateResourceKey);
+            else throw new NullReferenceException("Set ReaderRepo");
         }
     }
 }

@@ -24,7 +24,7 @@ namespace SourceConsole.Factory
                 case 1:
                     var noExtension = template.FullProjectFileName.Substring(0, template.FullProjectFileName.LastIndexOf('.'));
                     _ProjectReader.InsertXamlFileReferenceInProjectFile(
-                        noExtension + ".cs",
+                        noExtension + ".xaml.cs",
                         template.GetFileName());
                     _ProjectReader.InsertXamlEmbededResourceInProjectFile(template.FullProjectFileName);
                     break;

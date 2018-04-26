@@ -146,6 +146,16 @@
       <DependentUpon>ProjectBaseViewControllerTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Templates\Framework\PartialClasses\ProjectBaseViewControllerTemplatePartial.cs" />
+    <Compile Include="Templates\Framework\ProjectBaseViewModelTemplate.cs">
+      <DependentUpon>ProjectBaseViewModelTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Framework\PartialClasses\ProjectBaseViewModelTemplatePartial.cs" />
+    <Compile Include="Templates\Framework\SVGBindingPropertyTemplate.cs">
+      <DependentUpon>SVGBindingPropertyTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Framework\PartialClasses\SVGBindingPropertyTemplatePartial.cs" />
+    <Compile Include="Repository\Implementation\XamarinFormsScreenGeneratorRepository.cs" />
+    <Compile Include="Factory\TemplateInstanceFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Templates\" />
@@ -266,6 +276,14 @@
     <None Include="Templates\Framework\ProjectBaseViewControllerTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ProjectBaseViewControllerTemplate.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Framework\ProjectBaseViewModelTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ProjectBaseViewModelTemplate.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Framework\SVGBindingPropertyTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>SVGBindingPropertyTemplate.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
