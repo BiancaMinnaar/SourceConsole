@@ -25,7 +25,7 @@ namespace SourceConsole.Templates.Scafholding.ReturningServiceTemplates
             {
                 _ReaderRepo = readerRepo
             };
-            return this.GetFileName(mapRepo, DataModel.Template);
+            return this.GetFileName(mapRepo, DataModel.ServiceName);
         }
     }
 }

@@ -21,7 +21,7 @@ namespace SourceConsole
         public ProjectReaderRepository(IFileService fileService)
         {
 			_FileService = fileService;
-            configJson = _FileService.ReadFromFile("../../Data/Project.Config");
+            configJson = _FileService.ReadFromFile("Project.Config");
             _Model = Newtonsoft.Json.JsonConvert.DeserializeAnonymousType<ProjectModel>(configJson, _Model);
         }
 
