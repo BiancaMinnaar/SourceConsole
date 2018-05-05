@@ -7,12 +7,14 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Acr.UserDialogs;
+using BasePCL.Networking;
 using CorePCL;
 using Newtonsoft.Json;
-using <#= DataModel.ProjectName #>.Trunk.Repository;
-using <#= DataModel.ProjectName #>.Trunk.Repository.Implementation;
-using <#= DataModel.ProjectName #>.Root.ViewModel;
 using <#= DataModel.ProjectName #>.Interface.Repository;
+using <#= DataModel.ProjectName #>.Root.ViewModel;
+using <#= DataModel.ProjectName #>.Trunk.Repository.Implementation;
+using Newtonsoft.Json;
+using Xamarin.Forms;
 
 namespace <#= DataModel.ProjectName #>.Root.ViewController
 {
@@ -24,6 +26,7 @@ namespace <#= DataModel.ProjectName #>.Root.ViewController
         public bool HasSpecificResponse { get; set; }
 
         protected ProjectBaseViewController()
+            :base(new RestService(DependencyService.Get<INetworkInteraction>()))
         {
             _MasterRepo = MasterRepository.MasterRepo;
 

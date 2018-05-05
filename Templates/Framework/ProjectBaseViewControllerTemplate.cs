@@ -22,19 +22,8 @@ namespace SourceConsole.Templates.Framework {
             
             #line 6 ""
             this.Write("using System;\nusing System.Collections.Generic;\nusing System.Diagnostics;\nusing A" +
-                    "cr.UserDialogs;\nusing CorePCL;\nusing Newtonsoft.Json;\nusing ");
-            
-            #line default
-            #line hidden
-            
-            #line 12 ""
-            this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.ProjectName ));
-            
-            #line default
-            #line hidden
-            
-            #line 12 ""
-            this.Write(".Trunk.Repository;\nusing ");
+                    "cr.UserDialogs;\nusing BasePCL.Networking;\nusing CorePCL;\nusing Newtonsoft.Json;\n" +
+                    "using ");
             
             #line default
             #line hidden
@@ -46,7 +35,7 @@ namespace SourceConsole.Templates.Framework {
             #line hidden
             
             #line 13 ""
-            this.Write(".Trunk.Repository.Implementation;\nusing ");
+            this.Write(".Interface.Repository;\nusing ");
             
             #line default
             #line hidden
@@ -70,81 +59,83 @@ namespace SourceConsole.Templates.Framework {
             #line hidden
             
             #line 15 ""
-            this.Write(".Interface.Repository;\n\nnamespace ");
+            this.Write(".Trunk.Repository.Implementation;\nusing Newtonsoft.Json;\nusing Xamarin.Forms;\n\nna" +
+                    "mespace ");
             
             #line default
             #line hidden
             
-            #line 17 ""
+            #line 19 ""
             this.Write(this.ToStringHelper.ToStringWithCulture( DataModel.ProjectName ));
             
             #line default
             #line hidden
             
-            #line 17 ""
+            #line 19 ""
             this.Write(".Root.ViewController\n{\n    public abstract class ProjectBaseViewController<T> : B" +
                     "aseViewController<T>\n        where T : ProjectBaseViewModel\n    {\n        public" +
                     " IMasterRepository _MasterRepo { get; set; }\n        protected List<BrokenRule> " +
                     "BrokenRules;\n        public bool HasSpecificResponse { get; set; }\n\n        prot" +
-                    "ected ProjectBaseViewController()\n        {\n            _MasterRepo = MasterRepo" +
-                    "sitory.MasterRepo;\n\n            HasSpecificResponse = false;\n            BrokenR" +
-                    "ules = new List<BrokenRule>();\n            base.NetworkInteractionSucceeded += (" +
-                    "sender, e) =>\n            {\n                base._RawBytes = e.RawBytes;\n       " +
-                    "         base._ResponseContent = e.NetworkResponseContent;\n            };\n\n     " +
-                    "       base.NetworkInteractionFailed += (sender, e) =>\n            {\n           " +
-                    "     string mys = e.NetworkCallMessage;\n                UserDialogs.Instance.Toa" +
-                    "st(new ToastConfig(e.NetworkCallMessage).SetDuration(TimeSpan.FromSeconds(5)).Se" +
-                    "tBackgroundColor(System.Drawing.Color.FromArgb(193, 57, 43)));\n            };\n  " +
-                    "          base.NetworkCallInitialised += (sender, e) =>\n            {\n          " +
-                    "      UserDialogs.Instance.ShowLoading();\n            };\n            base.Networ" +
-                    "kCallCompleted += (sender, e) =>\n            {\n                UserDialogs.Insta" +
-                    "nce.HideLoading();\n            };\n        }\n\n        /// <summary>\n        /// S" +
-                    "erializes the object.\n        /// </summary>\n        /// <param name=\"objectToSe" +
-                    "rialize\">The object to serialize.</param>\n        /// <returns></returns>\n      " +
-                    "  protected override string SerializeObject(T objectToSerialize)\n        {\n     " +
-                    "       return JsonConvert.SerializeObject(objectToSerialize);\n        }\n\n       " +
-                    " /// <summary>\n        /// Serializes the type of the object with.\n        /// <" +
-                    "/summary>\n        /// <typeparam name=\"G\"></typeparam>\n        /// <param name=\"" +
-                    "objectToSerialize\">The object to serialize.</param>\n        /// <returns></retur" +
-                    "ns>\n        public string SerializeObjectWithType<G>(G objectToSerialize)\n      " +
-                    "  {\n            return JsonConvert.SerializeObject(objectToSerialize);\n        }" +
-                    "\n\n        /// <summary>\n        /// Deserializes the object.\n        /// </summa" +
-                    "ry>\n        /// <typeparam name=\"G\"></typeparam>\n        /// <param name=\"string" +
-                    "ToDeserialize\">The string to deserialize.</param>\n        /// <returns></returns" +
-                    ">\n        protected G DeserializeObject<G>(string stringToDeserialize)\n        {" +
-                    "\n            var returnObject = JsonConvert.DeserializeObject<G>(stringToDeseria" +
-                    "lize);\n            Debug.WriteLine(stringToDeserialize);\n            return retu" +
-                    "rnObject;\n        }\n\n        /// <summary>\n        /// Shows the message.\n      " +
-                    "  /// </summary>\n        /// <param name=\"message\">The message.</param>\n        " +
-                    "public void ShowMessage(string message)\n        {\n            try\n            {\n" +
-                    "                var toastOptions = new ToastConfig(message);\n                toa" +
-                    "stOptions.SetDuration(TimeSpan.FromSeconds(5));\n                toastOptions.Set" +
-                    "BackgroundColor(System.Drawing.Color.Red);\n                toastOptions.SetPosit" +
-                    "ion(ToastPosition.Bottom);\n                toastOptions.SetMessageTextColor(Syst" +
-                    "em.Drawing.Color.White);\n\n                UserDialogs.Instance.Toast(message, Ti" +
-                    "meSpan.FromSeconds(5));\n\n            }\n            catch (Exception ex)\n        " +
-                    "    {\n                Debug.WriteLine(ex.Message);\n            }\n        }\n\n    " +
-                    "    public void ShowError(string message)\n        {\n            try\n            " +
-                    "{\n                var toastOptions = new ToastConfig(message);\n                t" +
-                    "oastOptions.SetDuration(TimeSpan.FromSeconds(5));\n                toastOptions.S" +
-                    "etBackgroundColor(System.Drawing.Color.Red);\n                toastOptions.SetPos" +
-                    "ition(ToastPosition.Bottom);\n                toastOptions.SetMessageTextColor(Sy" +
-                    "stem.Drawing.Color.White);\n\n                UserDialogs.Instance.Toast(toastOpti" +
-                    "ons);\n            }\n            catch (Exception ex)\n            {\n             " +
-                    "   Debug.WriteLine(ex.Message);\n            }\n        }\n\n        /// <summary>\n " +
-                    "       /// Validates the broken rules.\n        /// </summary>\n        /// <retur" +
-                    "ns></returns>\n        protected string ValidateBrokenRules()\n        {\n         " +
-                    "   foreach (BrokenRule check in this.BrokenRules)\n            {\n                " +
-                    "if (!check.Check())\n                    return check.Balance;\n            }\n\n   " +
-                    "         return \"\";\n        }\n\n        public abstract void SetRepositories();\n\n" +
-                    "        /// <summary>\n        /// Sets the service network online.\n        /// <" +
-                    "/summary>\n        protected virtual void SetServiceNetworkOnline()\n        {\n   " +
-                    "     }\n\n        /// <summary>\n        /// Sets the service network offline.\n    " +
-                    "    /// </summary>\n        protected virtual void SetServiceNetworkOffline()\n   " +
-                    "     {\n        }\n\n        private void SetServiceNetworkAccess(bool isConnected)" +
-                    "\n        {\n            if (isConnected)\n                SetServiceNetworkOnline(" +
-                    ");\n            else\n                SetServiceNetworkOffline();\n        }\n    }\n" +
-                    "}\n\n");
+                    "ected ProjectBaseViewController()\n            :base(new RestService(DependencySe" +
+                    "rvice.Get<INetworkInteraction>()))\n        {\n            _MasterRepo = MasterRep" +
+                    "ository.MasterRepo;\n\n            HasSpecificResponse = false;\n            Broken" +
+                    "Rules = new List<BrokenRule>();\n            base.NetworkInteractionSucceeded += " +
+                    "(sender, e) =>\n            {\n                base._RawBytes = e.RawBytes;\n      " +
+                    "          base._ResponseContent = e.NetworkResponseContent;\n            };\n\n    " +
+                    "        base.NetworkInteractionFailed += (sender, e) =>\n            {\n          " +
+                    "      string mys = e.NetworkCallMessage;\n                UserDialogs.Instance.To" +
+                    "ast(new ToastConfig(e.NetworkCallMessage).SetDuration(TimeSpan.FromSeconds(5)).S" +
+                    "etBackgroundColor(System.Drawing.Color.FromArgb(193, 57, 43)));\n            };\n " +
+                    "           base.NetworkCallInitialised += (sender, e) =>\n            {\n         " +
+                    "       UserDialogs.Instance.ShowLoading();\n            };\n            base.Netwo" +
+                    "rkCallCompleted += (sender, e) =>\n            {\n                UserDialogs.Inst" +
+                    "ance.HideLoading();\n            };\n        }\n\n        /// <summary>\n        /// " +
+                    "Serializes the object.\n        /// </summary>\n        /// <param name=\"objectToS" +
+                    "erialize\">The object to serialize.</param>\n        /// <returns></returns>\n     " +
+                    "   protected override string SerializeObject(T objectToSerialize)\n        {\n    " +
+                    "        return JsonConvert.SerializeObject(objectToSerialize);\n        }\n\n      " +
+                    "  /// <summary>\n        /// Serializes the type of the object with.\n        /// " +
+                    "</summary>\n        /// <typeparam name=\"G\"></typeparam>\n        /// <param name=" +
+                    "\"objectToSerialize\">The object to serialize.</param>\n        /// <returns></retu" +
+                    "rns>\n        public string SerializeObjectWithType<G>(G objectToSerialize)\n     " +
+                    "   {\n            return JsonConvert.SerializeObject(objectToSerialize);\n        " +
+                    "}\n\n        /// <summary>\n        /// Deserializes the object.\n        /// </summ" +
+                    "ary>\n        /// <typeparam name=\"G\"></typeparam>\n        /// <param name=\"strin" +
+                    "gToDeserialize\">The string to deserialize.</param>\n        /// <returns></return" +
+                    "s>\n        protected G DeserializeObject<G>(string stringToDeserialize)\n        " +
+                    "{\n            var returnObject = JsonConvert.DeserializeObject<G>(stringToDeseri" +
+                    "alize);\n            Debug.WriteLine(stringToDeserialize);\n            return ret" +
+                    "urnObject;\n        }\n\n        /// <summary>\n        /// Shows the message.\n     " +
+                    "   /// </summary>\n        /// <param name=\"message\">The message.</param>\n       " +
+                    " public void ShowMessage(string message)\n        {\n            try\n            {" +
+                    "\n                var toastOptions = new ToastConfig(message);\n                to" +
+                    "astOptions.SetDuration(TimeSpan.FromSeconds(5));\n                toastOptions.Se" +
+                    "tBackgroundColor(System.Drawing.Color.Red);\n                toastOptions.SetPosi" +
+                    "tion(ToastPosition.Bottom);\n                toastOptions.SetMessageTextColor(Sys" +
+                    "tem.Drawing.Color.White);\n\n                UserDialogs.Instance.Toast(message, T" +
+                    "imeSpan.FromSeconds(5));\n\n            }\n            catch (Exception ex)\n       " +
+                    "     {\n                Debug.WriteLine(ex.Message);\n            }\n        }\n\n   " +
+                    "     public void ShowError(string message)\n        {\n            try\n           " +
+                    " {\n                var toastOptions = new ToastConfig(message);\n                " +
+                    "toastOptions.SetDuration(TimeSpan.FromSeconds(5));\n                toastOptions." +
+                    "SetBackgroundColor(System.Drawing.Color.Red);\n                toastOptions.SetPo" +
+                    "sition(ToastPosition.Bottom);\n                toastOptions.SetMessageTextColor(S" +
+                    "ystem.Drawing.Color.White);\n\n                UserDialogs.Instance.Toast(toastOpt" +
+                    "ions);\n            }\n            catch (Exception ex)\n            {\n            " +
+                    "    Debug.WriteLine(ex.Message);\n            }\n        }\n\n        /// <summary>\n" +
+                    "        /// Validates the broken rules.\n        /// </summary>\n        /// <retu" +
+                    "rns></returns>\n        protected string ValidateBrokenRules()\n        {\n        " +
+                    "    foreach (BrokenRule check in this.BrokenRules)\n            {\n               " +
+                    " if (!check.Check())\n                    return check.Balance;\n            }\n\n  " +
+                    "          return \"\";\n        }\n\n        public abstract void SetRepositories();\n" +
+                    "\n        /// <summary>\n        /// Sets the service network online.\n        /// " +
+                    "</summary>\n        protected virtual void SetServiceNetworkOnline()\n        {\n  " +
+                    "      }\n\n        /// <summary>\n        /// Sets the service network offline.\n   " +
+                    "     /// </summary>\n        protected virtual void SetServiceNetworkOffline()\n  " +
+                    "      {\n        }\n\n        private void SetServiceNetworkAccess(bool isConnected" +
+                    ")\n        {\n            if (isConnected)\n                SetServiceNetworkOnline" +
+                    "();\n            else\n                SetServiceNetworkOffline();\n        }\n    }" +
+                    "\n}\n\n");
             
             #line default
             #line hidden
