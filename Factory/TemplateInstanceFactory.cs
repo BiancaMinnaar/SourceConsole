@@ -39,6 +39,12 @@ namespace SourceConsole.Factory
             templateList.Add(new T() {DataModel=_model});
         }
 
+        public void Add<T>(M model)
+            where T : ITemplate<M>, new()
+        {
+            templateList.Add(new T() { DataModel = model });
+        }
+
         public List<ITemplate<M>> ToList()
         {
             return templateList.ToList();

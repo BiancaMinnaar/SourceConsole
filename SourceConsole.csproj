@@ -6,8 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="GeneratorBaseBonsai" Version="1.0.0" />
     <PackageReference Include="System.CodeDom" Version="4.4.0" />
+    <PackageReference Include="GeneratorBaseBonsai" Version="1.0.1" />
   </ItemGroup>
   
   <ItemGroup>

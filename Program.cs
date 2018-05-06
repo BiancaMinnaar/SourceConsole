@@ -13,6 +13,7 @@ namespace SourceConsole
         {
             var readerRepo = new ProjectReaderRepository(new FileService());
             var MainRepo = new XamarinFormsScreenGeneratorRepository(
+            //var MainRepo = new BonsaiFrameworkRepository(
                 new FileService(), 
                 new SimpleCSharpProjectFactory(readerRepo),
                 readerRepo);

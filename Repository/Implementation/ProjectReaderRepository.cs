@@ -3,6 +3,7 @@ using System.Xml;
 using CorePCL.Generation.Data;
 using CorePCL.Generation.Repository;
 using CorePCL.Generation.Service;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using SourceConsole.Repository.Implementation;
 
@@ -21,7 +22,7 @@ namespace SourceConsole
         public ProjectReaderRepository(IFileService fileService)
         {
 			_FileService = fileService;
-            configJson = _FileService.ReadFromFile("Project.Config");
+            configJson = _FileService.ReadFromFile("Data/Project.Config");
             _Model = Newtonsoft.Json.JsonConvert.DeserializeAnonymousType<ProjectModel>(configJson, _Model);
         }
 
