@@ -1,7 +1,4 @@
-﻿using System;
-using CorePCL.Generation.Repository;
-using CorePCL.Generation.Repository.Implementation;
-using Templater.Factory;
+﻿using Templater.Factory;
 using Templater.Repository.Implementation;
 using Templater.Service.Implementation;
 
