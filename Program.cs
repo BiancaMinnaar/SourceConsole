@@ -1,9 +1,9 @@
 ﻿using System;
 using CorePCL.Generation.Repository;
 using CorePCL.Generation.Repository.Implementation;
-using SourceConsole.Factory;
-using SourceConsole.Repository.Implementation;
-using SourceConsole.Templates.DataModel;
+using Templater.Factory;
+using Templater.Repository.Implementation;
+using Templater.Service.Implementation;
 
 namespace SourceConsole
 {

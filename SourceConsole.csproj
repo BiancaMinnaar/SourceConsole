@@ -6,211 +6,26 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.CodeDom" Version="4.4.0" />
-    <PackageReference Include="GeneratorBaseBonsai" Version="1.0.1" />
-  </ItemGroup>
-  
-  <ItemGroup>
     <Folder Include="Data\" />
-    <Folder Include="Factory\" />
     <Folder Include="Repository\" />
     <Folder Include="Service\" />
     <Folder Include="Templates\" />
     <Folder Include="Templates\DataModel\" />
-    <Folder Include="Templates\Framework\" />
-    <Folder Include="Templates\Scafholding\" />
-    <Folder Include="Templates\Framework\PartialClasses\" />
-    <Folder Include="Templates\Scafholding\NormalTemplates\" />
-    <Folder Include="Templates\Scafholding\ReturningServiceTemplates\" />
-    <Folder Include="Templates\Scafholding\NormalTemplates\PartialClasses\" />
-    <Folder Include="Templates\Scafholding\ReturningServiceTemplates\PartialClasses\" />
     <Folder Include="Repository\Implementation\" />
     <Folder Include="Service\Implementation\" />
+    <Folder Include="Templates\Custom\" />
+    <Folder Include="Templates\Custom\PartialClasses\" />
   </ItemGroup>
   <ItemGroup>
-    <None Update="Templates\Framework\AppCodeBehindTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>AppCodeBehindTemplate.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Framework\AppXamlTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>AppXamlTemplate.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Framework\CheckAndBalanceTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>CheckAndBalanceTemplate.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Framework\MasterModelTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>MasterModelTemplate.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Framework\ProjectBaseContentPageTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ProjectBaseContentPageTemplate.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Framework\ProjectBaseContentScrollViewTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ProjectBaseContentScrollViewTemplate.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Framework\ProjectBaseContentViewTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ProjectBaseContentViewTemplate.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Framework\ProjectBaseRepositoryTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ProjectBaseRepositoryTemplate.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Framework\ProjectBaseStackContentViewTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ProjectBaseStackContentViewTemplate.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Framework\ProjectBaseViewControllerTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ProjectBaseViewControllerTemplate.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Framework\ProjectBaseViewModelTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ProjectBaseViewModelTemplate.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Framework\SVGBindingPropertyTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>SVGBindingPropertyTemplate.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Scafholding\NormalTemplates\RepositoryInterfaceTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>RepositoryInterfaceTemplate.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Scafholding\NormalTemplates\RepositoryTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>RepositoryTemplate.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Scafholding\NormalTemplates\ServiceInterfaceTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ServiceInterfaceTemplate.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Scafholding\NormalTemplates\ServiceTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ServiceTemplate.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Scafholding\NormalTemplates\ViewCodeBehindTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ViewCodeBehindTemplate.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Scafholding\NormalTemplates\ViewControllerInterfaceTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ViewControllerInterfaceTemplate.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Scafholding\NormalTemplates\ViewControllerTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ViewControllerTemplate.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Scafholding\NormalTemplates\ViewModelTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ViewModelTemplate.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Scafholding\NormalTemplates\ViewTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ViewTemplate.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Scafholding\ReturningServiceTemplates\RepositoryInterfaceTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>RepositoryInterfaceTemplate.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Scafholding\ReturningServiceTemplates\RepositoryTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>RepositoryTemplate.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Scafholding\ReturningServiceTemplates\ServiceInterfaceTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ServiceInterfaceTemplate.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Scafholding\ReturningServiceTemplates\ServiceTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ServiceTemplate.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Scafholding\ReturningServiceTemplates\ViewControllerTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ViewControllerTemplate.cs</LastGenOutput>
-    </None>
+    <None Remove="Templates\Framework\AppCodeBehindTemplate.tt" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Templates\Framework\AppCodeBehindTemplate.cs">
-      <DependentUpon>AppCodeBehindTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Templates\Framework\AppXamlTemplate.cs">
-      <DependentUpon>AppXamlTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Templates\Framework\CheckAndBalanceTemplate.cs">
-      <DependentUpon>CheckAndBalanceTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Templates\Framework\MasterModelTemplate.cs">
-      <DependentUpon>MasterModelTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Templates\Framework\ProjectBaseContentPageTemplate.cs">
-      <DependentUpon>ProjectBaseContentPageTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Templates\Framework\ProjectBaseContentScrollViewTemplate.cs">
-      <DependentUpon>ProjectBaseContentScrollViewTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Templates\Framework\ProjectBaseContentViewTemplate.cs">
-      <DependentUpon>ProjectBaseContentViewTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Templates\Framework\ProjectBaseRepositoryTemplate.cs">
-      <DependentUpon>ProjectBaseRepositoryTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Templates\Framework\ProjectBaseStackContentViewTemplate.cs">
-      <DependentUpon>ProjectBaseStackContentViewTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Templates\Framework\ProjectBaseViewControllerTemplate.cs">
-      <DependentUpon>ProjectBaseViewControllerTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Templates\Framework\ProjectBaseViewModelTemplate.cs">
-      <DependentUpon>ProjectBaseViewModelTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Templates\Framework\SVGBindingPropertyTemplate.cs">
-      <DependentUpon>SVGBindingPropertyTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Templates\Scafholding\NormalTemplates\RepositoryInterfaceTemplate.cs">
-      <DependentUpon>RepositoryInterfaceTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Templates\Scafholding\NormalTemplates\RepositoryTemplate.cs">
-      <DependentUpon>RepositoryTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Templates\Scafholding\NormalTemplates\ServiceInterfaceTemplate.cs">
-      <DependentUpon>ServiceInterfaceTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Templates\Scafholding\NormalTemplates\ServiceTemplate.cs">
-      <DependentUpon>ServiceTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Templates\Scafholding\NormalTemplates\ViewCodeBehindTemplate.cs">
-      <DependentUpon>ViewCodeBehindTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Templates\Scafholding\NormalTemplates\ViewControllerInterfaceTemplate.cs">
-      <DependentUpon>ViewControllerInterfaceTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Templates\Scafholding\NormalTemplates\ViewControllerTemplate.cs">
-      <DependentUpon>ViewControllerTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Templates\Scafholding\NormalTemplates\ViewModelTemplate.cs">
-      <DependentUpon>ViewModelTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Templates\Scafholding\NormalTemplates\ViewTemplate.cs">
-      <DependentUpon>ViewTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Templates\Scafholding\ReturningServiceTemplates\RepositoryInterfaceTemplate.cs">
-      <DependentUpon>RepositoryInterfaceTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Templates\Scafholding\ReturningServiceTemplates\RepositoryTemplate.cs">
-      <DependentUpon>RepositoryTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Templates\Scafholding\ReturningServiceTemplates\ServiceInterfaceTemplate.cs">
-      <DependentUpon>ServiceInterfaceTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Templates\Scafholding\ReturningServiceTemplates\ServiceTemplate.cs">
-      <DependentUpon>ServiceTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Templates\Scafholding\ReturningServiceTemplates\ViewControllerTemplate.cs">
-      <DependentUpon>ViewControllerTemplate.tt</DependentUpon>
-    </Compile>
+    <Compile Remove="Factory\SimpleCSharpProjectFactory.cs" />
+    <Compile Remove="Factory\TemplateInstanceFactory.cs" />
+    <Compile Remove="Templates\Framework\AppCodeBehindTemplate.cs" />
+    <Compile Remove="Templates\Scafholding\NormalTemplates\PartialClasses\RepositoryInterfaceTemplatePartial.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="TemplaterBonsai" Version="1.0.0" />
   </ItemGroup>
 </Project>
