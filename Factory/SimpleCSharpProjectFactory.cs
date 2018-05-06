@@ -16,12 +16,12 @@ namespace SourceConsole.Factory
 
         public void UpdateProjectFileWithFileReference<M>(ITemplate<M> template) where M : TemplateDataModel
         {
-            switch ((int)template.TemplateType)
+            switch (template.TemplateType)
             {
-                case 0:
+                case CorePCL.Generation.Templates.PartialClasses.TemplateEnum.Normal:
                     _ProjectReader.InsertFileReferenceInProjectFile(template.FullProjectFileName);
                     break;
-                case 1:
+                case CorePCL.Generation.Templates.PartialClasses.TemplateEnum.Xaml:
                     var noExtension = template.FullProjectFileName.Substring(0, template.FullProjectFileName.LastIndexOf('.'));
                     _ProjectReader.InsertXamlFileReferenceInProjectFile(
                         noExtension + ".xaml.cs",
