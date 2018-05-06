@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using CorePCL.Generation.DataModel;
 using CorePCL.Generation.Repository;
 using CorePCL.Generation.Templates;
-using SourceConsole.Repository.Implementation;
 
 namespace SourceConsole.Factory
 {

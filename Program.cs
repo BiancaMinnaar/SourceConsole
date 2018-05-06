@@ -17,7 +17,6 @@ namespace SourceConsole
                 new FileService(), 
                 new SimpleCSharpProjectFactory(readerRepo),
                 readerRepo);
-            //MainRepo.GenerateXamarinScreen();
             MainRepo.RunSteps();
         }
     }
