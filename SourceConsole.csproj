@@ -20,12 +20,6 @@
     <None Remove="Templates\Framework\AppCodeBehindTemplate.tt" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Remove="Factory\SimpleCSharpProjectFactory.cs" />
-    <Compile Remove="Factory\TemplateInstanceFactory.cs" />
-    <Compile Remove="Templates\Framework\AppCodeBehindTemplate.cs" />
-    <Compile Remove="Templates\Scafholding\NormalTemplates\PartialClasses\RepositoryInterfaceTemplatePartial.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="TemplaterBonsai" Version="1.0.0" />
+    <PackageReference Include="TemplaterBonsai" Version="1.0.2" />
   </ItemGroup>
 </Project>
