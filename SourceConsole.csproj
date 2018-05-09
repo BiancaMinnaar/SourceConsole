@@ -17,7 +17,6 @@
     <Folder Include="Templates\Custom\PartialClasses\" />
   </ItemGroup>
   <ItemGroup>
-    <None Remove="Templates\Framework\AppCodeBehindTemplate.tt" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="TemplaterBonsai" Version="1.0.3" />
