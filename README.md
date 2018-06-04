@@ -16,7 +16,7 @@ You may however decide to write a custom frontend for your templates by adding a
 4. Download the [SourceConsole](https://github.com/BiancaMinnaar/SourceConsole) project.
 5. Be mindfull where you place the SourceConsole, It will create a new Solution structure around itself to house your new [Xamarin forms](https://www.visualstudio.com/xamarin/) Project.
 6. Follow the first four lessons and learn how to use Bonsai
-            https://www.linkedin.com/pulse/bonsai-lesson-1-bianca-minnaar/
-            https://www.linkedin.com/pulse/bonsai-lesson-2-bianca-minnaar/
-            https://www.linkedin.com/pulse/bonsai-lesson-3-bianca-minnaar/
-            https://www.linkedin.com/pulse/bonsai-lesson-4-bianca-minnaar/
+    https://www.linkedin.com/pulse/bonsai-lesson-1-bianca-minnaar/
+    https://www.linkedin.com/pulse/bonsai-lesson-2-bianca-minnaar/
+    https://www.linkedin.com/pulse/bonsai-lesson-3-bianca-minnaar/
+    https://www.linkedin.com/pulse/bonsai-lesson-4-bianca-minnaar/
