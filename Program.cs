@@ -1,7 +1,6 @@
 ﻿using Templater.Factory;
 using Templater.Repository.Implementation;
 using Templater.Service.Implementation;
-using TemplaterBonsai.Repository.Implementation;
 
 namespace SourceConsole
 {
