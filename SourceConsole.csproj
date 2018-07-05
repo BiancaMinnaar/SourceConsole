@@ -19,6 +19,6 @@
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="TemplaterBonsai" Version="1.2.4" />
+    <PackageReference Include="TemplaterBonsai" Version="1.2.5" />
   </ItemGroup>
 </Project>
