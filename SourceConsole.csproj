@@ -15,10 +15,14 @@
     <Folder Include="Service\Implementation\" />
     <Folder Include="Templates\Custom\" />
     <Folder Include="Templates\Custom\PartialClasses\" />
+    <Folder Include="Data\Project.Config" />
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="TemplaterBonsai" Version="1.2.8" />
+    <PackageReference Include="TemplaterBonsai" Version="1.2.9" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Data\Project.Config" />
   </ItemGroup>
 </Project>
