@@ -19,8 +19,6 @@
     <PackageReference Include="TemplaterBonsai" Version="1.2.9" />
   </ItemGroup>
   <ItemGroup>
-    <None Update="Data\Project.Config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <Content Include="Data\Project.Config" />
   </ItemGroup>
 </Project>
