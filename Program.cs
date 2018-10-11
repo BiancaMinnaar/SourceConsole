@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using MobileBonsai.Generation.Repository.Implementation;
 using Templater.Factory;
 using Templater.Repository.Implementation;
 using Templater.Service.Implementation;
@@ -38,8 +36,7 @@ namespace SourceConsole
                 if (arg.Equals("-init", System.StringComparison.OrdinalIgnoreCase))
                 {
                     MainRepo = new BonsaiFrameworkRepository(
-                    new FileService(), new SimpleCSharpProjectFactory(readerRepo), readerRepo);
-                    Console.WriteLine(str["-viewname"]);
+                        new FileService(), new SimpleCSharpProjectFactory(readerRepo), readerRepo);
                 }
                 if (arg.Equals("-view", System.StringComparison.OrdinalIgnoreCase))
                 {
