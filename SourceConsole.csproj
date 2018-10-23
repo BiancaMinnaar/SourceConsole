@@ -14,11 +14,12 @@
     <Folder Include="Service\Implementation\" />
     <Folder Include="Templates\Custom\" />
     <Folder Include="Templates\Custom\PartialClasses\" />
+    <Folder Include="Factory\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\Project.Config" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="TemplaterBonsai" Version="2.2.2" />
+    <PackageReference Include="TemplaterBonsai" Version="2.3.2" />
   </ItemGroup>
 </Project>
