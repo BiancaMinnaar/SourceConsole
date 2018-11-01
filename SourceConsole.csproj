@@ -20,6 +20,6 @@
     <Content Include="Data\Project.Config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Templater\TemplaterBonsai.csproj" />
+    <PackageReference Include="TemplaterBonsai" Version="2.5.0" />
   </ItemGroup>
 </Project>
