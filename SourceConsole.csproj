@@ -3,6 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <ReleaseVersion>4.0.1</ReleaseVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -20,8 +21,6 @@
     <Content Include="Data\Project.Config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\templaterbonsai\TemplaterBonsai.csproj" />
-    <ProjectReference Include="..\basebonsai\BaseBonsai.csproj" />
-    <ProjectReference Include="..\mobilebonsai\MobileBonsai.csproj" />
+    <PackageReference Include="TemplaterBonsai" Version="4.0.1" />
   </ItemGroup>
 </Project>
