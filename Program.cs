@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Linq;
 using Templater.Repository.Implementation;
 using Templater.Service.Implementation;
@@ -27,7 +28,8 @@ namespace SourceConsole
             new ProjectReaderRepository(new FileService()), args.ToList()
                 //You need a licence to call the paid functions.
                 //Please email me @ bianca@bonsaisoft.co.za
-                ,"","");
+                //,"","");
+                , ConfigurationManager.AppSettings["LicenceKey"], ConfigurationManager.AppSettings["LicenceValue"]);
             var commandMapKeys =map.GetCommandMap(args);
             foreach(var command in commandMapKeys)
             {
