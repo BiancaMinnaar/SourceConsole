@@ -14,9 +14,11 @@ namespace SourceConsole
             Console.Write("Enter Bonsai Command.\r\n" +
                 "<1> Init Bonsai\r\n" +
                 "<2> Create View\r\n" +
-                "<3> BindableProperty <4> ModelProperty\r\n" +
-                "<5> Add Business Logic Unit\r\n" +
-                "<6> Add Serviced Repository Method Call \r\n" +
+                "<3> BindableProperty\r\n" +
+                "<4> ModelProperty\r\n" +
+                "<5> ViewModel\r\n" +
+                "<6> Add Business Logic Unit\r\n" +
+                "<7> Add Serviced Repository Method Call \r\n" +
             	"\r\n<h>elp <q>uit :");
             var command = Console.ReadLine();
             if (command != "" && command.ToUpper() != "Q")
@@ -48,11 +50,16 @@ namespace SourceConsole
                         args = ("-modelProperty " + modelPropertyName + " " + modelPropertyType).Split(" ");
                         return true;
                     case "5":
+                        Console.Write("Please indicate your ViewModel name eg. Details :");
+                        var viewModelName = Console.ReadLine();
+                        args = ("-viewModel " + viewModelName).Split(" ");
+                        return true;
+                    case "6":
                         Console.Write("Please indicate your ViewController name eg. Dashboard :");
                         var viewControllername = Console.ReadLine();
                         args = ("-initServicedRepo " + viewControllername).Split(" ");
                         return true;
-                    case "6":
+                    case "7":
                         Console.Write("Please indicate your Repository name eg. Dashboard :");
                         var repoName = Console.ReadLine();
                         Console.Write("Please indicate your MethodName name eg. GetAllocations :");
