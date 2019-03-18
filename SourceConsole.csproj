@@ -18,7 +18,9 @@
     <Folder Include="Factory\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Data\Project.Config" />
+    <Content Include="Data\Project.Config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="TemplaterBonsai" Version="4.0.5" />
