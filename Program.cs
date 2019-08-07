@@ -19,7 +19,7 @@ namespace SourceConsole
                 "<5> ViewModel\r\n" +
                 "<6> Add Business Logic Unit\r\n" +
                 "<7> Add Serviced Repository Method Call \r\n" +
-            	"\r\n<h>elp <q>uit :");
+                "\r\n<h>elp <q>uit :");
             var command = Console.ReadLine();
             if (command != "" && command.ToUpper() != "Q")
             {

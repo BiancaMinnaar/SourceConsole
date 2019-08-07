@@ -23,7 +23,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="TemplaterBonsai" Version="4.0.5" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
+    <PackageReference Include="TemplaterBonsai" Version="5.0.0" />
   </ItemGroup>
 </Project>
