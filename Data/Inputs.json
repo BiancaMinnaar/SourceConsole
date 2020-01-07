@@ -1,0 +1,29 @@
+﻿{
+  "ProjectName": "RekindleLearing",
+  "ModelList": [
+    {
+      "PropertyName": "Courses",
+      "PropertyType": "List<CourseViewModel>"
+    },
+    /*{
+      "PropertyName": "Title",
+      "PropertyType": "string"
+    },
+    {
+      "PropertyName": "Lessons",
+      "PropertyType": "List<string>"
+    },
+    {
+      "PropertyName": "Cards",
+      "PropertyType": "List<string>"
+    },
+    {
+      "PropertyName": "CourseImage",
+      "PropertyType": "byte[]"
+    },
+    {
+      "PropertyName": "CourseVideo",
+      "PropertyType": "byte[]"
+    }*/
+  ]
+}
