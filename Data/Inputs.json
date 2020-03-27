@@ -2,28 +2,20 @@
   "ProjectName": "RekindleLearing",
   "ModelList": [
     {
-      "PropertyName": "Courses",
-      "PropertyType": "List<CourseViewModel>"
-    },
-    /*{
-      "PropertyName": "Title",
+      "PropertyName": "UserName",
       "PropertyType": "string"
     },
     {
-      "PropertyName": "Lessons",
-      "PropertyType": "List<string>"
+      "PropertyName": "RememberMe",
+      "PropertyType": "bool"
     },
     {
-      "PropertyName": "Cards",
-      "PropertyType": "List<string>"
-    },
+      "PropertyName": "CheckCommand",
+      "PropertyType": "ICommand"
+    }/*,
     {
-      "PropertyName": "CourseImage",
-      "PropertyType": "byte[]"
-    },
-    {
-      "PropertyName": "CourseVideo",
-      "PropertyType": "byte[]"
+      "PropertyName": "CheckCommand",
+      "PropertyType": "ICommand"
     }*/
   ]
 }

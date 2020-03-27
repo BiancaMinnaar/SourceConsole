@@ -22,3 +22,4 @@ You may however decide to write a custom frontend for your templates by adding a
 - https://www.linkedin.com/pulse/bonsai-lesson-4-bianca-minnaar/
 
 Contact me at bminnaar@gmail.com for further information.
+Mail me to obtain a licence file

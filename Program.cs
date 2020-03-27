@@ -24,6 +24,8 @@ namespace SourceConsole
                 "<8> Add Control \r\n" +
                 "<9> AddPopup \r\n" +
                 "<10> Partial \r\n" +
+                "<11> ViewWithShell \r\n" +
+                "<12> LayoutView \r\n" + 
                 "\r\n<h>elp <q>uit :");
             var command = Console.ReadLine();
             if (command != "" && command.ToUpper() != "Q")
@@ -112,6 +114,32 @@ namespace SourceConsole
                         var Datamodel = Console.ReadLine();
                         args = $"-partial {template} {NameSpace} {Datamodel}".Split(" ");
                         return true;
+                    case "11":
+                        Console.Write("Please past your json to file \n\r Hit enter to continue :");
+                        Console.ReadLine();
+                        var modelJson11 = InputReaderRepository.ReadInputJson();
+                        Console.Write("Please indicate your View name :");
+                        var ViewName11 = Console.ReadLine();
+                        Console.Write($"Please indicate your Shell name for {ViewName11} :");
+                        var shellName = Console.ReadLine();
+                        var args11 = new List<string>($"-viewWithShell {ViewName11}".Split(" "));
+                        args11.Add(shellName);
+                        args11.Add(modelJson11);
+                        args = args11.ToArray();
+                        return true;
+                    case "12":
+                        Console.Write("Please past your json to file \n\r Hit enter to continue :");
+                        Console.ReadLine();
+                        var modelJson12 = InputReaderRepository.ReadInputJson();
+                        Console.Write("Please indicate your View name :");
+                        var ViewName12 = Console.ReadLine();
+                        Console.Write($"Please indicate your Layout name for {ViewName12} :");
+                        var layoutName = Console.ReadLine();
+                        var args12 = new List<string>($"-viewWithLayout {ViewName12}".Split(" "));
+                        args12.Add(layoutName);
+                        args12.Add(modelJson12);
+                        args = args12.ToArray();
+                        return true;
                     default:
                         Console.WriteLine("Only use available Commans");
                         return GetConfirmation(out args);
@@ -143,7 +171,9 @@ namespace SourceConsole
                     //You need a licence to call the paid functions.
                     //Please email me @ bminnaar@gmail.com
                     //,"","");
-                    , ConfigurationManager.AppSettings["LicenceKey"], ConfigurationManager.AppSettings["LicenceValue"]);
+                    , ConfigurationManager.AppSettings["LicenceKey"],
+                    ConfigurationManager.AppSettings["LicenceValue"],
+                    ConfigurationManager.AppSettings["AppName"]);
                 var commandMapKeys =map.GetCommandMap(args);
                 foreach(var command in commandMapKeys)
                 {
