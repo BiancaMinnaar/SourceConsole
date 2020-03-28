@@ -3,9 +3,18 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <ReleaseVersion>5.2</ReleaseVersion>
+    <ReleaseVersion>5.5.4</ReleaseVersion>
+    <SynchReleaseVersion>false</SynchReleaseVersion>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>..\Bonsai</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>..\Bonsai</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
   <ItemGroup>
     <Folder Include="Repository\" />
     <Folder Include="Service\" />
@@ -16,17 +25,19 @@
     <Folder Include="Templates\Custom\" />
     <Folder Include="Templates\Custom\PartialClasses\" />
     <Folder Include="Factory\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Data\Project.Config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Folder Include="Data\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.7.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="TemplaterBonsai" Version="5.5.6" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\templaterbonsai\TemplaterBonsai.csproj" />
+    <Content Include="Data\Inputs.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\ProjectSeed.Config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 </Project>

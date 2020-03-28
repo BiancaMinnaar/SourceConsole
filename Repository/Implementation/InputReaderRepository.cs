@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Templater.Repository.Implementation;
 using Templater.Service.Implementation;
 
 namespace SourceConsole.Repository.Implementation
@@ -9,7 +10,8 @@ namespace SourceConsole.Repository.Implementation
         public static string ReadInputJson()
         {
             var filer = new FileService();
-            return filer.ReadFromFile($"Data/Inputs.json");
+            var projectName = new ProjectReaderRepository(new FileService()).GetProjectName();
+            return filer.ReadFromFile($"../{projectName}/Inputs.json");
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
+using BaseBonsai.Generation.Repository;
 using SourceConsole.Repository.Implementation;
 using Templater.Repository.Implementation;
 using Templater.Service.Implementation;
@@ -164,10 +165,12 @@ namespace SourceConsole
         // -partial
         public static void Main(string[] args)
         {
+            var projectReader = GetReaderRepository();
+            LoaderReposetory.TestForDataFiles(ConfigurationManager.AppSettings["AppName"]);
             while(GetConfirmation(out args))
             {
                 var map = new CommandParameterFunctionMapManager(
-                    new ProjectReaderRepository(new FileService()), args.ToList()
+                    projectReader, args.ToList()
                     //You need a licence to call the paid functions.
                     //Please email me @ bminnaar@gmail.com
                     //,"","");
@@ -181,6 +184,11 @@ namespace SourceConsole
                     Console.ReadLine();
                 }
             }
+        }
+
+        private static ProjectReaderRepository GetReaderRepository()
+        {
+            return new ProjectReaderRepository(new FileService(), ConfigurationManager.AppSettings["AppName"]);
         }
     }
 }
