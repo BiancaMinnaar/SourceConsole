@@ -1,0 +1,21 @@
+﻿{
+  "ProjectName": "Bonsai",
+  "ModelList": [
+    {
+      "PropertyName": "UserName",
+      "PropertyType": "string"
+    },
+    {
+      "PropertyName": "RememberMe",
+      "PropertyType": "bool"
+    },
+    {
+      "PropertyName": "CheckCommand",
+      "PropertyType": "ICommand"
+    }/*,
+    {
+      "PropertyName": "CheckCommand",
+      "PropertyType": "ICommand"
+    }*/
+  ]
+}
