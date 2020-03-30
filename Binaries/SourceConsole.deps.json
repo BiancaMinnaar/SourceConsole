@@ -10,7 +10,7 @@
         "dependencies": {
           "Newtonsoft.Json": "12.0.3",
           "System.Configuration.ConfigurationManager": "4.7.0",
-          "TemplaterBonsai": "5.5.8"
+          "TemplaterBonsai": "5.5.9"
         },
         "runtime": {
           "SourceConsole.dll": {}
@@ -166,7 +166,7 @@
           }
         }
       },
-      "TemplaterBonsai/5.5.8": {
+      "TemplaterBonsai/5.5.9": {
         "dependencies": {
           "GeneratorBaseBonsai": "5.5.2",
           "System.CodeDom": "4.7.0"
@@ -277,12 +277,12 @@
       "path": "system.windows.extensions/4.7.0",
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
     },
-    "TemplaterBonsai/5.5.8": {
+    "TemplaterBonsai/5.5.9": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-DGfhqx46d+wecmTqa31ez/yOBaNsyZaMqeM4+ywZ4xBJ9Hmc4To84NzoVb1+H6TnwOzVm0xesHFuYjaS8CP8dg==",
-      "path": "templaterbonsai/5.5.8",
-      "hashPath": "templaterbonsai.5.5.8.nupkg.sha512"
+      "sha512": "sha512-BKTrNJCJdGYQMclYlVonczdsd0gfDDmDKdHY6CSo3AtgvdAB8XTLHLCvr2zYp4hOkubX9nY5qUA6BGfgysDRfQ==",
+      "path": "templaterbonsai/5.5.9",
+      "hashPath": "templaterbonsai.5.5.9.nupkg.sha512"
     }
   }
 }
