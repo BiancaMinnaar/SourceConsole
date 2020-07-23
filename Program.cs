@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
-using BaseBonsai.Generation.Repository;
+using SourceConsole.Repository;
 using SourceConsole.Repository.Implementation;
 using Templater.Repository.Implementation;
 using Templater.Service.Implementation;
-using TemplaterBonsai.Factory;
 
 namespace SourceConsole
 {
     class MainClass
     {
+        private static IInteractionRepository BInteraction;
+
         private static bool GetConfirmation(out string[] args)
         {
             Console.Write("Enter Bonsai Command.\r\n" +
@@ -167,23 +167,24 @@ namespace SourceConsole
         {
             var projectReader = GetReaderRepository();
             LoaderReposetory.TestForDataFiles(ConfigurationManager.AppSettings["AppName"]);
-            while(GetConfirmation(out args))
+            BInteraction = new InteractionRepository();
+            var availableCommands = BInteraction.GetAvailableCommands();
+            foreach (var command in availableCommands)
             {
-                var map = new CommandParameterFunctionMapManager(
-                    projectReader, args.ToList()
-                    //You need a licence to call the paid functions.
-                    //Please email me @ bminnaar@gmail.com
-                    //,"","");
-                    , ConfigurationManager.AppSettings["LicenceKey"],
-                    ConfigurationManager.AppSettings["LicenceValue"],
-                    ConfigurationManager.AppSettings["AppName"]);
-                var commandMapKeys =map.GetCommandMap(args);
-                foreach(var command in commandMapKeys)
-                {
-                    Console.WriteLine(command.Value);
-                    Console.ReadLine();
-                }
+                Console.WriteLine(command);
+                Console.ReadLine();
             }
+
+            //while(GetConfirmation(out args))
+            //{
+
+            //    var commandMapKeys =map.GetCommandMap(args);
+            //    foreach(var command in commandMapKeys)
+            //    {
+            //        Console.WriteLine(command.Value);
+            //        Console.ReadLine();
+            //    }
+            //}
         }
 
         private static ProjectReaderRepository GetReaderRepository()
