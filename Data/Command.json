@@ -1,0 +1,122 @@
+﻿{
+  "Command": "upgradeViewWithLayout",
+  "Component": {
+    "ComponentName": "Login",
+    "ComponentLayout": null,
+    "ComponentDataModel": {
+      "ProjectName": null,
+      "ModelList": [
+        {
+          "ProjectName": null,
+          "PropertyName": "UserName",
+          "PropertyType": "InputTextBox",
+          "PropertyTextLabel": null,
+          "FileName": null,
+          "_Template": null,
+          "Template": null,
+          "ValidationRules": [],
+          "ErrorList": [],
+          "OnError": null
+        },
+        {
+          "ProjectName": null,
+          "PropertyName": "Password",
+          "PropertyType": "InputTextBox",
+          "PropertyTextLabel": null,
+          "FileName": null,
+          "_Template": null,
+          "Template": null,
+          "ValidationRules": [],
+          "ErrorList": [],
+          "OnError": null
+        }
+      ],
+      "FileName": null,
+      "_Template": null,
+      "Template": null,
+      "ValidationRules": [],
+      "ErrorList": [],
+      "OnError": null
+    },
+    "Controls": [
+      {
+        "ComponentName": "InputTextBox",
+        "ComponentLayout": null,
+        "ComponentDataModel": {
+          "ProjectName": null,
+          "ModelList": [
+            {
+              "ProjectName": null,
+              "PropertyName": "Text",
+              "PropertyType": "string",
+              "PropertyTextLabel": null,
+              "FileName": null,
+              "_Template": null,
+              "Template": null,
+              "ValidationRules": [],
+              "ErrorList": [],
+              "OnError": null
+            },
+            {
+              "ProjectName": null,
+              "PropertyName": "Text",
+              "PropertyType": "string",
+              "PropertyTextLabel": null,
+              "FileName": null,
+              "_Template": null,
+              "Template": null,
+              "ValidationRules": [],
+              "ErrorList": [],
+              "OnError": null
+            }
+          ],
+          "FileName": null,
+          "_Template": null,
+          "Template": null,
+          "ValidationRules": [],
+          "ErrorList": [],
+          "OnError": null
+        },
+        "Controls": null
+      }
+    ]
+  },
+  "ComponentLayoutDataModel": {
+    "ProjectName": null,
+    "ModelList": [
+      {
+        "ProjectName": null,
+        "PropertyName": "HomeButton",
+        "PropertyType": "MenuButtonViewModel",
+        "PropertyTextLabel": null,
+        "FileName": null,
+        "_Template": null,
+        "Template": null,
+        "ValidationRules": [],
+        "ErrorList": [],
+        "OnError": null
+      },
+      {
+        "ProjectName": null,
+        "PropertyName": "Settings",
+        "PropertyType": "CenterMenuButtonViewModel",
+        "PropertyTextLabel": null,
+        "FileName": null,
+        "_Template": null,
+        "Template": null,
+        "ValidationRules": [],
+        "ErrorList": [],
+        "OnError": null
+      }
+    ],
+    "FileName": null,
+    "_Template": null,
+    "Template": null,
+    "ValidationRules": [],
+    "ErrorList": [],
+    "OnError": null
+  },
+  "ValidationRules": [],
+  "ErrorList": [],
+  "OnError": null
+}

@@ -24,12 +24,14 @@
     <Folder Include="Service\Implementation\" />
     <Folder Include="Templates\Custom\" />
     <Folder Include="Templates\Custom\PartialClasses\" />
-    <Folder Include="Factory\" />
     <Folder Include="Data\" />
+    <Folder Include="Repository\Factory\" />
+    <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.7.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="TemplaterBonsai" Version="5.6.3" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\Inputs.json">
@@ -38,10 +40,19 @@
     <Content Include="Data\ProjectSeed.Config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Data\Command.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\basebonsai\BaseBonsai.csproj" />
-    <ProjectReference Include="..\generatorbasebonsai\GenerationBaseBonsai.csproj" />
-    <ProjectReference Include="..\templaterbonsai\TemplaterBonsai.csproj" />
+    <Compile Remove="Factory\BonsaiCommandFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Data\Command.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Data\Command.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>

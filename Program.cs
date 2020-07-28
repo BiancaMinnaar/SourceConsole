@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using SourceConsole.Data;
 using SourceConsole.Repository;
 using SourceConsole.Repository.Implementation;
 using Templater.Repository.Implementation;
@@ -11,6 +12,7 @@ namespace SourceConsole
     class MainClass
     {
         private static IInteractionRepository BInteraction;
+        private static IBonsaiCommandRepository CommandRepository;
 
         private static bool GetConfirmation(out string[] args)
         {
@@ -26,7 +28,8 @@ namespace SourceConsole
                 "<9> AddPopup \r\n" +
                 "<10> Partial \r\n" +
                 "<11> ViewWithShell \r\n" +
-                "<12> LayoutView \r\n" + 
+                "<12> LayoutView \r\n" +
+                "<13> View upgrade with BonsaiCommand from Builder \r\n" +
                 "\r\n<h>elp <q>uit :");
             var command = Console.ReadLine();
             if (command != "" && command.ToUpper() != "Q")
@@ -141,6 +144,36 @@ namespace SourceConsole
                         args12.Add(modelJson12);
                         args = args12.ToArray();
                         return true;
+                    case "13":
+                        Console.Write("Please Code your BonsaiCommand into Command.json \n\r Hit enter to continue :");
+                        var answer1 = Console.ReadLine();
+                        if (answer1.ToLower().Equals("y"))
+                        {
+                            var array = CommandRepository.GetBonsaiCommands(
+                                () => Data.Builder.ReadBonsaiCommands<UpgradeViewCommand>()).ToArray();
+                            var fullargs = new List<string>();
+                            foreach (var commandFromList in array)
+                                fullargs.AddRange(commandFromList.Split());
+                            args = fullargs.ToArray();
+                            BInteraction.ReturnAvailableAccessMap(args);
+                            return true;
+                        }
+                        return GetConfirmation(out args);
+                    case "14":
+                        Console.Write("Please Code your BonsaiCommand into Builder.cs and recompile if necesary \n\r Hit enter to continue :");
+                        var answer2 = Console.ReadLine();
+                        if (answer2.ToLower().Equals("y"))
+                        {
+                            var array = CommandRepository.GetBonsaiCommands(
+                                () => Data.Builder.GetBonsiaCommandList<UpgradeViewCommand>()).ToArray();
+                            var fullargs = new List<string>();
+                            foreach (var commandFromList in array)
+                                fullargs.AddRange(commandFromList.Split());
+                            args = fullargs.ToArray();
+                            BInteraction.ReturnAvailableAccessMap(args);
+                            return true;
+                        }
+                        return GetConfirmation(out args);
                     default:
                         Console.WriteLine("Only use available Commans");
                         return GetConfirmation(out args);
@@ -165,14 +198,20 @@ namespace SourceConsole
         // -partial
         public static void Main(string[] args)
         {
+            IBonsaiCommandRepository commsRepo = new BonsaiCommandRepository();
+            BInteraction = new InteractionRepository();
+            CommandRepository = new BonsaiCommandRepository();
             var projectReader = GetReaderRepository();
             LoaderReposetory.TestForDataFiles(ConfigurationManager.AppSettings["AppName"]);
-            BInteraction = new InteractionRepository();
-            var availableCommands = BInteraction.GetAvailableCommands();
-            foreach (var command in availableCommands)
+
+            while (GetConfirmation(out args))
             {
-                Console.WriteLine(command);
-                Console.ReadLine();
+                var commandMapKeys = BInteraction.ReturnAvailableAccessMap(args);
+                foreach (var command in commandMapKeys)
+                {
+                    Console.WriteLine(command.Value);
+                    Console.ReadLine();
+                }
             }
 
             //while(GetConfirmation(out args))
