@@ -30,6 +30,7 @@ namespace SourceConsole
                 "<11> ViewWithShell \r\n" +
                 "<12> LayoutView \r\n" +
                 "<13> View upgrade with BonsaiCommand from Builder \r\n" +
+                "<15> Upgrade Bonsai License \r\n"+
                 "\r\n<h>elp <q>uit :");
             var command = Console.ReadLine();
             if (command != "" && command.ToUpper() != "Q")
@@ -174,6 +175,9 @@ namespace SourceConsole
                             return true;
                         }
                         return GetConfirmation(out args);
+                    case "15":
+                        args = $"-applicationLicense {ConfigurationManager.AppSettings["LicenceKey"]} {ConfigurationManager.AppSettings["LicenceValue"]} {ConfigurationManager.AppSettings["AppName"]}".Split(" ");
+                        return true;
                     default:
                         Console.WriteLine("Only use available Commans");
                         return GetConfirmation(out args);
@@ -213,17 +217,6 @@ namespace SourceConsole
                     Console.ReadLine();
                 }
             }
-
-            //while(GetConfirmation(out args))
-            //{
-
-            //    var commandMapKeys =map.GetCommandMap(args);
-            //    foreach(var command in commandMapKeys)
-            //    {
-            //        Console.WriteLine(command.Value);
-            //        Console.ReadLine();
-            //    }
-            //}
         }
 
         private static ProjectReaderRepository GetReaderRepository()
